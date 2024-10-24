@@ -1,5 +1,6 @@
 import About from "./components/About";
 import Hero from "./components/Hero";
+import WorkEx from "./components/WorkEx";
 
 export default function App() {
     return (
@@ -7,6 +8,7 @@ export default function App() {
             <div className="w-[650px] space-y-10">
                 <Hero />
                 <About />
+                <WorkEx />
             </div>
         </div>
     )
