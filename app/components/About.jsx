@@ -5,7 +5,7 @@ function About() {
         <div className=''>
             <p className='font-bold text-xl'>About</p>
             <div className='text-slate-500 font-semibold text-justify'>
-                Welcome to my portfolio website! {`I'm`} Sagar Karmoker, a passionate Computer Science and Engineering student at <span className='text-black underline hover:cursor-pointer'>East West University</span> in Bangladesh. I enjoy exploring new technologies and solving real-world problems through software development and <span className='text-black underline hover:cursor-pointer'>blockchain</span> innovation.
+                Welcome to my portfolio website! {`I'm`} Sagar Karmoker, a passionate Computer Science and Engineering student at <span className='text-black underline hover:cursor-pointer'>East West University</span> in Bangladesh. I enjoy exploring new technologies and solving real-world problems through <span className='text-black underline hover:cursor-pointer'>software development</span> and <span className='text-black underline hover:cursor-pointer'>blockchain</span> innovation.
                 <br />
                 <span className='mt-5 font-semibold text-black'>What I Do:</span>
                 <br />

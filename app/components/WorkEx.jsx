@@ -14,7 +14,7 @@ export default function WorkEx() {
         {
             image: ewu,
             org: "EWU Cyber Security Club",
-            position: "Web Developer Lead",
+            position: "Web Development Lead",
             time: "October 2024 - Present"
         }
     ]

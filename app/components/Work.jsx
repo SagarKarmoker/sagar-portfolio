@@ -4,15 +4,13 @@ import Image from 'next/image'
 export default function Work({ details }) {
     const { image, org, position, time } = details;
     return (
-        <div className='flex justify-between'>
+        <div className='flex flex-col lg:flex-row justify-between'>
             <div className='flex gap-x-4'>
                 <div>
                     <Image
                         src={image}
-                        width={100}
-                        height={100}
                         alt="Picture of the author"
-                        className="rounded-full object-cover border"
+                        className="rounded-full object-fit border h-20 w-20"
                     />
                 </div>
                 <div>
@@ -20,7 +18,7 @@ export default function Work({ details }) {
                     <p>{position}</p>
                 </div>
             </div>
-            <div className='text-slate-500'>
+            <div className='text-slate-500 text-center'>
                 {time}
             </div>
         </div>
