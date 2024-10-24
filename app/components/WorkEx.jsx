@@ -1,6 +1,7 @@
 import React from 'react'
 import Work from './Work'
 import ewu from '@/public/ewu.png'
+import ewucsc from '@/public/ewucsc.jpg'
 
 export default function WorkEx() {
 
@@ -12,7 +13,7 @@ export default function WorkEx() {
             time: "October 2023 - Present"
         },
         {
-            image: ewu,
+            image: ewucsc,
             org: "EWU Cyber Security Club",
             position: "Web Development Lead",
             time: "October 2024 - Present"

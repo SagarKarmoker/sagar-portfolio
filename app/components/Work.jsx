@@ -10,7 +10,7 @@ export default function Work({ details }) {
                     <Image
                         src={image}
                         alt="Picture of the author"
-                        className="rounded-full object-fit border h-20 w-20"
+                        className="rounded-full object-fit border h-12 w-12"
                     />
                 </div>
                 <div>
