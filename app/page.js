@@ -1,9 +1,10 @@
-import Image from "next/image";
+import React from 'react'
+import App from './App'
 
-export default function Home() {
+export default function page() {
   return (
-    <main className="text-center text-4xl flex justify-center items-center h-screen">
-      <h2>Sagar Karmoker Portfolio Website</h2>
-    </main>
-  );
+    <div>
+      <App />
+    </div>
+  )
 }
