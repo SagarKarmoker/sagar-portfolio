@@ -10,19 +10,19 @@ export default function ProjectCard({ project }) {
 
     return (
         <Card className="flex flex-col max-w-md mx-auto overflow-hidden h-full"> {/* Flex container */}
-            <CardHeader className="p-0">
-                <div className="relative h-48 bg-red-500">
+            {/* <CardHeader className="p-0">
+                <div className="relative h-48">
                     <Image
-                        src="/placeholder.svg?height=192&width=384"
+                        src=""
                         alt="Project preview"
                         layout="fill"
                         objectFit="cover"
                         className="rounded-t-lg"
                     />
                 </div>
-            </CardHeader>
-            <CardContent className="p-3 flex-grow"> {/* Flex child that grows */}
-                <h2 className="text-2xl font-bold mb-2">{name}</h2>
+            </CardHeader> */}
+            <CardContent className="p-3 flex-grow mt-4"> {/* Flex child that grows */}
+                <h2 className="text-2xl font-bold mb-2 text-center">{name}</h2>
                 <p className="text-sm text-gray-500 mb-4">{timeline}</p>
                 <p className="text-sm mb-4">
                     {desc}
