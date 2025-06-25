@@ -32,7 +32,7 @@ function Hero() {
                             transition={{ delay: 0.4, duration: 0.6 }}
                             className="text-5xl lg:text-7xl font-bold leading-tight"
                         >
-                            Hi, I'm{' '}
+                            Hi, I&apos;m{' '}
                             <span className="bg-gradient-to-r from-color-secondary via-color-accent to-color-orange bg-clip-text text-transparent">
                                 Sagar
                             </span>
