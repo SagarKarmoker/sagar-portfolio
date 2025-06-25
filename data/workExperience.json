@@ -4,13 +4,31 @@
     "org": "East West University",
     "position": "Undergraduate Teaching Assistant (UTA)",
     "time": "October 2023 - Present",
-    "description": "Assisting professors in teaching computer science courses and mentoring students in programming and software development concepts."
+    "location": "Dhaka, Bangladesh",
+    "description": "Assisting professors in teaching computer science courses and mentoring students in programming and software development concepts.",
+    "responsibilities": [
+      "Conducting lab sessions for programming courses",
+      "Providing one-on-one tutoring to struggling students",
+      "Grading assignments and providing constructive feedback",
+      "Assisting in curriculum development and course materials"
+    ],
+    "technologies": ["Java", "Python", "C++", "Data Structures", "Algorithms"],
+    "website": "https://www.ewubd.edu"
   },
   {
     "image": "/ewucsc.jpg",
     "org": "EWU Cyber Security Club",
     "position": "Web Development Lead",
     "time": "October 2024 - Present",
-    "description": "Leading web development initiatives and managing the club's online presence while mentoring junior developers."
+    "location": "Dhaka, Bangladesh",
+    "description": "Leading web development initiatives and managing the club's online presence while mentoring junior developers.",
+    "responsibilities": [
+      "Leading web development projects for the club",
+      "Mentoring junior developers and conducting workshops",
+      "Managing the club's website and social media presence",
+      "Collaborating with other departments for technical solutions"
+    ],
+    "technologies": ["React", "Next.js", "JavaScript", "HTML/CSS", "Git"],
+    "website": ""
   }
 ] 

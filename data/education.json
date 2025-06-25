@@ -1,6 +1,6 @@
 [
   {
-    "image": "/ewu.png",
+    "image": "./../public/ewu.png",
     "org": "East West University",
     "position": "B.Sc in Computer Science and Engineering",
     "time": "2020 - 2024",

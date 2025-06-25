@@ -3,9 +3,21 @@ import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, MapPin, ExternalLink } from 'lucide-react'
 import workExperienceData from '@/data/workExperience.json'
+import Image from 'next/image'
 
 export default function WorkEx() {
-    const workExperience = workExperienceData;
+    // Map the JSON data to the expected structure
+    const workExperience = workExperienceData.map(job => ({
+        image: job.image,
+        company: job.org,
+        title: job.position,
+        period: job.time,
+        location: job.location || '',
+        description: job.description,
+        responsibilities: job.responsibilities || [],
+        technologies: job.technologies || [],
+        website: job.website || ''
+    }));
 
     return (
         <div className="py-20">
@@ -40,28 +52,43 @@ export default function WorkEx() {
                     >
                         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                             <div className="flex-1">
-                                <div className="flex items-center space-x-3 mb-2">
-                                    <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">
-                                        {job.title}
-                                    </h3>
-                                    {job.company && (
-                                        <Badge className="bg-color-accent/90 text-white border-0">
-                                            {job.company}
-                                        </Badge>
-                                    )}
-                                </div>
-                                
-                                <div className="flex flex-wrap items-center gap-4 text-slate-600 dark:text-slate-400 mb-4">
-                                    <div className="flex items-center space-x-1">
-                                        <Calendar className="w-4 h-4" />
-                                        <span>{job.period}</span>
-                                    </div>
-                                    {job.location && (
-                                        <div className="flex items-center space-x-1">
-                                            <MapPin className="w-4 h-4" />
-                                            <span>{job.location}</span>
+                                <div className="flex items-center space-x-4 mb-4">
+                                    {job.image && (
+                                        <div className="w-16 h-16 rounded-xl overflow-hidden bg-white shadow-md flex-shrink-0">
+                                            <Image
+                                                src={job.image}
+                                                alt={job.company}
+                                                width={64}
+                                                height={64}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
                                     )}
+                                    <div className="flex-1">
+                                        <div className="flex items-center space-x-3 mb-2">
+                                            <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">
+                                                {job.title}
+                                            </h3>
+                                            {job.company && (
+                                                <Badge className="bg-color-accent/90 text-white border-0">
+                                                    {job.company}
+                                                </Badge>
+                                            )}
+                                        </div>
+                                        
+                                        <div className="flex flex-wrap items-center gap-4 text-slate-600 dark:text-slate-400">
+                                            <div className="flex items-center space-x-1">
+                                                <Calendar className="w-4 h-4" />
+                                                <span>{job.period}</span>
+                                            </div>
+                                            {job.location && (
+                                                <div className="flex items-center space-x-1">
+                                                    <MapPin className="w-4 h-4" />
+                                                    <span>{job.location}</span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             
@@ -82,7 +109,7 @@ export default function WorkEx() {
                             {job.description}
                         </p>
 
-                        {job.responsibilities && (
+                        {job.responsibilities && job.responsibilities.length > 0 && (
                             <div className="mb-6">
                                 <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-3">
                                     Key Responsibilities:
@@ -98,7 +125,7 @@ export default function WorkEx() {
                             </div>
                         )}
 
-                        {job.technologies && (
+                        {job.technologies && job.technologies.length > 0 && (
                             <div>
                                 <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-3">
                                     Technologies Used:
