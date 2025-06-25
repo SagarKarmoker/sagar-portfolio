@@ -3,10 +3,13 @@ import { motion } from 'framer-motion'
 import { Badge } from "@/components/ui/badge"
 import { Code, Database, Smartphone, Globe, Shield } from 'lucide-react'
 import skillsData from '@/data/skills.json'
+import logosData from '@/data/logos.json'
 import { getIcon } from '@/lib/icons'
+import Image from 'next/image'
 
 export default function Skills() {
     const { skillCategories, additionalSkills } = skillsData;
+    const logos = logosData;
 
     return (
         <div className="py-20">
@@ -42,24 +45,45 @@ export default function Skills() {
                             className="bg-white dark:bg-color-dark rounded-2xl p-8 shadow-xl border border-color-primary/20 dark:border-color-secondary/30 hover:shadow-2xl transition-all duration-300"
                         >
                             <div className="flex items-center mb-6">
-                                <div className="p-3 bg-gradient-to-r from-color-secondary to-color-accent rounded-xl text-white mr-4">
-                                    <IconComponent className="w-6 h-6" />
+                                <div className="flex items-center space-x-3">
+                                    <div className="p-3 bg-gradient-to-r from-color-secondary to-color-accent rounded-xl text-white">
+                                        <IconComponent className="w-6 h-6" />
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
+                                <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 ml-4">
                                     {category.title}
                                 </h3>
                             </div>
                             
                             <div className="flex flex-wrap gap-2">
-                                {category.skills.map((skill, skillIndex) => (
-                                    <Badge 
-                                        key={skillIndex}
-                                        variant="secondary" 
-                                        className="bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30 transition-colors"
-                                    >
-                                        {skill}
-                                    </Badge>
-                                ))}
+                                {category.skills.map((skill, skillIndex) => {
+                                    const skillLogo = logos.programmingLanguages[skill] || 
+                                                    logos.frontend[skill] || 
+                                                    logos.backend[skill] || 
+                                                    logos.mobile[skill] || 
+                                                    logos.blockchain[skill] || 
+                                                    logos.tools[skill];
+                                    return (
+                                        <Badge 
+                                            key={skillIndex}
+                                            variant="secondary" 
+                                            className="bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30 transition-colors flex items-center space-x-1"
+                                        >
+                                            {skillLogo && (
+                                                <div className="w-4 h-4 flex-shrink-0">
+                                                    <Image
+                                                        src={skillLogo}
+                                                        alt={skill}
+                                                        width={16}
+                                                        height={16}
+                                                        className="w-full h-full object-contain"
+                                                    />
+                                                </div>
+                                            )}
+                                            <span>{skill}</span>
+                                        </Badge>
+                                    );
+                                })}
                             </div>
                         </motion.div>
                     );
@@ -77,16 +101,35 @@ export default function Skills() {
                 <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-8">
                     Additional Skills & Tools
                 </h3>
-                <div className="flex flex-wrap justify-center gap-3">
-                    {additionalSkills.map((skill, index) => (
-                        <Badge 
-                            key={index}
-                            variant="outline"
-                            className="border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-colors"
-                        >
-                            {skill}
-                        </Badge>
-                    ))}
+                <div className="flex flex-wrap justify-center gap-4">
+                    {additionalSkills.map((skill, index) => {
+                        const skillLogo = logos.tools[skill] || logos.programmingLanguages[skill] || logos.frontend[skill] || logos.backend[skill];
+                        return (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.4, delay: index * 0.05 }}
+                                viewport={{ once: true }}
+                                className="flex items-center space-x-2 bg-white dark:bg-color-dark rounded-xl p-3 shadow-lg border border-color-primary/20 dark:border-color-secondary/30 hover:shadow-xl transition-all duration-300 hover:scale-105"
+                            >
+                                {skillLogo && (
+                                    <div className="w-6 h-6 flex-shrink-0">
+                                        <Image
+                                            src={skillLogo}
+                                            alt={skill}
+                                            width={24}
+                                            height={24}
+                                            className="w-full h-full object-contain"
+                                        />
+                                    </div>
+                                )}
+                                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                                    {skill}
+                                </span>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </motion.div>
         </div>
