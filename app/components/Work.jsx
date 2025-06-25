@@ -6,6 +6,18 @@ import { Calendar, MapPin } from 'lucide-react'
 export default function Work({ details }) {
     const { image, org, position, time, description } = details;
     
+    // Handle image import based on the path
+    const getImageSrc = (imagePath) => {
+        if (imagePath === '/ewu.png') {
+            return require('@/public/ewu.png');
+        } else if (imagePath === '/ewucsc.jpg') {
+            return require('@/public/ewucsc.jpg');
+        }
+        return null;
+    };
+
+    const imageSrc = getImageSrc(image);
+    
     return (
         <motion.div 
             whileHover={{ y: -4 }}
@@ -16,13 +28,15 @@ export default function Work({ details }) {
                 {/* Company Logo */}
                 <div className="flex-shrink-0">
                     <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 flex items-center justify-center border border-slate-200 dark:border-slate-700">
-                        <Image
-                            src={image}
-                            alt={`${org} logo`}
-                            width={48}
-                            height={48}
-                            className="rounded-lg object-cover"
-                        />
+                        {imageSrc && (
+                            <Image
+                                src={imageSrc}
+                                alt={`${org} logo`}
+                                width={48}
+                                height={48}
+                                className="rounded-lg object-cover"
+                            />
+                        )}
                     </div>
                 </div>
 

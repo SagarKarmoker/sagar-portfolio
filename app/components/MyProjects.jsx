@@ -3,70 +3,10 @@ import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { ExternalLink, Github, Calendar } from 'lucide-react'
 import ProjectCard from './ProjectCard'
+import projectsData from '@/data/projects.json'
 
 export default function MyProjects() {
-    const projects = [
-        {
-            name: "eKYC using Blockchain",
-            timeline: "Current project",
-            desc: "A blockchain-based system designed to streamline the verification processes required for KYC compliance, increasing security and privacy through decentralized data management.",
-            badges: ["Blockchain", "Security", "Data Management"],
-            website: "",
-            github: "",
-            coverImage: "",
-            status: "In Progress"
-        },
-        {
-            name: "Taxation System with eKYC Using Blockchain",
-            timeline: "Development stage",
-            desc: "An integrated blockchain system designed to facilitate the secure and efficient handling of tax processes, coupled with an eKYC mechanism to ensure compliance and authenticity.",
-            badges: ["Blockchain", "Finance", "Security", "KYC"],
-            website: "",
-            github: "",
-            coverImage: "",
-            status: "Development"
-        },
-        {
-            name: "UniCourse",
-            timeline: "Current project",
-            desc: "A full-fledged Learning Management System built with HTML, JavaScript, Tailwind CSS, and PHP.",
-            badges: ["HTML", "JavaScript", "Tailwind CSS", "PHP"],
-            website: "",
-            github: "https://github.com/SagarKarmoker/UniCourse",
-            coverImage: "",
-            status: "Live"
-        },
-        {
-            name: "TutorBridge",
-            timeline: "Past project",
-            desc: "A freelance teaching platform for Android developed using Java, XML, and Firebase.",
-            badges: ["Java", "XML", "Firebase"],
-            website: "",
-            github: "https://github.com/SagarKarmoker/TutorBridge",
-            coverImage: "",
-            status: "Completed"
-        },
-        {
-            name: "TraceChainBD",
-            timeline: "Past project",
-            desc: "A blockchain-based supply chain management system that enhances transparency and traceability in logistics.",
-            badges: ["Blockchain", "Supply Chain"],
-            website: "",
-            github: "https://github.com/SagarKarmoker/TraceChainBD",
-            coverImage: "",
-            status: "Completed"
-        },
-        {
-            name: "Job Platform with Interview Feature",
-            timeline: "Past project",
-            desc: "An online platform that connects job seekers and employers, featuring built-in tools for conducting live interviews and assessments.",
-            badges: ["Web Development", "React", "Node.js", "WebRTC"],
-            website: "",
-            github: "",
-            coverImage: "",
-            status: "Completed"
-        }
-    ];
+    const projects = projectsData;
 
     return (
         <div className="py-20">

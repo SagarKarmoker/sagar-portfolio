@@ -3,33 +3,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Trophy, Calendar, MapPin } from 'lucide-react'
 import Hacks from './Hacks'
+import hackathonsData from '@/data/hackathons.json'
 
 export default function Hackathon() {
-    const events = [
-        {
-            icon: "🟣",
-            date: "September, 2024",
-            title: "The 5th Bangladesh Blockchain Olympiad",
-            location: "Dhaka, Bangladesh",
-            description: "Developed a blockchain-based supply chain management system that enhances transparency and traceability in logistics.",
-            achievement: "Finalist"
-        },
-        {
-            icon: "🔵",
-            date: "October, 2024",
-            title: "NASA Space Apps Challenge 2024 (Grant Event)",
-            location: "AIUB Dhaka, Bangladesh",
-            description: "Developed a SDG Classroom is an educational platform designed to revolutionize high school science education by integrating Sustainable Development Goals (SDGs) directly into the curriculum using augmented reality (AR) technology, NASAs API, and many interactive games and videos.",
-            achievement: "Participant"
-        },
-        // {
-        //     icon: "⚪",
-        //     date: "March 23rd - 24th, 2018",
-        //     title: "FirstNet Public Safety Hackathon",
-        //     location: "San Francisco, California",
-        //     description: "Developed a mobile application which communcicates a victims medical data from inside an ambulance to doctors at hospital."
-        // }
-    ]
+    const events = hackathonsData;
 
     return (
         <div className="py-20">

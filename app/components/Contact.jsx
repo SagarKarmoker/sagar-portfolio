@@ -4,42 +4,14 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Mail, Linkedin, Twitter, Github, MessageCircle, Send } from 'lucide-react'
 import Link from 'next/link'
+import contactData from '@/data/contact.json'
+import { getIcon } from '@/lib/icons'
 
 export default function Contact() {
-    const contactMethods = [
-        {
-            icon: <Linkedin className="w-6 h-6" />,
-            title: "LinkedIn",
-            description: "Connect with me professionally",
-            link: "https://www.linkedin.com/in/sagarkarmoker",
-            color: "text-blue-600 dark:text-blue-400",
-            bgColor: "bg-blue-100 dark:bg-blue-900/30"
-        },
-        {
-            icon: <Twitter className="w-6 h-6" />,
-            title: "Twitter",
-            description: "Follow me for updates",
-            link: "#",
-            color: "text-blue-400 dark:text-blue-300",
-            bgColor: "bg-blue-100 dark:bg-blue-900/30"
-        },
-        {
-            icon: <Github className="w-6 h-6" />,
-            title: "GitHub",
-            description: "Check out my code",
-            link: "#",
-            color: "text-slate-700 dark:text-slate-300",
-            bgColor: "bg-slate-100 dark:bg-slate-700"
-        },
-        {
-            icon: <Mail className="w-6 h-6" />,
-            title: "Email",
-            description: "Send me a message",
-            link: "mailto:sagar@example.com",
-            color: "text-red-600 dark:text-red-400",
-            bgColor: "bg-red-100 dark:bg-red-900/30"
-        }
-    ];
+    const contactMethods = contactData.map(method => ({
+        ...method,
+        icon: getIcon(method.icon)
+    }));
 
     return (
         <div className="py-20">
@@ -93,7 +65,7 @@ export default function Contact() {
                                         <div className="flex items-center space-x-4">
                                             <div className={`p-3 rounded-lg ${method.bgColor}`}>
                                                 <div className={method.color}>
-                                                    {method.icon}
+                                                    <method.icon className="w-6 h-6" />
                                                 </div>
                                             </div>
                                             <div className="flex-1">

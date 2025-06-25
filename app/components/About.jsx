@@ -1,25 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { User, Code, Smartphone, Database } from 'lucide-react'
+import expertiseData from '@/data/expertise.json'
+import { getIcon } from '@/lib/icons'
 
 function About() {
-    const expertise = [
-        {
-            icon: <Database className="w-6 h-6" />,
-            title: "Blockchain Development",
-            description: "Specialized in developing decentralized applications (dApps) using Solidity, Ethers.js, and smart contracts. Building secure and efficient blockchain solutions."
-        },
-        {
-            icon: <Code className="w-6 h-6" />,
-            title: "Web & Mobile Development",
-            description: "Proficient in React, Vite, Tailwind CSS for front-end, and Node.js for back-end. Skilled in mobile development with Kotlin and Jetpack Compose."
-        },
-        {
-            icon: <Smartphone className="w-6 h-6" />,
-            title: "Programming Languages",
-            description: "Experienced in C, C++, Java, Python, and more, with a solid foundation in data structures, algorithms, and software engineering concepts."
-        }
-    ]
+    const expertise = expertiseData.map(item => ({
+        ...item,
+        icon: getIcon(item.icon)
+    }));
 
     return (
         <div className="py-20">
@@ -87,7 +76,7 @@ function About() {
                         >
                             <div className="flex items-start space-x-4">
                                 <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white">
-                                    {item.icon}
+                                    <item.icon className="w-6 h-6" />
                                 </div>
                                 <div className="flex-1">
                                     <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-2">

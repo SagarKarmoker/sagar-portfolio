@@ -2,35 +2,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Badge } from "@/components/ui/badge"
 import { Code, Database, Smartphone, Globe, Shield } from 'lucide-react'
+import skillsData from '@/data/skills.json'
+import { getIcon } from '@/lib/icons'
 
 export default function Skills() {
-    const skillCategories = [
-        {
-            title: "Programming Languages",
-            icon: <Code className="w-6 h-6" />,
-            skills: ["Java", "C++", "C", "Python", "JavaScript", "TypeScript", "Solidity"]
-        },
-        {
-            title: "Frontend Development",
-            icon: <Globe className="w-6 h-6" />,
-            skills: ["React", "Next.js", "HTML", "CSS", "Tailwind CSS", "Vite", "JavaScript"]
-        },
-        {
-            title: "Backend & Database",
-            icon: <Database className="w-6 h-6" />,
-            skills: ["Node.js", "Spring Boot", "MongoDB", "Oracle SQL", "MySQL", "Firebase"]
-        },
-        {
-            title: "Mobile Development",
-            icon: <Smartphone className="w-6 h-6" />,
-            skills: ["Kotlin", "Jetpack Compose", "Android", "XML", "Java"]
-        },
-        {
-            title: "Blockchain & Security",
-            icon: <Shield className="w-6 h-6" />,
-            skills: ["Blockchain", "Solidity", "Smart Contracts", "Ethers.js", "Web3.js", "Security"]
-        }
-    ];
+    const { skillCategories, additionalSkills } = skillsData;
 
     return (
         <div className="py-20">
@@ -54,37 +30,40 @@ export default function Skills() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {skillCategories.map((category, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                        className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-300"
-                    >
-                        <div className="flex items-center mb-6">
-                            <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white mr-4">
-                                {category.icon}
+                {skillCategories.map((category, index) => {
+                    const IconComponent = getIcon(category.icon);
+                    return (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            viewport={{ once: true }}
+                            className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all duration-300"
+                        >
+                            <div className="flex items-center mb-6">
+                                <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl text-white mr-4">
+                                    <IconComponent className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
+                                    {category.title}
+                                </h3>
                             </div>
-                            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
-                                {category.title}
-                            </h3>
-                        </div>
-                        
-                        <div className="flex flex-wrap gap-2">
-                            {category.skills.map((skill, skillIndex) => (
-                                <Badge 
-                                    key={skillIndex}
-                                    variant="secondary" 
-                                    className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
-                                >
-                                    {skill}
-                                </Badge>
-                            ))}
-                        </div>
-                    </motion.div>
-                ))}
+                            
+                            <div className="flex flex-wrap gap-2">
+                                {category.skills.map((skill, skillIndex) => (
+                                    <Badge 
+                                        key={skillIndex}
+                                        variant="secondary" 
+                                        className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                                    >
+                                        {skill}
+                                    </Badge>
+                                ))}
+                            </div>
+                        </motion.div>
+                    );
+                })}
             </div>
 
             {/* Additional Skills Section */}
@@ -99,10 +78,7 @@ export default function Skills() {
                     Additional Skills & Tools
                 </h3>
                 <div className="flex flex-wrap justify-center gap-3">
-                    {[
-                        "Git", "GitHub", "Docker", "AWS", "REST APIs", "GraphQL", 
-                        "Agile", "Scrum", "JIRA", "Figma", "Postman", "VS Code"
-                    ].map((skill, index) => (
+                    {additionalSkills.map((skill, index) => (
                         <Badge 
                             key={index}
                             variant="outline"

@@ -1,18 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Work from './Work'
-import ewu from '@/public/ewu.png'
+import educationData from '@/data/education.json'
 
 export default function Education() {
-    const myedu = [
-        {
-            image: ewu,
-            org: "East West University",
-            position: "B.Sc in Computer Science and Engineering",
-            time: "2020 - 2024",
-            description: "Focused on software engineering, algorithms, data structures, and emerging technologies including blockchain and artificial intelligence."
-        },
-    ]
+    const myedu = educationData;
 
     return (
         <div className="py-20">

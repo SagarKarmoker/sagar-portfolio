@@ -1,26 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import Work from './Work'
-import ewu from '@/public/ewu.png'
-import ewucsc from '@/public/ewucsc.jpg'
+import workExperienceData from '@/data/workExperience.json'
 
 export default function WorkEx() {
-    const workex = [
-        {
-            image: ewu,
-            org: "East West University",
-            position: "Undergraduate Teaching Assistant (UTA)",
-            time: "October 2023 - Present",
-            description: "Assisting professors in teaching computer science courses and mentoring students in programming and software development concepts."
-        },
-        {
-            image: ewucsc,
-            org: "EWU Cyber Security Club",
-            position: "Web Development Lead",
-            time: "October 2024 - Present",
-            description: "Leading web development initiatives and managing the club's online presence while mentoring junior developers."
-        }
-    ]
+    const workex = workExperienceData;
 
     return (
         <div className="py-20">

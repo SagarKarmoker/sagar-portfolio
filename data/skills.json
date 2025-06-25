@@ -1,0 +1,33 @@
+{
+  "skillCategories": [
+    {
+      "title": "Programming Languages",
+      "icon": "Code",
+      "skills": ["Java", "C++", "C", "Python", "JavaScript", "TypeScript", "Solidity"]
+    },
+    {
+      "title": "Frontend Development",
+      "icon": "Globe",
+      "skills": ["React", "Next.js", "HTML", "CSS", "Tailwind CSS", "Vite", "JavaScript"]
+    },
+    {
+      "title": "Backend & Database",
+      "icon": "Database",
+      "skills": ["Node.js", "Spring Boot", "MongoDB", "Oracle SQL", "MySQL", "Firebase"]
+    },
+    {
+      "title": "Mobile Development",
+      "icon": "Smartphone",
+      "skills": ["Kotlin", "Jetpack Compose", "Android", "XML", "Java"]
+    },
+    {
+      "title": "Blockchain & Security",
+      "icon": "Shield",
+      "skills": ["Blockchain", "Solidity", "Smart Contracts", "Ethers.js", "Web3.js", "Security"]
+    }
+  ],
+  "additionalSkills": [
+    "Git", "GitHub", "Docker", "AWS", "REST APIs", "GraphQL", 
+    "Agile", "Scrum", "JIRA", "Figma", "Postman", "VS Code"
+  ]
+} 
