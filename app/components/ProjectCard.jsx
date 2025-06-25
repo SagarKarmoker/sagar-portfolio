@@ -8,7 +8,17 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export default function ProjectCard({ project }) {
-    const { name, timeline, desc, badges, website, github, coverImage, status } = project;
+    // Handle both old and new field names for compatibility
+    const title = project.title || project.name;
+    const description = project.description || project.desc;
+    const technologies = project.technologies || project.badges || [];
+    const live = project.live || project.website;
+    const github = project.github;
+    const coverImage = project.coverImage;
+    const status = project.status;
+    const category = project.category || 'Project';
+    const icon = project.icon || '💻';
+    const date = project.date || project.timeline;
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -29,32 +39,32 @@ export default function ProjectCard({ project }) {
         <motion.div
             whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
-            className="bg-white dark:bg-color-dark rounded-2xl shadow-xl border border-color-primary/20 dark:border-color-secondary/30 overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer"
+            className="bg-white dark:bg-color-dark rounded-2xl shadow-xl border border-color-primary/20 dark:border-color-secondary/30 overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col h-full"
         >
             {/* Project Image */}
-            <div className="relative h-48 bg-gradient-to-br from-color-primary/20 to-color-secondary/20 dark:from-color-primary/10 dark:to-color-secondary/10">
+            <div className="relative h-48 bg-gradient-to-br from-color-primary/20 to-color-secondary/20 dark:from-color-primary/10 dark:to-color-secondary/10 flex-shrink-0">
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-6xl opacity-20">
-                        {project.icon || '💻'}
+                        {icon}
                     </div>
                 </div>
                 <div className="absolute top-4 right-4">
                     <Badge className="bg-color-accent/90 text-white border-0">
-                        {project.category}
+                        {category}
                     </Badge>
                 </div>
             </div>
 
             {/* Project Content */}
-            <div className="p-6">
+            <div className="p-6 flex flex-col flex-1">
                 <div className="flex items-start justify-between mb-4">
                     <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
-                        {project.title}
+                        {title}
                     </h3>
-                    <div className="flex space-x-2">
-                        {project.github && (
+                    <div className="flex space-x-2 flex-shrink-0">
+                        {github && (
                             <a 
-                                href={project.github} 
+                                href={github} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-color-primary/20 dark:hover:bg-color-primary/20 transition-colors cursor-pointer"
@@ -62,9 +72,9 @@ export default function ProjectCard({ project }) {
                                 <Github className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                             </a>
                         )}
-                        {project.live && (
+                        {live && (
                             <a 
-                                href={project.live} 
+                                href={live} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
                                 className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-color-primary/20 dark:hover:bg-color-primary/20 transition-colors cursor-pointer"
@@ -75,13 +85,13 @@ export default function ProjectCard({ project }) {
                     </div>
                 </div>
 
-                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                    {project.description}
+                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed flex-1">
+                    {description}
                 </p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                    {(project.technologies || []).map((tech, index) => (
+                    {technologies.map((tech, index) => (
                         <Badge 
                             key={index}
                             variant="secondary"
@@ -93,21 +103,63 @@ export default function ProjectCard({ project }) {
                 </div>
 
                 {/* Project Details */}
-                <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
+                <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400 mb-4">
                     <div className="flex items-center space-x-1">
                         <Calendar className="w-4 h-4" />
-                        <span>{project.date}</span>
+                        <span>{date}</span>
                     </div>
-                    {project.status && (
+                    {status && (
                         <Badge 
-                            variant={project.status === 'Completed' ? 'default' : 'secondary'}
-                            className={project.status === 'Completed' 
+                            variant={status === 'Completed' ? 'default' : 'secondary'}
+                            className={status === 'Completed' 
                                 ? 'bg-color-accent text-white' 
                                 : 'bg-color-primary/20 text-color-secondary dark:text-color-primary'
                             }
                         >
-                            {project.status}
+                            {status}
                         </Badge>
+                    )}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3 mt-auto">
+                    {live && (
+                        <Button 
+                            asChild
+                            className="flex-1 bg-gradient-to-r from-color-secondary to-color-accent hover:from-color-secondary/90 hover:to-color-accent/90 text-white border-0 transition-all duration-300 hover:scale-105"
+                        >
+                            <a 
+                                href={live} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center space-x-2"
+                            >
+                                <Globe className="w-4 h-4" />
+                                <span>Visit Project</span>
+                            </a>
+                        </Button>
+                    )}
+                    {github && (
+                        <Button 
+                            asChild
+                            variant="outline"
+                            className="flex-1 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 hover:scale-105"
+                        >
+                            <a 
+                                href={github} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center space-x-2"
+                            >
+                                <Github className="w-4 h-4" />
+                                <span>View Code</span>
+                            </a>
+                        </Button>
+                    )}
+                    {!live && !github && (
+                        <div className="w-full text-center text-slate-500 dark:text-slate-400 text-sm py-2">
+                            Links coming soon
+                        </div>
                     )}
                 </div>
             </div>
