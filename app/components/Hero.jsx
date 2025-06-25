@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react'
-import ProfilePic from '@/public/my.jpeg'
+import ProfilePic from '@/public/profile.jpg'
 
 function Hero() {
     return (

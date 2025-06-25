@@ -16,7 +16,8 @@ export default function WorkEx() {
         description: job.description,
         responsibilities: job.responsibilities || [],
         technologies: job.technologies || [],
-        website: job.website || ''
+        website: job.website || '',
+        current: job.current || false
     }));
 
     return (
@@ -48,7 +49,11 @@ export default function WorkEx() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        className="bg-white dark:bg-color-dark rounded-2xl p-8 shadow-xl border border-color-primary/20 dark:border-color-secondary/30 hover:shadow-2xl transition-all duration-300"
+                        className={`bg-white dark:bg-color-dark rounded-2xl p-8 shadow-xl border transition-all duration-300 ${
+                            job.current 
+                                ? 'border-color-accent/50 dark:border-color-accent/30 hover:shadow-2xl hover:shadow-color-accent/10' 
+                                : 'border-color-primary/20 dark:border-color-secondary/30 hover:shadow-2xl'
+                        }`}
                     >
                         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                             <div className="flex-1">
@@ -69,6 +74,11 @@ export default function WorkEx() {
                                             <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">
                                                 {job.title}
                                             </h3>
+                                            {job.current && (
+                                                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 animate-pulse">
+                                                    Current
+                                                </Badge>
+                                            )}
                                             {job.company && (
                                                 <Badge className="bg-color-accent/90 text-white border-0">
                                                     {job.company}
@@ -117,7 +127,11 @@ export default function WorkEx() {
                                 <ul className="space-y-2">
                                     {job.responsibilities.map((responsibility, idx) => (
                                         <li key={idx} className="flex items-start space-x-2 text-slate-600 dark:text-slate-300">
-                                            <span className="w-2 h-2 bg-color-accent rounded-full mt-2 flex-shrink-0"></span>
+                                            <span className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
+                                                job.current 
+                                                    ? 'bg-gradient-to-r from-green-500 to-emerald-500' 
+                                                    : 'bg-color-accent'
+                                            }`}></span>
                                             <span>{responsibility}</span>
                                         </li>
                                     ))}
@@ -135,7 +149,11 @@ export default function WorkEx() {
                                         <Badge 
                                             key={idx}
                                             variant="secondary"
-                                            className="bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30 transition-colors"
+                                            className={`transition-colors ${
+                                                job.current 
+                                                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50' 
+                                                    : 'bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30'
+                                            }`}
                                         >
                                             {tech}
                                         </Badge>

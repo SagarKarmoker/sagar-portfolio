@@ -14,5 +14,13 @@
     "location": "AIUB Dhaka, Bangladesh",
     "description": "Developed a SDG Classroom is an educational platform designed to revolutionize high school science education by integrating Sustainable Development Goals (SDGs) directly into the curriculum using augmented reality (AR) technology, NASAs API, and many interactive games and videos.",
     "achievement": "Participant"
+  },
+  {
+    "icon": "🌐",
+    "date": "2024",
+    "title": "Cisco IoT Hackathon",
+    "location": "Dhaka, Bangladesh",
+    "description": "Led a team to the finals of the Cisco IoT Hackathon with an IoT and blockchain-based supply chain management system. Developed and demonstrated a prototype that integrated IoT sensors and blockchain for real-time product tracking and transparency in the supply chain.",
+    "achievement": "Finalist"
   }
 ] 
