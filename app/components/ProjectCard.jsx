@@ -42,34 +42,34 @@ export default function ProjectCard({ project }) {
             className="bg-white dark:bg-color-dark rounded-2xl shadow-xl border border-color-primary/20 dark:border-color-secondary/30 overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col h-full"
         >
             {/* Project Image */}
-            <div className="relative h-48 bg-gradient-to-br from-color-primary/20 to-color-secondary/20 dark:from-color-primary/10 dark:to-color-secondary/10 flex-shrink-0">
+            <div className="relative h-40 sm:h-48 bg-gradient-to-br from-color-primary/20 to-color-secondary/20 dark:from-color-primary/10 dark:to-color-secondary/10 flex-shrink-0">
                 <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-6xl opacity-20">
+                    <div className="text-4xl sm:text-6xl opacity-20">
                         {icon}
                     </div>
                 </div>
-                <div className="absolute top-4 right-4">
-                    <Badge className="bg-color-accent/90 text-white border-0">
+                <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
+                    <Badge className="bg-color-accent/90 text-white border-0 text-xs sm:text-sm">
                         {category}
                     </Badge>
                 </div>
             </div>
 
             {/* Project Content */}
-            <div className="p-6 flex flex-col flex-1">
-                <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
+            <div className="p-4 sm:p-6 flex flex-col flex-1">
+                <div className="flex items-start justify-between mb-3 sm:mb-4">
+                    <h3 className="text-lg sm:text-xl font-semibold text-slate-800 dark:text-slate-200 pr-2">
                         {title}
                     </h3>
-                    <div className="flex space-x-2 flex-shrink-0">
+                    <div className="flex space-x-1 sm:space-x-2 flex-shrink-0">
                         {github && (
                             <a 
                                 href={github} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-color-primary/20 dark:hover:bg-color-primary/20 transition-colors cursor-pointer"
+                                className="p-1.5 sm:p-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-color-primary/20 dark:hover:bg-color-primary/20 transition-colors cursor-pointer"
                             >
-                                <Github className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                                <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-600 dark:text-slate-300" />
                             </a>
                         )}
                         {live && (
@@ -77,20 +77,20 @@ export default function ProjectCard({ project }) {
                                 href={live} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-color-primary/20 dark:hover:bg-color-primary/20 transition-colors cursor-pointer"
+                                className="p-1.5 sm:p-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-color-primary/20 dark:hover:bg-color-primary/20 transition-colors cursor-pointer"
                             >
-                                <ExternalLink className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                                <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-600 dark:text-slate-300" />
                             </a>
                         )}
                     </div>
                 </div>
 
-                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed flex-1">
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 mb-3 sm:mb-4 leading-relaxed flex-1">
                     {description}
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                     {technologies.map((tech, index) => (
                         <Badge 
                             key={index}
@@ -103,18 +103,18 @@ export default function ProjectCard({ project }) {
                 </div>
 
                 {/* Project Details */}
-                <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400 mb-4">
+                <div className="flex items-center justify-between text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-3 sm:mb-4">
                     <div className="flex items-center space-x-1">
-                        <Calendar className="w-4 h-4" />
+                        <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                         <span>{date}</span>
                     </div>
                     {status && (
                         <Badge 
                             variant={status === 'Completed' ? 'default' : 'secondary'}
-                            className={status === 'Completed' 
+                            className={`text-xs sm:text-sm ${status === 'Completed' 
                                 ? 'bg-color-accent text-white' 
                                 : 'bg-color-primary/20 text-color-secondary dark:text-color-primary'
-                            }
+                            }`}
                         >
                             {status}
                         </Badge>
@@ -122,19 +122,19 @@ export default function ProjectCard({ project }) {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-3 mt-auto">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-auto">
                     {live && (
                         <Button 
                             asChild
-                            className="flex-1 bg-gradient-to-r from-color-secondary to-color-accent hover:from-color-secondary/90 hover:to-color-accent/90 text-white border-0 transition-all duration-300 hover:scale-105"
+                            className="flex-1 bg-gradient-to-r from-color-secondary to-color-accent hover:from-color-secondary/90 hover:to-color-accent/90 text-white border-0 transition-all duration-300 hover:scale-105 text-xs sm:text-sm py-2 sm:py-3"
                         >
                             <a 
                                 href={live} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center space-x-2"
+                                className="flex items-center justify-center space-x-1.5 sm:space-x-2"
                             >
-                                <Globe className="w-4 h-4" />
+                                <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                 <span>Visit Project</span>
                             </a>
                         </Button>
@@ -143,21 +143,21 @@ export default function ProjectCard({ project }) {
                         <Button 
                             asChild
                             variant="outline"
-                            className="flex-1 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 hover:scale-105"
+                            className="flex-1 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 hover:scale-105 text-xs sm:text-sm py-2 sm:py-3"
                         >
                             <a 
                                 href={github} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center space-x-2"
+                                className="flex items-center justify-center space-x-1.5 sm:space-x-2"
                             >
-                                <Github className="w-4 h-4" />
+                                <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                                 <span>View Code</span>
                             </a>
                         </Button>
                     )}
                     {!live && !github && (
-                        <div className="w-full text-center text-slate-500 dark:text-slate-400 text-sm py-2">
+                        <div className="w-full text-center text-slate-500 dark:text-slate-400 text-xs sm:text-sm py-2">
                             Links coming soon
                         </div>
                     )}

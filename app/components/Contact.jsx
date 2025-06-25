@@ -52,44 +52,44 @@ export default function Contact() {
     };
 
     return (
-        <div className="py-20">
+        <div className="py-12 sm:py-16 lg:py-20">
             <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="text-center mb-12 sm:mb-16"
             >
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-color-secondary text-color-accent text-sm font-medium mb-6">
+                <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-secondary text-color-accent text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                     <span className="w-2 h-2 bg-color-accent rounded-full mr-2"></span>
                     Let&apos;s Connect
                 </div>
-                <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                     Get in{' '}
                     <span className="bg-gradient-to-r from-color-accent to-color-secondary bg-clip-text text-transparent">
                         Touch
                     </span>
                 </h2>
-                <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4">
                     I&apos;m always open to discussing new opportunities, interesting projects, 
                     or just having a chat about technology and innovation.
                 </p>
-                <div className="w-24 h-1 bg-gradient-to-r from-color-accent to-color-secondary mx-auto rounded-full mt-6"></div>
+                <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-color-accent to-color-secondary mx-auto rounded-full mt-4 sm:mt-6"></div>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
                 {/* Contact Methods */}
                 <motion.div 
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="space-y-6"
+                    className="space-y-4 sm:space-y-6 order-2 lg:order-1"
                 >
-                    <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-8">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6 sm:mb-8">
                         Connect with me
                     </h3>
-                    <div className="grid gap-4">
+                    <div className="grid gap-3 sm:gap-4">
                         {contactMethods.map((method, index) => (
                             <motion.div
                                 key={index}
@@ -99,22 +99,22 @@ export default function Contact() {
                                 viewport={{ once: true }}
                             >
                                 <Link href={method.link} target="_blank" rel="noopener noreferrer">
-                                    <div className="bg-white dark:bg-color-dark rounded-xl p-6 shadow-lg border border-color-primary/20 dark:border-color-secondary/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
-                                        <div className="flex items-center space-x-4">
-                                            <div className={`p-3 rounded-lg ${method.bgColor}`}>
+                                    <div className="bg-white dark:bg-color-dark rounded-xl p-4 sm:p-6 shadow-lg border border-color-primary/20 dark:border-color-secondary/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                                        <div className="flex items-center space-x-3 sm:space-x-4">
+                                            <div className={`p-2 sm:p-3 rounded-lg ${method.bgColor}`}>
                                                 <div className={method.color}>
-                                                    <method.icon className="w-6 h-6" />
+                                                    <method.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                                                 </div>
                                             </div>
-                                            <div className="flex-1">
-                                                <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-200">
+                                            <div className="flex-1 min-w-0">
+                                                <h4 className="text-base sm:text-lg font-semibold text-slate-800 dark:text-slate-200 truncate">
                                                     {method.title}
                                                 </h4>
-                                                <p className="text-slate-600 dark:text-slate-300">
+                                                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 truncate">
                                                     {method.description}
                                                 </p>
                                             </div>
-                                            <Send className="w-5 h-5 text-slate-400" />
+                                            <Send className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400 flex-shrink-0" />
                                         </div>
                                     </div>
                                 </Link>
@@ -129,15 +129,15 @@ export default function Contact() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-color-dark rounded-2xl p-8 shadow-xl border border-color-primary/20 dark:border-color-secondary/30"
+                    className="bg-white dark:bg-color-dark rounded-2xl p-6 sm:p-8 shadow-xl border border-color-primary/20 dark:border-color-secondary/30 order-1 lg:order-2"
                 >
-                    <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6">
+                    <h3 className="text-xl sm:text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-4 sm:mb-6">
                         Send me a message
                     </h3>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">
                                     First Name
                                 </label>
                                 <input 
@@ -146,12 +146,12 @@ export default function Contact() {
                                     value={formData.firstName}
                                     onChange={handleInputChange}
                                     required
-                                    className="w-full px-4 py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300"
+                                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                                     placeholder="John"
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">
                                     Last Name
                                 </label>
                                 <input 
@@ -160,13 +160,13 @@ export default function Contact() {
                                     value={formData.lastName}
                                     onChange={handleInputChange}
                                     required
-                                    className="w-full px-4 py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300"
+                                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                                     placeholder="Doe"
                                 />
                             </div>
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">
                                 Email
                             </label>
                             <input 
@@ -175,12 +175,12 @@ export default function Contact() {
                                 value={formData.email}
                                 onChange={handleInputChange}
                                 required
-                                className="w-full px-4 py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300"
+                                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                                 placeholder="john@example.com"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 sm:mb-2">
                                 Message
                             </label>
                             <textarea 
@@ -189,44 +189,20 @@ export default function Contact() {
                                 onChange={handleInputChange}
                                 required
                                 rows={4}
-                                className="w-full px-4 py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300 resize-none"
+                                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300 resize-none text-sm sm:text-base"
                                 placeholder="Tell me about your project or just say hello!"
                             ></textarea>
                         </div>
                         <Button 
                             type="submit"
-                            className="w-full bg-gradient-to-r from-color-secondary to-color-accent hover:from-color-accent hover:to-color-secondary text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
+                            className="w-full bg-gradient-to-r from-color-secondary to-color-accent hover:from-color-accent hover:to-color-secondary text-white font-semibold py-2.5 sm:py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base"
                         >
-                            <MessageCircle className="w-5 h-5 mr-2" />
+                            <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                             Send Message
                         </Button>
                     </form>
                 </motion.div>
             </div>
-
-            {/* Quick Contact Note */}
-            <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="text-center mt-16"
-            >
-                <div className="bg-gradient-to-r from-color-accent to-color-secondary rounded-2xl p-8 border border-color-primary/20 dark:border-color-secondary/30">
-                    <p className="text-lg text-slate-700 dark:text-slate-300">
-                        <span className="font-semibold text-slate-800 dark:text-slate-200">Quick tip:</span> 
-                        For urgent matters or direct questions, feel free to reach out on{' '}
-                        <Link 
-                            href="https://www.linkedin.com/in/sagarkarmoker" 
-                            target="_blank"
-                            className="text-color-accent font-semibold hover:underline cursor-pointer"
-                        >
-                            LinkedIn
-                        </Link>
-                        . I&apos;ll respond as soon as possible!
-                    </p>
-                </div>
-            </motion.div>
         </div>
     )
 }
