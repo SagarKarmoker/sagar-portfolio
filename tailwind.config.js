@@ -53,11 +53,11 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-  			'color-1': 'hsl(var(--color-1))',
-  			'color-2': 'hsl(var(--color-2))',
-  			'color-3': 'hsl(var(--color-3))',
-  			'color-4': 'hsl(var(--color-4))',
-  			'color-5': 'hsl(var(--color-5))'
+  			'color-primary': 'hsl(var(--color-primary))',      // #8ECAE6 - Light Blue
+  			'color-secondary': 'hsl(var(--color-secondary))',  // #219EBC - Medium Blue
+  			'color-dark': 'hsl(var(--color-dark))',           // #023047 - Dark Blue
+  			'color-accent': 'hsl(var(--color-accent))',       // #FFB703 - Yellow
+  			'color-orange': 'hsl(var(--color-orange))'        // #FB8500 - Orange
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

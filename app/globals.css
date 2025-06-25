@@ -39,11 +39,12 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --color-1: 0 100% 63%;
-    --color-2: 270 100% 63%;
-    --color-3: 210 100% 63%;
-    --color-4: 195 100% 63%;
-    --color-5: 90 100% 63%;
+    /* New color palette from Coolors */
+    --color-primary: 199 89% 72%;    /* #8ECAE6 - Light Blue */
+    --color-secondary: 199 89% 44%;  /* #219EBC - Medium Blue */
+    --color-dark: 199 89% 14%;       /* #023047 - Dark Blue */
+    --color-accent: 43 100% 51%;     /* #FFB703 - Yellow */
+    --color-orange: 25 100% 49%;     /* #FB8500 - Orange */
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -70,11 +71,12 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --color-1: 0 100% 63%;
-    --color-2: 270 100% 63%;
-    --color-3: 210 100% 63%;
-    --color-4: 195 100% 63%;
-    --color-5: 90 100% 63%;
+    /* Dark mode color palette */
+    --color-primary: 199 89% 72%;    /* #8ECAE6 - Light Blue */
+    --color-secondary: 199 89% 44%;  /* #219EBC - Medium Blue */
+    --color-dark: 199 89% 14%;       /* #023047 - Dark Blue */
+    --color-accent: 43 100% 51%;     /* #FFB703 - Yellow */
+    --color-orange: 25 100% 49%;     /* #FB8500 - Orange */
   }
 }
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
@@ -26,96 +27,90 @@ export default function ProjectCard({ project }) {
 
     return (
         <motion.div
-            whileHover={{ y: -8 }}
+            whileHover={{ y: -5 }}
             transition={{ duration: 0.3 }}
+            className="bg-white dark:bg-color-dark rounded-2xl shadow-xl border border-color-primary/20 dark:border-color-secondary/30 overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer"
         >
-            <Card className="h-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                {/* Project Image Placeholder */}
-                <div className="relative h-48 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-6xl opacity-20">💻</div>
+            {/* Project Image */}
+            <div className="relative h-48 bg-gradient-to-br from-color-primary/20 to-color-secondary/20 dark:from-color-primary/10 dark:to-color-secondary/10">
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-6xl opacity-20">
+                        {project.icon || '💻'}
                     </div>
-                    {/* Status Badge */}
-                    <div className="absolute top-4 right-4">
-                        <Badge className={`${getStatusColor(status)} text-xs font-medium`}>
-                            {status}
-                        </Badge>
+                </div>
+                <div className="absolute top-4 right-4">
+                    <Badge className="bg-color-accent/90 text-white border-0">
+                        {project.category}
+                    </Badge>
+                </div>
+            </div>
+
+            {/* Project Content */}
+            <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200">
+                        {project.title}
+                    </h3>
+                    <div className="flex space-x-2">
+                        {project.github && (
+                            <a 
+                                href={project.github} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-color-primary/20 dark:hover:bg-color-primary/20 transition-colors cursor-pointer"
+                            >
+                                <Github className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                            </a>
+                        )}
+                        {project.live && (
+                            <a 
+                                href={project.live} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="p-2 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-color-primary/20 dark:hover:bg-color-primary/20 transition-colors cursor-pointer"
+                            >
+                                <ExternalLink className="w-4 h-4 text-slate-600 dark:text-slate-300" />
+                            </a>
+                        )}
                     </div>
                 </div>
 
-                <CardContent className="p-6">
-                    {/* Project Header */}
-                    <div className="mb-4">
-                        <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">
-                            {name}
-                        </h3>
-                        <div className="flex items-center text-sm text-slate-500 dark:text-slate-400 mb-3">
-                            <Calendar className="w-4 h-4 mr-2" />
-                            {timeline}
-                        </div>
-                    </div>
+                <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                    {project.description}
+                </p>
 
-                    {/* Project Description */}
-                    <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
-                        {desc}
-                    </p>
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                    {(project.technologies || []).map((tech, index) => (
+                        <Badge 
+                            key={index}
+                            variant="secondary"
+                            className="bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary text-xs"
+                        >
+                            {tech}
+                        </Badge>
+                    ))}
+                </div>
 
-                    {/* Technology Badges */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                        {badges.map((tech, index) => (
-                            <Badge 
-                                key={index} 
-                                variant="secondary" 
-                                className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
-                            >
-                                {tech}
-                            </Badge>
-                        ))}
+                {/* Project Details */}
+                <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
+                    <div className="flex items-center space-x-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>{project.date}</span>
                     </div>
-                </CardContent>
-
-                <CardFooter className="p-6 pt-0">
-                    <div className="flex gap-3 w-full">
-                        {github && (
-                            <Button 
-                                variant="outline" 
-                                size="sm" 
-                                className="flex-1 border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500"
-                                asChild
-                            >
-                                <Link href={github} target="_blank" rel="noopener noreferrer">
-                                    <Github className="w-4 h-4 mr-2" />
-                                    Code
-                                </Link>
-                            </Button>
-                        )}
-                        {website && (
-                            <Button 
-                                variant="outline" 
-                                size="sm" 
-                                className="flex-1 border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500"
-                                asChild
-                            >
-                                <Link href={website} target="_blank" rel="noopener noreferrer">
-                                    <ExternalLink className="w-4 h-4 mr-2" />
-                                    Live
-                                </Link>
-                            </Button>
-                        )}
-                        {!github && !website && (
-                            <Button 
-                                variant="outline" 
-                                size="sm" 
-                                className="flex-1 border-slate-300 dark:border-slate-600 hover:border-slate-400 dark:hover:border-slate-500"
-                                disabled
-                            >
-                                <Globe className="w-4 h-4 mr-2" />
-                                Coming Soon
-                            </Button>
-                        )}
-                    </div>
-                </CardFooter>
-            </Card>
+                    {project.status && (
+                        <Badge 
+                            variant={project.status === 'Completed' ? 'default' : 'secondary'}
+                            className={project.status === 'Completed' 
+                                ? 'bg-color-accent text-white' 
+                                : 'bg-color-primary/20 text-color-secondary dark:text-color-primary'
+                            }
+                        >
+                            {project.status}
+                        </Badge>
+                    )}
+                </div>
+            </div>
         </motion.div>
     )
 }

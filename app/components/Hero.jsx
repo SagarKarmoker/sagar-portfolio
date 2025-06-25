@@ -20,9 +20,9 @@ function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.2, duration: 0.6 }}
-                            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-sm font-medium"
+                            className="inline-flex items-center px-4 py-2 rounded-full bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary text-sm font-medium"
                         >
-                            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"></span>
+                            <span className="w-2 h-2 bg-color-secondary rounded-full mr-2 animate-pulse"></span>
                             Available for opportunities
                         </motion.div>
                         
@@ -33,7 +33,7 @@ function Hero() {
                             className="text-5xl lg:text-7xl font-bold leading-tight"
                         >
                             Hi, I'm{' '}
-                            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-color-secondary via-color-accent to-color-orange bg-clip-text text-transparent">
                                 Sagar
                             </span>
                             <br />
@@ -53,7 +53,7 @@ function Hero() {
                                 creating innovative solutions
                             </span>
                             . I specialize in building scalable web applications and turning ideas into reality. Always eager to{' '}
-                            <span className="text-blue-600 dark:text-blue-400 font-semibold">
+                            <span className="text-color-secondary dark:text-color-primary font-semibold">
                                 learn and grow
                             </span>
                             .
@@ -66,10 +66,10 @@ function Hero() {
                         transition={{ delay: 0.8, duration: 0.6 }}
                         className="flex flex-wrap gap-4"
                     >
-                        <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                        <button className="px-8 py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-color-accent/25 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
                             View My Work
                         </button>
-                        <button className="px-8 py-4 border-2 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 rounded-xl font-semibold hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 cursor-pointer">
+                        <button className="px-8 py-4 border-2 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 rounded-xl font-semibold hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 cursor-pointer">
                             Download CV
                         </button>
                     </motion.div>
@@ -80,14 +80,14 @@ function Hero() {
                         transition={{ delay: 1, duration: 0.6 }}
                         className="flex space-x-6"
                     >
-                        <a href="#" className="p-3 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                        <a href="#" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
                             <Github className="w-6 h-6 text-slate-700 dark:text-slate-300" />
                         </a>
-                        <a href="#" className="p-3 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
-                            <Linkedin className="w-6 h-6 text-blue-600" />
+                        <a href="#" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                            <Linkedin className="w-6 h-6 text-color-secondary" />
                         </a>
-                        <a href="#" className="p-3 bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
-                            <Twitter className="w-6 h-6 text-blue-400" />
+                        <a href="#" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                            <Twitter className="w-6 h-6 text-color-accent" />
                         </a>
                     </motion.div>
                 </motion.div>
@@ -100,7 +100,7 @@ function Hero() {
                     className="flex justify-center lg:justify-end"
                 >
                     <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-color-secondary to-color-accent rounded-full blur-3xl opacity-20 animate-pulse"></div>
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.3 }}

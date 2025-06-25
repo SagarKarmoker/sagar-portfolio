@@ -21,11 +21,11 @@ function About() {
             >
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                     About{' '}
-                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-color-secondary to-color-accent bg-clip-text text-transparent">
                         Me
                     </span>
                 </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+                <div className="w-24 h-1 bg-gradient-to-r from-color-secondary to-color-accent mx-auto rounded-full"></div>
             </motion.div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -37,21 +37,21 @@ function About() {
                     viewport={{ once: true }}
                     className="space-y-6"
                 >
-                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-slate-200 dark:border-slate-700">
+                    <div className="bg-white dark:bg-color-dark rounded-2xl p-8 shadow-xl border border-color-primary/20 dark:border-color-secondary/30">
                         <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                             Welcome to my portfolio website! I'm{' '}
                             <span className="font-semibold text-slate-800 dark:text-slate-200">Sagar Karmoker</span>, 
                             a passionate Computer Science and Engineering student at{' '}
-                            <span className="text-blue-600 dark:text-blue-400 font-semibold hover:underline cursor-pointer">
+                            <span className="text-color-secondary dark:text-color-primary font-semibold hover:underline cursor-pointer">
                                 East West University
                             </span>{' '}
                             in Bangladesh.
                         </p>
                         <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mt-4">
                             I enjoy exploring new technologies and solving real-world problems through{' '}
-                            <span className="text-blue-600 dark:text-blue-400 font-semibold cursor-pointer">software development</span>{' '}
+                            <span className="text-color-secondary dark:text-color-primary font-semibold cursor-pointer">software development</span>{' '}
                             and{' '}
-                            <span className="text-blue-600 dark:text-blue-400 font-semibold cursor-pointer">blockchain</span>{' '}
+                            <span className="text-color-secondary dark:text-color-primary font-semibold cursor-pointer">blockchain</span>{' '}
                             innovation.
                         </p>
                     </div>
@@ -72,10 +72,10 @@ function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-200 dark:border-slate-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                            className="bg-white dark:bg-color-dark rounded-xl p-6 shadow-lg border border-color-primary/20 dark:border-color-secondary/30 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
                         >
                             <div className="flex items-start space-x-4">
-                                <div className="p-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white">
+                                <div className="p-3 bg-gradient-to-r from-color-secondary to-color-accent rounded-lg text-white">
                                     <item.icon className="w-6 h-6" />
                                 </div>
                                 <div className="flex-1">
