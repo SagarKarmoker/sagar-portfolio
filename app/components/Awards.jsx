@@ -1,0 +1,177 @@
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Badge } from '@/components/ui/badge'
+import { Calendar, MapPin, Award, Star, Trophy } from 'lucide-react'
+import awardsData from '@/data/awards.json'
+
+export default function Awards() {
+    const awards = awardsData;
+
+    const getAchievementColor = (achievement) => {
+        switch (achievement) {
+            case 'Merit Scholarship':
+                return 'bg-gradient-to-r from-yellow-500 to-orange-500';
+            case "Dean's List":
+                return 'bg-gradient-to-r from-purple-500 to-blue-500';
+            default:
+                return 'bg-gradient-to-r from-color-secondary to-color-accent';
+        }
+    };
+
+    return (
+        <div className="py-20">
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+            >
+                <h2 className="text-4xl lg:text-5xl font-bold mb-6">
+                    Awards &{' '}
+                    <span className="bg-gradient-to-r from-color-secondary to-color-accent bg-clip-text text-transparent">
+                        Achievements
+                    </span>
+                </h2>
+                <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+                    Recognition for academic excellence and outstanding performance in my educational journey.
+                </p>
+                <div className="w-24 h-1 bg-gradient-to-r from-color-secondary to-color-accent mx-auto rounded-full mt-6"></div>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {awards.map((award, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        transition={{ duration: 0.7, delay: index * 0.2 }}
+                        viewport={{ once: true }}
+                        whileHover={{ y: -8, scale: 1.02 }}
+                        className="group bg-white dark:bg-color-dark rounded-2xl p-8 shadow-xl border border-color-primary/20 dark:border-color-secondary/30 hover:shadow-2xl transition-all duration-500 overflow-visible relative"
+                    >
+                        {/* Background Pattern */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-color-primary/5 to-color-secondary/5 dark:from-color-primary/10 dark:to-color-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                        
+                        {/* Achievement Badge */}
+                        <motion.div 
+                            className="absolute -top-4 right-6 z-50"
+                            initial={{ scale: 0, rotate: -180 }}
+                            whileInView={{ scale: 1, rotate: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                            viewport={{ once: true }}
+                        >
+                            <Badge className={`${getAchievementColor(award.achievement)} text-white px-6 py-2 border-0 shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300 z-50`}>
+                                <Trophy className="w-4 h-4 mr-2" />
+                                {award.achievement}
+                            </Badge>
+                        </motion.div>
+
+                        <div className="relative z-10">
+                            {/* Header Section */}
+                            <div className="flex items-start justify-between mb-6">
+                                <div className="flex-1">
+                                    <motion.div 
+                                        className="flex items-center space-x-4 mb-4"
+                                        initial={{ opacity: 0, x: -20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: index * 0.2 + 0.1 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <div className="w-12 h-12 bg-gradient-to-br from-color-primary/20 to-color-secondary/20 dark:from-color-primary/10 dark:to-color-secondary/10 rounded-2xl flex items-center justify-center text-2xl border border-color-primary/30 dark:border-color-secondary/30 group-hover:border-color-accent/50 transition-all duration-300">
+                                            {award.icon}
+                                        </div>
+                                        <div>
+                                            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 group-hover:text-color-secondary dark:group-hover:text-color-primary transition-colors duration-300">
+                                                {award.title}
+                                            </h3>
+                                            <Badge className="bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary text-xs mt-1">
+                                                {award.category}
+                                            </Badge>
+                                        </div>
+                                    </motion.div>
+                                    
+                                    <motion.div 
+                                        className="flex flex-wrap items-center gap-4 text-slate-600 dark:text-slate-400"
+                                        initial={{ opacity: 0, y: 10 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
+                                        viewport={{ once: true }}
+                                    >
+                                        <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
+                                            <Calendar className="w-4 h-4 mr-2 text-color-secondary" />
+                                            <span className="text-sm font-medium">{award.period}</span>
+                                        </div>
+                                        <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
+                                            <MapPin className="w-4 h-4 mr-2 text-color-accent" />
+                                            <span className="text-sm font-medium">{award.location}</span>
+                                        </div>
+                                        <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
+                                            <Award className="w-4 h-4 mr-2 text-color-primary" />
+                                            <span className="text-sm font-medium">{award.institution}</span>
+                                        </div>
+                                    </motion.div>
+                                </div>
+                            </div>
+
+                            {/* Description */}
+                            <motion.div 
+                                className="mb-6"
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                                viewport={{ once: true }}
+                            >
+                                <div className="flex items-start space-x-3">
+                                    <div className="flex-shrink-0 mt-1">
+                                        <div className="w-2 h-2 bg-gradient-to-r from-color-secondary to-color-accent rounded-full"></div>
+                                    </div>
+                                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                        {award.description}
+                                    </p>
+                                </div>
+                            </motion.div>
+
+                            {/* Additional Details */}
+                            {award.details && (
+                                <motion.div 
+                                    className="mb-6"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="flex items-start space-x-3">
+                                        <div className="flex-shrink-0 mt-1">
+                                            <div className="w-2 h-2 bg-gradient-to-r from-color-accent to-color-orange rounded-full"></div>
+                                        </div>
+                                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
+                                            {award.details}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {/* Achievement Stars */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 10 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6, delay: index * 0.2 + 0.5 }}
+                                viewport={{ once: true }}
+                                className="flex justify-end"
+                            >
+                                <div className="flex items-center space-x-1">
+                                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                                    <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
+                                        {award.achievement === 'Merit Scholarship' ? 'Academic Excellence' : 
+                                         award.achievement === "Dean's List" ? 'Outstanding Performance' : award.achievement}
+                                    </span>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                ))}
+            </div>
+        </div>
+    )
+} 

@@ -1,5 +1,6 @@
 "use client"
 import About from "./components/About";
+import Awards from "./components/Awards";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
 import Hackathon from "./components/Hackathon";
@@ -21,19 +22,37 @@ export default function App() {
                         <motion.div 
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="text-xl font-bold bg-gradient-to-r from-color-secondary to-color-accent bg-clip-text text-transparent"
+                            className="text-xl font-bold bg-gradient-to-r from-color-secondary to-color-accent bg-clip-text text-transparent cursor-pointer"
                         >
                             Sagar Karmoker
                         </motion.div>
                         <motion.div 
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            className="hidden md:flex space-x-8"
+                            className="hidden lg:flex space-x-8"
                         >
-                            <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer">About</a>
-                            <a href="#projects" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer">Projects</a>
-                            <a href="#skills" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer">Skills</a>
-                            <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer">Contact</a>
+                            <a href="#about" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">About</a>
+                            <a href="#experience" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">Experience</a>
+                            <a href="#education" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">Education</a>
+                            <a href="#awards" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">Awards</a>
+                            <a href="#skills" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">Skills</a>
+                            <a href="#projects" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">Projects</a>
+                            <a href="#hackathons" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">Hackathons</a>
+                            <a href="#research" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">Research</a>
+                            <a href="#contact" className="text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-colors cursor-pointer font-medium">Contact</a>
+                        </motion.div>
+                        
+                        {/* Mobile Menu Button */}
+                        <motion.div 
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            className="lg:hidden"
+                        >
+                            <button className="p-2 rounded-lg bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30 transition-colors cursor-pointer">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
                         </motion.div>
                     </div>
                 </div>
@@ -66,6 +85,7 @@ export default function App() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
+                            id="experience"
                         >
                             <WorkEx />
                         </motion.div>
@@ -75,8 +95,19 @@ export default function App() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
+                            id="education"
                         >
                             <Education />
+                        </motion.div>
+                        
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
+                            id="awards"
+                        >
+                            <Awards />
                         </motion.div>
                         
                         <motion.div
@@ -104,6 +135,7 @@ export default function App() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
+                            id="hackathons"
                         >
                             <Hackathon />
                         </motion.div>
@@ -113,6 +145,7 @@ export default function App() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                             viewport={{ once: true }}
+                            id="research"
                         >
                             <Research />
                         </motion.div>
