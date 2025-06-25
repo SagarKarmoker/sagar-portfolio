@@ -39,7 +39,7 @@ function About() {
                 >
                     <div className="bg-white dark:bg-color-dark rounded-2xl p-8 shadow-xl border border-color-primary/20 dark:border-color-secondary/30">
                         <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Welcome to my portfolio website! I'm{' '}
+                            Welcome to my portfolio website! I&apos;m{' '}
                             <span className="font-semibold text-slate-800 dark:text-slate-200">Sagar Karmoker</span>, 
                             a passionate Computer Science and Engineering student at{' '}
                             <span className="text-color-secondary dark:text-color-primary font-semibold hover:underline cursor-pointer">
