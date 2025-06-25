@@ -1,22 +1,18 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
-import { Calendar, MapPin, Trophy, ExternalLink, Users, Award, Star } from 'lucide-react'
-import hackathonsData from '@/data/hackathons.json'
+import { Calendar, MapPin, Award, Star, Trophy } from 'lucide-react'
+import awardsData from '@/data/awards.json'
 
-export default function Hackathon() {
-    const hackathons = hackathonsData;
+export default function Awards() {
+    const awards = awardsData;
 
     const getAchievementColor = (achievement) => {
         switch (achievement) {
-            case 'Finalist':
+            case 'Merit Scholarship':
                 return 'bg-gradient-to-r from-yellow-500 to-orange-500';
-            case 'Winner':
-                return 'bg-gradient-to-r from-yellow-400 to-yellow-600';
-            case 'Participant':
-                return 'bg-gradient-to-r from-color-secondary to-color-accent';
-            case 'Runner-up':
-                return 'bg-gradient-to-r from-gray-400 to-gray-600';
+            case "Dean's List":
+                return 'bg-gradient-to-r from-purple-500 to-blue-500';
             default:
                 return 'bg-gradient-to-r from-color-secondary to-color-accent';
         }
@@ -32,19 +28,19 @@ export default function Hackathon() {
                 className="text-center mb-16"
             >
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-                    Hackathon{' '}
+                    Awards &{' '}
                     <span className="bg-gradient-to-r from-color-secondary to-color-accent bg-clip-text text-transparent">
-                        Experience
+                        Achievements
                     </span>
                 </h2>
                 <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                    My participation in various hackathons and coding competitions, showcasing innovation and problem-solving skills.
+                    Recognition for academic excellence and outstanding performance in my educational journey.
                 </p>
                 <div className="w-24 h-1 bg-gradient-to-r from-color-secondary to-color-accent mx-auto rounded-full mt-6"></div>
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {hackathons.map((hackathon, index) => (
+                {awards.map((award, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -58,20 +54,18 @@ export default function Hackathon() {
                         <div className="absolute inset-0 bg-gradient-to-br from-color-primary/5 to-color-secondary/5 dark:from-color-primary/10 dark:to-color-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                         
                         {/* Achievement Badge */}
-                        {hackathon.achievement && (
-                            <motion.div 
-                                className="absolute -top-4 right-6 z-50"
-                                initial={{ scale: 0, rotate: -180 }}
-                                whileInView={{ scale: 1, rotate: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
-                                viewport={{ once: true }}
-                            >
-                                <Badge className={`${getAchievementColor(hackathon.achievement)} text-white px-6 py-2 border-0 shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300 z-50`}>
-                                    <Trophy className="w-4 h-4 mr-2" />
-                                    {hackathon.achievement}
-                                </Badge>
-                            </motion.div>
-                        )}
+                        <motion.div 
+                            className="absolute -top-4 right-6 z-50"
+                            initial={{ scale: 0, rotate: -180 }}
+                            whileInView={{ scale: 1, rotate: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                            viewport={{ once: true }}
+                        >
+                            <Badge className={`${getAchievementColor(award.achievement)} text-white px-6 py-2 border-0 shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300 z-50`}>
+                                <Trophy className="w-4 h-4 mr-2" />
+                                {award.achievement}
+                            </Badge>
+                        </motion.div>
 
                         <div className="relative z-10">
                             {/* Header Section */}
@@ -85,12 +79,15 @@ export default function Hackathon() {
                                         viewport={{ once: true }}
                                     >
                                         <div className="w-12 h-12 bg-gradient-to-br from-color-primary/20 to-color-secondary/20 dark:from-color-primary/10 dark:to-color-secondary/10 rounded-2xl flex items-center justify-center text-2xl border border-color-primary/30 dark:border-color-secondary/30 group-hover:border-color-accent/50 transition-all duration-300">
-                                            {hackathon.icon}
+                                            {award.icon}
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 group-hover:text-color-secondary dark:group-hover:text-color-primary transition-colors duration-300">
-                                                {hackathon.title}
+                                                {award.title}
                                             </h3>
+                                            <Badge className="bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary text-xs mt-1">
+                                                {award.category}
+                                            </Badge>
                                         </div>
                                     </motion.div>
                                     
@@ -103,15 +100,15 @@ export default function Hackathon() {
                                     >
                                         <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
                                             <Calendar className="w-4 h-4 mr-2 text-color-secondary" />
-                                            <span className="text-sm font-medium">{hackathon.date}</span>
+                                            <span className="text-sm font-medium">{award.period}</span>
                                         </div>
                                         <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
                                             <MapPin className="w-4 h-4 mr-2 text-color-accent" />
-                                            <span className="text-sm font-medium">{hackathon.location}</span>
+                                            <span className="text-sm font-medium">{award.location}</span>
                                         </div>
                                         <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
-                                            <Users className="w-4 h-4 mr-2 text-color-primary" />
-                                            <span className="text-sm font-medium">Hackathon</span>
+                                            <Award className="w-4 h-4 mr-2 text-color-primary" />
+                                            <span className="text-sm font-medium">{award.institution}</span>
                                         </div>
                                     </motion.div>
                                 </div>
@@ -130,35 +127,46 @@ export default function Hackathon() {
                                         <div className="w-2 h-2 bg-gradient-to-r from-color-secondary to-color-accent rounded-full"></div>
                                     </div>
                                     <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                                        {hackathon.description}
+                                        {award.description}
                                     </p>
                                 </div>
                             </motion.div>
 
-                            {/* Action Button */}
+                            {/* Additional Details */}
+                            {award.details && (
+                                <motion.div 
+                                    className="mb-6"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                                    viewport={{ once: true }}
+                                >
+                                    <div className="flex items-start space-x-3">
+                                        <div className="flex-shrink-0 mt-1">
+                                            <div className="w-2 h-2 bg-gradient-to-r from-color-accent to-color-orange rounded-full"></div>
+                                        </div>
+                                        <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
+                                            {award.details}
+                                        </p>
+                                    </div>
+                                </motion.div>
+                            )}
+
+                            {/* Achievement Stars */}
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
+                                transition={{ duration: 0.6, delay: index * 0.2 + 0.5 }}
                                 viewport={{ once: true }}
-                                className="flex justify-between items-center"
+                                className="flex justify-end"
                             >
-                                <div className="inline-flex items-center space-x-2 text-color-secondary dark:text-color-primary hover:text-color-accent transition-colors duration-300 cursor-pointer group/btn">
-                                    <span className="font-medium">View Details</span>
-                                    <ExternalLink className="w-4 h-4 transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
+                                <div className="flex items-center space-x-1">
+                                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                                    <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
+                                        {award.achievement === 'Merit Scholarship' ? 'Academic Excellence' : 
+                                         award.achievement === "Dean's List" ? 'Outstanding Performance' : award.achievement}
+                                    </span>
                                 </div>
-                                
-                                {/* Achievement Stars */}
-                                {hackathon.achievement && (
-                                    <div className="flex items-center space-x-1">
-                                        <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                                        <span className="text-sm font-medium text-slate-600 dark:text-slate-400">
-                                            {hackathon.achievement === 'Finalist' ? 'Top Finalist' : 
-                                             hackathon.achievement === 'Winner' ? 'Champion' : 
-                                             hackathon.achievement === 'Participant' ? 'Active Participant' : hackathon.achievement}
-                                        </span>
-                                    </div>
-                                )}
                             </motion.div>
                         </div>
                     </motion.div>
@@ -166,4 +174,4 @@ export default function Hackathon() {
             </div>
         </div>
     )
-}
+} 

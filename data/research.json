@@ -1,0 +1,62 @@
+{
+  "publications": [
+    {
+      "title": "PassChain: A Blockchain-Based Decentralized Password Manager",
+      "venue": "IEEE International Conference on Blockchain and Distributed Systems Security 2024",
+      "doi": "10.1109/ICBDS61829.2024.10837098",
+      "status": "Published",
+      "year": "2024",
+      "type": "Conference Paper"
+    },
+    {
+      "title": "Decentralized e-KYC System for Secure Identity Verification in Bangladesh",
+      "venue": "IEEE International Conference on Blockchain and Distributed Systems Security 2024",
+      "doi": "10.1109/ICBDS61829.2024.10837368",
+      "status": "Published",
+      "year": "2024",
+      "type": "Conference Paper"
+    },
+    {
+      "title": "ImportChainBD: Blockchain Solutions for Transparent and Accountable Imported Cosmetic Products",
+      "venue": "IEEE International Conference on Blockchain and Distributed Systems Security 2024",
+      "doi": "10.1109/ICBDS61829.2024.10837434",
+      "status": "Published",
+      "year": "2024",
+      "type": "Conference Paper"
+    },
+    {
+      "title": "TraceChainBD: Securing Supply Chains from Counterfeiting in Bangladesh with Blockchain and IoT Integration",
+      "venue": "IEEE International Conference on Innovations in Science, Engineering and Technology (ICISET) 2024",
+      "doi": "10.1109/ICISET62123.2024.10940030",
+      "status": "Published",
+      "year": "2024",
+      "type": "Conference Paper"
+    },
+    {
+      "title": "SafeMediChain: Enhancing Blockchain Healthcare Networks with Machine Learning-Based Fraud Detection Mechanisms",
+      "venue": "International Conference on Data Mining and Information Security 2024",
+      "doi": "",
+      "status": "To be published",
+      "year": "2024",
+      "type": "Conference Paper"
+    },
+    {
+      "title": "AuthiFi: An Advanced Blockchain e-KYC Solution with Enhanced Wallet Security Using Shamir's Secret Sharing",
+      "venue": "International Conference on Computer and Information Technology, ICCIT",
+      "doi": "",
+      "status": "Presented",
+      "year": "2024",
+      "type": "Conference Paper"
+    }
+  ],
+  "researchAreas": [
+    "Blockchain Technology",
+    "Decentralized Systems",
+    "Cybersecurity",
+    "Identity Verification",
+    "Supply Chain Security",
+    "Healthcare Blockchain",
+    "Machine Learning",
+    "IoT Integration"
+  ]
+}

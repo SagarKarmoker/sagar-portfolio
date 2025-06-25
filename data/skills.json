@@ -1,0 +1,38 @@
+{
+  "skillCategories": [
+    {
+      "title": "Programming Languages",
+      "icon": "Code",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg",
+      "skills": ["Java", "C++", "C", "Python", "JavaScript", "TypeScript", "Solidity"]
+    },
+    {
+      "title": "Frontend Development",
+      "icon": "Globe",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/globe/globe-original.svg",
+      "skills": ["React", "Next.js", "HTML", "CSS", "Tailwind CSS", "Vite", "JavaScript"]
+    },
+    {
+      "title": "Backend & Database",
+      "icon": "Database",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/database/database-original.svg",
+      "skills": ["Node.js", "Spring Boot", "MongoDB", "Oracle SQL", "MySQL", "Firebase"]
+    },
+    {
+      "title": "Mobile Development",
+      "icon": "Smartphone",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/smartphone/smartphone-original.svg",
+      "skills": ["Kotlin", "Jetpack Compose", "Android", "XML", "Java"]
+    },
+    {
+      "title": "Blockchain & Security",
+      "icon": "Shield",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shield/shield-original.svg",
+      "skills": ["Blockchain", "Solidity", "Smart Contracts", "Ethers.js", "Web3.js", "Security"]
+    }
+  ],
+  "additionalSkills": [
+    "Git", "GitHub", "Docker", "AWS", "REST APIs", "GraphQL", 
+    "Agile", "Scrum", "JIRA", "Figma", "Postman", "VS Code"
+  ]
+} 

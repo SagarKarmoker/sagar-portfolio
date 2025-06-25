@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Merit Scholarship",
+    "period": "2023 – 2024",
+    "institution": "East West University",
+    "location": "Dhaka, Bangladesh",
+    "description": "Maintained a CGPA of 3.95 or higher for multiple semesters.",
+    "details": "Tuition fee waiver for one academic year.",
+    "icon": "🏆",
+    "category": "Academic Excellence",
+    "achievement": "Merit Scholarship"
+  },
+  {
+    "title": "Dean's List",
+    "period": "2023 – 2024",
+    "institution": "East West University",
+    "location": "Dhaka, Bangladesh",
+    "description": "Maintained a CGPA of 3.95 or higher for multiple semesters.",
+    "details": "Recognition for outstanding academic performance.",
+    "icon": "📚",
+    "category": "Academic Excellence",
+    "achievement": "Dean's List"
+  }
+] 

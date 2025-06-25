@@ -1,0 +1,68 @@
+[
+  {
+    "image": "/file.svg",
+    "org": "AHOM Limited",
+    "position": "Junior Blockchain Developer",
+    "time": "December 2024 - Present",
+    "location": "Remote (UK)",
+    "current": true,
+    "description": "Developing and maintaining blockchain infrastructure and systems for a UK-based company, focusing on wallet management, transaction handling, and DeFi integrations.",
+    "responsibilities": [
+      "Engineered a scalable Wallet Management System capable of generating and managing EOAs across 101 blockchain networks, streamlining onboarding and integration",
+      "Built and deployed an automated transaction handler for a centralized exchange, ensuring secure and efficient fund transfers to designated hot wallets",
+      "Designed and implemented a real-time Oracle Price Aggregator to identify optimal swap routes across multiple DeFi protocols, improving transaction efficiency and cost savings",
+      "Created detailed instructional materials and technical documentation to support internal training and enhance comprehension of complex blockchain workflows"
+    ],
+    "technologies": ["Blockchain", "Solidity", "Web3.js", "Ethereum", "DeFi", "Smart Contracts", "Oracle", "Multi-chain", "JavaScript", "Node.js"],
+    "website": ""
+  },
+  {
+    "image": "/ewu.png",
+    "org": "East West University",
+    "position": "Graduate Teaching Assistant (GTA)",
+    "time": "February 2025 - Present",
+    "current": true,
+    "location": "Dhaka, Bangladesh",
+    "description": "Assisting professors in teaching computer science courses and mentoring students in programming and software development concepts.",
+    "responsibilities": [
+      "Conducting lab sessions for CSE412 Software Engineering, CSE479 Web Programming, and CSE360 Computer Architecture",
+      "Providing one-on-one tutoring to struggling students",
+      "Grading assignments and providing constructive feedback",
+      "Assisting in curriculum development and course materials"
+    ],
+    "technologies": ["Software Engineering", "Web Development", "Computer Architecture"],
+    "website": "https://www.ewubd.edu"
+  },
+  {
+    "image": "/ewu.png",
+    "org": "East West University",
+    "position": "Undergraduate Teaching Assistant (UTA)",
+    "time": "October 2023 - Januray 2025",
+    "location": "Dhaka, Bangladesh",
+    "description": "Assisting professors in teaching computer science courses and mentoring students in programming and software development concepts.",
+    "responsibilities": [
+      "Conducting lab sessions for programming courses",
+      "Providing one-on-one tutoring to struggling students",
+      "Grading assignments and providing constructive feedback",
+      "Assisting in curriculum development and course materials"
+    ],
+    "technologies": ["Java", "Python", "C++", "Data Structures", "Algorithms"],
+    "website": "https://www.ewubd.edu"
+  },
+  {
+    "image": "/ewucsc.jpg",
+    "org": "EWU Cyber Security Club",
+    "position": "Web Development Lead",
+    "time": "October 2024 - Present",
+    "location": "Dhaka, Bangladesh",
+    "description": "Leading web development initiatives and managing the club's online presence while mentoring junior developers.",
+    "responsibilities": [
+      "Leading web development projects for the club",
+      "Mentoring junior developers and conducting workshops",
+      "Managing the club's website and social media presence",
+      "Collaborating with other departments for technical solutions"
+    ],
+    "technologies": ["React", "Next.js", "JavaScript", "HTML/CSS", "Git"],
+    "website": ""
+  }
+] 

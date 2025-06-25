@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "Database",
+    "title": "Blockchain Development",
+    "description": "Specialized in developing decentralized applications (dApps) using Solidity, Ethers.js, and smart contracts. Building secure and efficient blockchain solutions."
+  },
+  {
+    "icon": "Code",
+    "title": "Web & Mobile Development",
+    "description": "Proficient in React, Vite, Tailwind CSS for front-end, and Node.js for back-end. Skilled in mobile development with Kotlin and Jetpack Compose."
+  },
+  {
+    "icon": "Smartphone",
+    "title": "Programming Languages",
+    "description": "Experienced in C, C++, Java, Python, and more, with a solid foundation in data structures, algorithms, and software engineering concepts."
+  }
+] 
