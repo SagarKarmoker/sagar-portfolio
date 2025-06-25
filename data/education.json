@@ -1,9 +1,27 @@
 [
   {
-    "image": "./../public/ewu.png",
-    "org": "East West University",
-    "position": "B.Sc in Computer Science and Engineering",
-    "time": "2020 - 2024",
-    "description": "Focused on software engineering, algorithms, data structures, and emerging technologies including blockchain and artificial intelligence."
+    "image": "/ewu.png",
+    "institution": "East West University",
+    "degree": "B.Sc in Computer Science and Engineering",
+    "period": "2020 - 2024",
+    "location": "Dhaka, Bangladesh",
+    "description": "Focused on software engineering, algorithms, data structures, and emerging technologies including blockchain and artificial intelligence.",
+    "courses": [
+      "Data Structures & Algorithms",
+      "Software Engineering",
+      "Database Management Systems",
+      "Computer Networks",
+      "Operating Systems",
+      "Web Development",
+      "Machine Learning",
+      "Blockchain Technology"
+    ],
+    "achievements": [
+      "Maintained excellent academic performance throughout the program",
+      "Active member of the Computer Science Club",
+      "Participated in various programming competitions",
+      "Completed multiple software development projects"
+    ],
+    "website": "https://www.ewubd.edu"
   }
 ] 
