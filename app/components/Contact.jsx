@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -13,6 +13,44 @@ export default function Contact() {
         icon: getIcon(method.icon)
     }));
 
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: ''
+    });
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+        const { firstName, lastName, email, message } = formData;
+        
+        // Create mailto link with form data
+        const subject = `Portfolio Contact from ${firstName} ${lastName}`;
+        const body = `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`;
+        
+        const mailtoLink = `mailto:sagarkarmoker@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open default email client
+        window.open(mailtoLink);
+        
+        // Reset form
+        setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            message: ''
+        });
+    };
+
     return (
         <div className="py-20">
             <motion.div 
@@ -24,7 +62,7 @@ export default function Contact() {
             >
                 <div className="inline-flex items-center px-4 py-2 rounded-full bg-color-secondary text-color-accent text-sm font-medium mb-6">
                     <span className="w-2 h-2 bg-color-accent rounded-full mr-2"></span>
-                    Let's Connect
+                    Let&apos;s Connect
                 </div>
                 <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                     Get in{' '}
@@ -33,7 +71,7 @@ export default function Contact() {
                     </span>
                 </h2>
                 <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-                    I'm always open to discussing new opportunities, interesting projects, 
+                    I&apos;m always open to discussing new opportunities, interesting projects, 
                     or just having a chat about technology and innovation.
                 </p>
                 <div className="w-24 h-1 bg-gradient-to-r from-color-accent to-color-secondary mx-auto rounded-full mt-6"></div>
@@ -96,7 +134,7 @@ export default function Contact() {
                     <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-200 mb-6">
                         Send me a message
                     </h3>
-                    <form className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
@@ -104,6 +142,10 @@ export default function Contact() {
                                 </label>
                                 <input 
                                     type="text" 
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleInputChange}
+                                    required
                                     className="w-full px-4 py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300"
                                     placeholder="John"
                                 />
@@ -114,6 +156,10 @@ export default function Contact() {
                                 </label>
                                 <input 
                                     type="text" 
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleInputChange}
+                                    required
                                     className="w-full px-4 py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300"
                                     placeholder="Doe"
                                 />
@@ -125,6 +171,10 @@ export default function Contact() {
                             </label>
                             <input 
                                 type="email" 
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                required
                                 className="w-full px-4 py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300"
                                 placeholder="john@example.com"
                             />
@@ -134,12 +184,19 @@ export default function Contact() {
                                 Message
                             </label>
                             <textarea 
+                                name="message"
+                                value={formData.message}
+                                onChange={handleInputChange}
+                                required
                                 rows={4}
                                 className="w-full px-4 py-3 border border-color-primary/30 dark:border-color-secondary/30 rounded-lg bg-white dark:bg-color-dark text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-color-secondary focus:border-transparent transition-all duration-300 resize-none"
                                 placeholder="Tell me about your project or just say hello!"
                             ></textarea>
                         </div>
-                        <Button className="w-full bg-gradient-to-r from-color-secondary to-color-accent hover:from-color-accent hover:to-color-secondary text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1">
+                        <Button 
+                            type="submit"
+                            className="w-full bg-gradient-to-r from-color-secondary to-color-accent hover:from-color-accent hover:to-color-secondary text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:-translate-y-1"
+                        >
                             <MessageCircle className="w-5 h-5 mr-2" />
                             Send Message
                         </Button>
@@ -166,7 +223,7 @@ export default function Contact() {
                         >
                             LinkedIn
                         </Link>
-                        . I'll respond as soon as possible!
+                        . I&apos;ll respond as soon as possible!
                     </p>
                 </div>
             </motion.div>
