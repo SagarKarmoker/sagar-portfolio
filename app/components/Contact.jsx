@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Mail, Linkedin, Twitter, Github, MessageCircle, Send } from 'lucide-react'
+import { Mail, Linkedin, Github, MessageCircle, Send } from 'lucide-react'
 import Link from 'next/link'
 import contactData from '@/data/contact.json'
 import { getIcon } from '@/lib/icons'
@@ -37,7 +37,7 @@ export default function Contact() {
         const subject = `Portfolio Contact from ${firstName} ${lastName}`;
         const body = `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`;
         
-        const mailtoLink = `mailto:sagarkarmoker@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:sagarkarmoker.official@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
         // Open default email client
         window.open(mailtoLink);
