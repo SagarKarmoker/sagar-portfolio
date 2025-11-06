@@ -8,11 +8,11 @@
     "bgColor": "bg-blue-100 dark:bg-blue-900/30"
   },
   {
-    "icon": "Twitter",
-    "title": "Twitter",
-    "description": "Follow me for updates",
-    "link": "#",
-    "color": "text-blue-400 dark:text-blue-300",
+    "icon": "GraduationCap",
+    "title": "Google Scholar",
+    "description": "View my research",
+    "link": "https://scholar.google.com",
+    "color": "text-blue-600 dark:text-blue-400",
     "bgColor": "bg-blue-100 dark:bg-blue-900/30"
   },
   {
