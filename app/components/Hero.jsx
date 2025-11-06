@@ -1,10 +1,106 @@
-import React from 'react'
+'use client'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 import ProfilePic from '@/public/profile.jpg'
 
 function Hero() {
+    const [mounted, setMounted] = useState(false)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    // Static version for SSR to prevent hydration issues
+    if (!mounted) {
+        return (
+            <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 sm:py-12">
+                <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto px-4 sm:px-6">
+                    {/* Left Content - Static version for SSR */}
+                    <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
+                        <div className="space-y-4 sm:space-y-6">
+                            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 text-color-secondary text-xs sm:text-sm font-medium">
+                                <span className="w-2 h-2 bg-color-secondary rounded-full mr-2"></span>
+                                Available for opportunities
+                            </div>
+                            
+                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                                Hi, I&apos;m{' '}
+                                <span className="bg-gradient-to-r from-color-secondary via-color-accent to-color-orange bg-clip-text text-transparent">
+                                    Sagar
+                                </span>
+                                <br />
+                                <span className="text-slate-600">
+                                    👋
+                                </span>
+                            </h1>
+                            
+                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed">
+                                Full Stack Developer passionate about{' '}
+                                <span className="font-semibold text-slate-800">
+                                    creating innovative solutions
+                                </span>
+                                . I specialize in building scalable web applications and turning ideas into reality. Always eager to{' '}
+                                <span className="text-color-secondary font-semibold">
+                                    learn and grow
+                                </span>
+                                .
+                            </p>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <a href="#projects" className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-color-accent/25 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-sm sm:text-base text-center">
+                                View My Work
+                            </a>
+                            <a href="/Sagar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-color-primary/30 text-slate-700 rounded-xl font-semibold hover:border-color-secondary hover:text-color-secondary transition-all duration-300 cursor-pointer text-sm sm:text-base text-center">
+                                Download CV
+                            </a>
+                        </div>
+
+                        <div className="flex space-x-4 sm:space-x-6">
+                            <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                                <Github className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                                <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-color-secondary" />
+                            </a>
+                            <a href="mailto:sagarkarmoker.official@gmail.com" className="p-2 sm:p-3 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-color-accent" />
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Right Content - Profile Image */}
+                    <div className="flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0">
+                        <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-r from-color-secondary to-color-accent rounded-full blur-2xl sm:blur-3xl opacity-20"></div>
+                            <div className="relative">
+                                <Image
+                                    src={ProfilePic}
+                                    width={300}
+                                    height={300}
+                                    alt="Sagar Karmoker"
+                                    className="rounded-full shadow-2xl w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px] object-cover"
+                                    priority
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Scroll Indicator */}
+                <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2">
+                    <div className="flex flex-col items-center space-y-2 text-slate-600">
+                        <span className="text-xs sm:text-sm font-medium">Scroll down</span>
+                        <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    // Animated version for client-side rendering
     return (
         <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 sm:py-12">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto px-4 sm:px-6">
@@ -66,12 +162,12 @@ function Hero() {
                         transition={{ delay: 0.8, duration: 0.6 }}
                         className="flex flex-col sm:flex-row gap-4"
                     >
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-color-accent/25 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-sm sm:text-base">
+                        <a href="#projects" className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-color-accent/25 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-sm sm:text-base text-center">
                             View My Work
-                        </button>
-                        <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 rounded-xl font-semibold hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 cursor-pointer text-sm sm:text-base">
+                        </a>
+                        <a href="/Sagar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 rounded-xl font-semibold hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 cursor-pointer text-sm sm:text-base text-center">
                             Download CV
-                        </button>
+                        </a>
                     </motion.div>
 
                     <motion.div 
@@ -80,14 +176,14 @@ function Hero() {
                         transition={{ delay: 1, duration: 0.6 }}
                         className="flex space-x-4 sm:space-x-6"
                     >
-                        <a href="#" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                        <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
                             <Github className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700 dark:text-slate-300" />
                         </a>
-                        <a href="#" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                        <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
                             <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-color-secondary" />
                         </a>
-                        <a href="#" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
-                            <Twitter className="w-5 h-5 sm:w-6 sm:h-6 text-color-accent" />
+                        <a href="mailto:sagarkarmoker.official@gmail.com" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                            <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-color-accent" />
                         </a>
                     </motion.div>
                 </motion.div>

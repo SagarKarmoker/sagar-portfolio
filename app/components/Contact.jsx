@@ -37,7 +37,7 @@ export default function Contact() {
         const subject = `Portfolio Contact from ${firstName} ${lastName}`;
         const body = `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`;
         
-        const mailtoLink = `mailto:sagarkarmoker@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailtoLink = `mailto:sagarkarmoker.official@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         
         // Open default email client
         window.open(mailtoLink);
