@@ -22,7 +22,7 @@ function Hero() {
                         <div className="space-y-4 sm:space-y-6">
                             <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 text-color-secondary text-xs sm:text-sm font-medium">
                                 <span className="w-2 h-2 bg-color-secondary rounded-full mr-2"></span>
-                                Available for opportunities
+                                MSc Student | Backend & Blockchain Engineer | Seeking PhD
                             </div>
                             
                             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
@@ -37,15 +37,15 @@ function Hero() {
                             </h1>
                             
                             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed">
-                                Full Stack Developer passionate about{' '}
+                                Backend & Blockchain Engineer passionate about{' '}
                                 <span className="font-semibold text-slate-800">
-                                    creating innovative solutions
+                                    distributed systems and decentralized infrastructure
                                 </span>
-                                . I specialize in building scalable web applications and turning ideas into reality. Always eager to{' '}
+                                . Currently at Core Devs Ltd, building scalable backend systems and smart contracts. Seeking{' '}
                                 <span className="text-color-secondary font-semibold">
-                                    learn and grow
+                                    PhD opportunities
                                 </span>
-                                .
+                                {' '}in Computer Science.
                             </p>
                         </div>
 
@@ -119,7 +119,7 @@ function Hero() {
                             className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary text-xs sm:text-sm font-medium"
                         >
                             <span className="w-2 h-2 bg-color-secondary rounded-full mr-2 animate-pulse"></span>
-                            Available for opportunities
+                            PhD Researcher | Backend & Blockchain Engineer
                         </motion.div>
                         
                         <motion.h1 
@@ -144,16 +144,29 @@ function Hero() {
                             transition={{ delay: 0.6, duration: 0.6 }}
                             className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed"
                         >
-                            Full Stack Developer passionate about{' '}
+                            Backend & Blockchain Engineer passionate about{' '}
                             <span className="font-semibold text-slate-800 dark:text-slate-200">
-                                creating innovative solutions
+                                distributed systems and decentralized infrastructure
                             </span>
-                            . I specialize in building scalable web applications and turning ideas into reality. Always eager to{' '}
-                            <span className="text-color-secondary dark:text-color-primary font-semibold">
-                                learn and grow
-                            </span>
-                            .
+                            . Currently at Core Devs Ltd, building scalable backend systems and smart contracts. Former Research Assistant at BRAC University.
                         </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.7, duration: 0.6 }}
+                            className="flex flex-wrap gap-2"
+                        >
+                            <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
+                                🔬 Blockchain Research
+                            </span>
+                            <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
+                                ⚡ Distributed Systems
+                            </span>
+                            <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
+                                🎓 Seeking PhD Opportunity
+                            </span>
+                        </motion.div>
                     </div>
 
                     <motion.div 

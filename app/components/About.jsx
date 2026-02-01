@@ -39,20 +39,27 @@ function About() {
                 >
                     <div className="bg-white dark:bg-color-dark rounded-2xl p-6 sm:p-8 shadow-xl border border-color-primary/20 dark:border-color-secondary/30">
                         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                            Welcome to my portfolio website! I&apos;m{' '}
+                            Welcome to my portfolio! I&apos;m{' '}
                             <span className="font-semibold text-slate-800 dark:text-slate-200">Sagar Karmoker</span>, 
-                            a passionate Computer Science and Engineering student at{' '}
+                            a <span className="text-color-secondary dark:text-color-primary font-semibold cursor-pointer">Backend & Blockchain Engineer</span> currently working at{' '}
                             <span className="text-color-secondary dark:text-color-primary font-semibold hover:underline cursor-pointer">
-                                East West University
-                            </span>{' '}
-                            in Bangladesh.
+                                Core Devs Ltd
+                            </span>.
                         </p>
                         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mt-3 sm:mt-4">
-                            I enjoy exploring new technologies and solving real-world problems through{' '}
-                            <span className="text-color-secondary dark:text-color-primary font-semibold cursor-pointer">software development</span>{' '}
-                            and{' '}
-                            <span className="text-color-secondary dark:text-color-primary font-semibold cursor-pointer">blockchain</span>{' '}
-                            innovation.
+                            I specialize in building{' '}
+                            <span className="text-color-secondary dark:text-color-primary font-semibold cursor-pointer">scalable backend systems</span>
+                            , developing{' '}
+                            <span className="text-color-secondary dark:text-color-primary font-semibold cursor-pointer">smart contracts</span>
+                            , and researching distributed systems. Previously, I was a Research Assistant at{' '}
+                            <span className="font-semibold">BRAC University</span>
+                            {' '}and a Blockchain Developer at{' '}
+                            <span className="font-semibold">AHOM Limited</span>.
+                        </p>
+                        <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mt-3 sm:mt-4">
+                            I am actively{' '}
+                            <span className="text-color-secondary dark:text-color-primary font-semibold cursor-pointer">seeking PhD opportunities</span>
+                            {' '}in Computer Science, with research interests in blockchain technology, distributed systems, and backend infrastructure.
                         </p>
                     </div>
                 </motion.div>

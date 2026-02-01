@@ -1,12 +1,46 @@
 [
   {
+    "image": "/coredevs.webp",
+    "org": "Core Devs Ltd",
+    "position": "Blockchain and Backend Developer",
+    "time": "January 2026 - Present",
+    "location": "Dhaka, Bangladesh",
+    "current": true,
+    "description": "Developing blockchain infrastructure, smart contracts, and scalable backend systems for enterprise applications.",
+    "responsibilities": [
+      "Developing and deploying smart contracts for blockchain-based applications",
+      "Building scalable backend APIs and microservices architecture",
+      "Implementing secure wallet management and transaction processing systems",
+      "Collaborating with cross-functional teams on blockchain protocol development"
+    ],
+    "technologies": ["Blockchain", "Solidity", "Web3.js", "Ethereum", "Node.js", "TypeScript", "PostgreSQL", "Redis", "Docker"],
+    "website": ""
+  },
+  {
+    "image": "/brac.png",
+    "org": "BRAC University",
+    "position": "Research Assistant (RA) - Department of CSE",
+    "time": "August 2025 - December 2025",
+    "current": false,
+    "location": "Dhaka, Bangladesh",
+    "description": "Conducting research in blockchain technology, distributed systems, and backend architecture while pursuing PhD opportunities.",
+    "responsibilities": [
+      "Researching blockchain scalability solutions and consensus mechanisms",
+      "Developing prototype systems for distributed ledger technology",
+      "Publishing research papers on blockchain and backend systems",
+      "Collaborating with faculty on cutting-edge computer science research projects"
+    ],
+    "technologies": ["Blockchain", "Research", "Distributed Systems", "Python", "Solidity", "Academic Writing"],
+    "website": "https://www.bracu.ac.bd"
+  },
+  {
     "image": "/file.svg",
     "org": "AHOM Limited",
     "position": "Junior Blockchain Developer",
-    "time": "December 2024 - Present",
+    "time": "December 2024 - August 2025",
     "location": "Remote (UK)",
-    "current": true,
-    "description": "Developing and maintaining blockchain infrastructure and systems for a UK-based company, focusing on wallet management, transaction handling, and DeFi integrations.",
+    "current": false,
+    "description": "Developed and maintained blockchain infrastructure and systems for a UK-based company, focusing on wallet management, transaction handling, and DeFi integrations.",
     "responsibilities": [
       "Engineered a scalable Wallet Management System capable of generating and managing EOAs across 101 blockchain networks, streamlining onboarding and integration",
       "Built and deployed an automated transaction handler for a centralized exchange, ensuring secure and efficient fund transfers to designated hot wallets",
@@ -20,15 +54,15 @@
     "image": "/ewu.png",
     "org": "East West University",
     "position": "Graduate Teaching Assistant (GTA)",
-    "time": "February 2025 - Present",
-    "current": true,
+    "time": "February 2025 - December 2025",
+    "current": false,
     "location": "Dhaka, Bangladesh",
-    "description": "Assisting professors in teaching computer science courses and mentoring students in programming and software development concepts.",
+    "description": "Assisted professors in teaching computer science courses and mentoring students in programming and software development concepts.",
     "responsibilities": [
-      "Conducting lab sessions for CSE412 Software Engineering, CSE479 Web Programming, and CSE360 Computer Architecture",
-      "Providing one-on-one tutoring to struggling students",
-      "Grading assignments and providing constructive feedback",
-      "Assisting in curriculum development and course materials"
+      "Conducted lab sessions for CSE412 Software Engineering, CSE479 Web Programming, and CSE360 Computer Architecture",
+      "Provided one-on-one tutoring to struggling students",
+      "Graded assignments and provided constructive feedback",
+      "Assisted in curriculum development and course materials"
     ],
     "technologies": ["Software Engineering", "Web Development", "Computer Architecture"],
     "website": "https://www.ewubd.edu"

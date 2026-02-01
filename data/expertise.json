@@ -1,17 +1,17 @@
 [
   {
+    "icon": "Server",
+    "title": "Backend Engineering",
+    "description": "Building scalable backend systems, REST APIs, and microservices architecture. Experienced in Node.js, TypeScript, PostgreSQL, Redis, and Docker. Passionate about system design and distributed systems."
+  },
+  {
     "icon": "Database",
     "title": "Blockchain Development",
-    "description": "Specialized in developing decentralized applications (dApps) using Solidity, Ethers.js, and smart contracts. Building secure and efficient blockchain solutions."
+    "description": "Developing decentralized applications (dApps), smart contracts with Solidity, and blockchain infrastructure. Experienced in Web3.js, Ethers.js, Ethereum, and multi-chain integrations."
   },
   {
-    "icon": "Code",
-    "title": "Web & Mobile Development",
-    "description": "Proficient in React, Vite, Tailwind CSS for front-end, and Node.js for back-end. Skilled in mobile development with Kotlin and Jetpack Compose."
-  },
-  {
-    "icon": "Smartphone",
-    "title": "Programming Languages",
-    "description": "Experienced in C, C++, Java, Python, and more, with a solid foundation in data structures, algorithms, and software engineering concepts."
+    "icon": "BookOpen",
+    "title": "Research & Academia",
+    "description": "Former Research Assistant at BRAC University conducting research on blockchain scalability and distributed systems. Seeking PhD opportunities in Computer Science with focus on backend and blockchain research."
   }
 ] 

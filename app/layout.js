@@ -13,16 +13,14 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Sagar Karmoker Portfolio",
-  description: "Official Portfolio of Sagar Karmoker ",
+  title: "Sagar Karmoker | MSc Student | Backend & Blockchain Engineer | Seeking PhD",
+  description: "Sagar Karmoker - MSc Student and Backend & Blockchain Engineer at Core Devs Ltd, former Research Assistant at BRAC University. Seeking PhD opportunities in Computer Science with research focus on distributed systems and blockchain technology.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className="inter"
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -39,12 +39,12 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    /* New color palette from Coolors */
-    --color-primary: 199 89% 72%;    /* #8ECAE6 - Light Blue */
-    --color-secondary: 199 89% 44%;  /* #219EBC - Medium Blue */
-    --color-dark: 199 89% 14%;       /* #023047 - Dark Blue */
-    --color-accent: 43 100% 51%;     /* #FFB703 - Yellow */
-    --color-orange: 25 100% 49%;     /* #FB8500 - Orange */
+    /* Professional Academic Color Palette */
+    --color-primary: 210 40% 96%;    /* #F1F5F9 - Slate 100 */
+    --color-secondary: 215 28% 35%;  /* #475569 - Slate 600 */
+    --color-dark: 222 47% 11%;       /* #0F172A - Slate 900 */
+    --color-accent: 199 89% 48%;     /* #0EA5E9 - Sky Blue 500 */
+    --color-orange: 217 91% 60%;     /* #3B82F6 - Blue 500 */
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -72,11 +72,11 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
     /* Dark mode color palette */
-    --color-primary: 199 89% 72%;    /* #8ECAE6 - Light Blue */
-    --color-secondary: 199 89% 44%;  /* #219EBC - Medium Blue */
-    --color-dark: 199 89% 14%;       /* #023047 - Dark Blue */
-    --color-accent: 43 100% 51%;     /* #FFB703 - Yellow */
-    --color-orange: 25 100% 49%;     /* #FB8500 - Orange */
+    --color-primary: 215 28% 25%;    /* #334155 - Slate 700 */
+    --color-secondary: 210 40% 80%;  /* #BFDBFE - Blue 200 */
+    --color-dark: 222 47% 11%;       /* #0F172A - Slate 900 */
+    --color-accent: 199 89% 60%;     /* #38BDF8 - Sky Blue 400 */
+    --color-orange: 217 91% 70%;     /* #93C5FD - Blue 300 */
   }
 }
 
