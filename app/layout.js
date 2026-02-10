@@ -17,10 +17,21 @@ export const metadata = {
   description: "Sagar Karmoker - MSc Student and Backend & Blockchain Engineer at Core Devs Ltd, former Research Assistant at BRAC University. Seeking PhD opportunities in Computer Science with research focus on distributed systems and blockchain technology.",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#F1F5F9' },
+    { media: '(prefers-color-scheme: dark)', color: '#0F172A' },
+  ],
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
         {children}
       </body>
     </html>

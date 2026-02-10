@@ -126,9 +126,11 @@ export default function App() {
                         >
                             <button 
                                 onClick={toggleMobileMenu}
-                                className="p-2 rounded-xl bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30 transition-all duration-300 cursor-pointer"
+                                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                                aria-expanded={isMobileMenuOpen}
+                                className="p-3 rounded-xl bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30 transition-all duration-300 cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center touch-target"
                             >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     {isMobileMenuOpen ? (
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                                     ) : (
@@ -157,7 +159,7 @@ export default function App() {
                                         key={item.href}
                                         href={item.href}
                                         onClick={closeMobileMenu}
-                                        className="block px-4 py-3 text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary hover:bg-color-primary/10 dark:hover:bg-color-primary/20 rounded-xl transition-all duration-300 cursor-pointer font-medium"
+                                        className="block px-4 py-4 text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary hover:bg-color-primary/10 dark:hover:bg-color-primary/20 rounded-xl transition-all duration-300 cursor-pointer font-medium min-h-[48px] flex items-center touch-target"
                                     >
                                         {item.label}
                                     </a>
@@ -175,7 +177,7 @@ export default function App() {
                                         key={item.href}
                                         href={item.href}
                                         onClick={closeMobileMenu}
-                                        className="block px-4 py-2 text-sm text-slate-500 dark:text-slate-400 hover:text-color-secondary dark:hover:text-color-primary hover:bg-color-primary/10 dark:hover:bg-color-primary/20 rounded-xl transition-all duration-300 cursor-pointer"
+                                        className="block px-4 py-3 text-sm text-slate-500 dark:text-slate-400 hover:text-color-secondary dark:hover:text-color-primary hover:bg-color-primary/10 dark:hover:bg-color-primary/20 rounded-xl transition-all duration-300 cursor-pointer min-h-[44px] flex items-center touch-target"
                                     >
                                         {item.label}
                                     </a>
@@ -188,7 +190,7 @@ export default function App() {
                                         target="_blank" 
                                         rel="noopener noreferrer"
                                         onClick={closeMobileMenu}
-                                        className="block px-4 py-3 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold text-center hover:shadow-lg transition-all duration-300"
+                                        className="block px-4 py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold text-center hover:shadow-lg transition-all duration-300 min-h-[48px] flex items-center justify-center touch-target"
                                     >
                                         Download CV
                                     </a>
@@ -338,9 +340,21 @@ export default function App() {
 
             {/* Footer */}
             <footer className="bg-white dark:bg-color-dark border-t border-color-primary/20 dark:border-color-secondary/30 mt-16 sm:mt-20 lg:mt-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-                    <div className="text-center text-slate-600 dark:text-slate-400">
-                        <p className="text-sm sm:text-base">© 2025 Sagar Karmoker. Built with Next.js and Tailwind CSS.</p>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                    <div className="text-center">
+                        <blockquote className="mb-6 sm:mb-8">
+                            <p className="text-base sm:text-lg lg:text-xl text-slate-700 dark:text-slate-300 italic font-medium max-w-2xl mx-auto leading-relaxed">
+                                "The best way to predict the future is to invent it."
+                            </p>
+                            <cite className="text-sm sm:text-base text-color-secondary dark:text-color-primary mt-2 block not-italic font-semibold">
+                                — Alan Kay
+                            </cite>
+                        </blockquote>
+                        <div className="border-t border-color-primary/10 dark:border-color-secondary/20 pt-6 sm:pt-8">
+                            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
+                                © 2025 Sagar Karmoker. Crafted with passion, coffee, and code.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </footer>

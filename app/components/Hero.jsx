@@ -20,9 +20,9 @@ function Hero() {
                     {/* Left Content - Static version for SSR */}
                     <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
                         <div className="space-y-4 sm:space-y-6">
-                            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 text-color-secondary text-xs sm:text-sm font-medium">
+                            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary text-xs sm:text-sm font-medium">
                                 <span className="w-2 h-2 bg-color-secondary rounded-full mr-2"></span>
-                                MSc Student | Backend & Blockchain Engineer | Seeking PhD
+                                PhD Researcher | Backend & Blockchain Engineer
                             </div>
                             
                             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
@@ -31,41 +31,49 @@ function Hero() {
                                     Sagar
                                 </span>
                                 <br />
-                                <span className="text-slate-600">
+                                <span className="text-slate-600 dark:text-slate-300">
                                     👋
                                 </span>
                             </h1>
                             
-                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 leading-relaxed">
+                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed">
                                 Backend & Blockchain Engineer passionate about{' '}
-                                <span className="font-semibold text-slate-800">
+                                <span className="font-semibold text-slate-800 dark:text-slate-200">
                                     distributed systems and decentralized infrastructure
                                 </span>
-                                . Currently at Core Devs Ltd, building scalable backend systems and smart contracts. Seeking{' '}
-                                <span className="text-color-secondary font-semibold">
-                                    PhD opportunities
-                                </span>
-                                {' '}in Computer Science.
+                                . Currently at Core Devs Ltd, building scalable backend systems and smart contracts. Former Research Assistant at BRAC University.
                             </p>
+
+                            <div className="flex flex-wrap gap-2">
+                                <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
+                                    🔬 Blockchain Research
+                                </span>
+                                <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
+                                    ⚡ Distributed Systems
+                                </span>
+                                <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
+                                    🎓 Seeking PhD Opportunity
+                                </span>
+                            </div>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a href="#projects" className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-color-accent/25 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-sm sm:text-base text-center">
                                 View My Work
                             </a>
-                            <a href="/Sagar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-color-primary/30 text-slate-700 rounded-xl font-semibold hover:border-color-secondary hover:text-color-secondary transition-all duration-300 cursor-pointer text-sm sm:text-base text-center">
+                            <a href="/Sagar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 rounded-xl font-semibold hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 cursor-pointer text-sm sm:text-base text-center">
                                 Download CV
                             </a>
                         </div>
 
                         <div className="flex space-x-4 sm:space-x-6">
-                            <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
-                                <Github className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700" />
+                            <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
+                                <Github className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700 dark:text-slate-300" />
                             </a>
-                            <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                            <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
                                 <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-color-secondary" />
                             </a>
-                            <a href="mailto:sagarkarmoker.official@gmail.com" className="p-2 sm:p-3 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                            <a href="mailto:sagarkarmoker.official@gmail.com" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
                                 <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-color-accent" />
                             </a>
                         </div>
@@ -91,7 +99,7 @@ function Hero() {
 
                 {/* Scroll Indicator */}
                 <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2">
-                    <div className="flex flex-col items-center space-y-2 text-slate-600">
+                    <div className="flex flex-col items-center space-y-2 text-slate-600 dark:text-slate-400">
                         <span className="text-xs sm:text-sm font-medium">Scroll down</span>
                         <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
@@ -189,13 +197,13 @@ function Hero() {
                         transition={{ delay: 1, duration: 0.6 }}
                         className="flex space-x-4 sm:space-x-6"
                     >
-                        <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                        <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
                             <Github className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700 dark:text-slate-300" />
                         </a>
-                        <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                        <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
                             <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-color-secondary" />
                         </a>
-                        <a href="mailto:sagarkarmoker.official@gmail.com" className="p-2 sm:p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                        <a href="mailto:sagarkarmoker.official@gmail.com" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
                             <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-color-accent" />
                         </a>
                     </motion.div>
