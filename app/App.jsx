@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Pointer } from "@/components/ui/pointer"
 import { Dock, DockIcon } from "@/components/ui/dock"
 import { Home, User, FlaskConical, Briefcase, FolderGit2, Mail } from "lucide-react"
@@ -19,6 +19,11 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function App() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        setIsDesktop(!('ontouchstart' in window || navigator.maxTouchPoints > 0));
+    }, []);
 
     const toggleMobileMenu = () => setIsMobileMenuOpen(p => !p);
     const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -42,10 +47,10 @@ export default function App() {
 
     return (
         <div className="min-h-screen relative">
-            <Pointer />
+            {isDesktop && <Pointer />}
             {/* Grain overlay via layout */}
 
-            {/* Mobile Nav — hidden on lg+ */}
+            {/* Mobile top bar */}
             <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 mix-blend-difference">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16 sm:h-20">
@@ -68,39 +73,41 @@ export default function App() {
                         </div>
                     </div>
                 </div>
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="fixed inset-0 top-0 bg-[hsl(var(--color-dark))] z-40 flex items-center justify-center"
-                        >
-                            <div className="flex flex-col items-center gap-8">
-                                {mobileNavLinks.map((item) => (
-                                    <a
-                                        key={item.href}
-                                        href={item.href}
-                                        onClick={closeMobileMenu}
-                                        className="text-white/80 hover:text-white text-xl font-mono uppercase tracking-widest transition-all duration-300"
-                                    >
-                                        {item.label}
-                                    </a>
-                                ))}
-                                <a
-                                    href="/Sagar_Resume.pdf"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={closeMobileMenu}
-                                    className="mt-4 px-6 py-3 text-sm font-medium text-white border border-white/30 rounded-full hover:bg-white hover:text-black transition-all duration-300"
-                                >
-                                    Download CV ↗
-                                </a>
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
             </nav>
+
+            {/* Mobile overlay — separate from nav to avoid mix-blend */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 bg-[hsl(var(--color-dark))] z-40 flex items-center justify-center lg:hidden"
+                    >
+                        <div className="flex flex-col items-center gap-8">
+                            {mobileNavLinks.map((item) => (
+                                <a
+                                    key={item.href}
+                                    href={item.href}
+                                    onClick={closeMobileMenu}
+                                    className="text-white/80 hover:text-white text-xl font-mono uppercase tracking-widest transition-all duration-300"
+                                >
+                                    {item.label}
+                                </a>
+                            ))}
+                            <a
+                                href="/Sagar_Resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={closeMobileMenu}
+                                className="mt-4 px-6 py-3 text-sm font-medium text-white border border-white/30 rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                            >
+                                Download CV ↗
+                            </a>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             {/* Desktop Dock — hidden on < lg */}
             <div className="hidden lg:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
