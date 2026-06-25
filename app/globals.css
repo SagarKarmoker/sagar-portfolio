@@ -10,24 +10,24 @@ body {
 
 @layer base {
   :root {
-    --background: 220 16% 6%;
-    --foreground: 200 3% 79%;
-    --card: 220 14% 9%;
-    --card-foreground: 200 3% 79%;
-    --popover: 220 14% 9%;
-    --popover-foreground: 200 3% 79%;
+    --background: 220 16% 96%;
+    --foreground: 220 16% 12%;
+    --card: 220 14% 98%;
+    --card-foreground: 220 16% 12%;
+    --popover: 220 14% 98%;
+    --popover-foreground: 220 16% 12%;
     --primary: 335 76% 45%;
     --primary-foreground: 0 0% 98%;
     --secondary: 335 76% 45%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 220 12% 12%;
-    --muted-foreground: 200 3% 55%;
-    --accent: 224 100% 75%;
-    --accent-foreground: 220 16% 6%;
-    --destructive: 0 62% 50%;
+    --muted: 220 12% 92%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 224 100% 50%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 220 12% 16%;
-    --input: 220 12% 16%;
+    --border: 220 12% 85%;
+    --input: 220 12% 85%;
     --ring: 335 76% 45%;
     --radius: 0.5rem;
 
@@ -35,7 +35,7 @@ body {
     --color-primary: 335 76% 45%;
     --color-secondary: 335 76% 45%;
     --color-dark: 220 16% 6%;
-    --color-accent: 224 100% 75%;
+    --color-accent: 224 100% 50%;
   }
   .dark {
     --background: 220 16% 6%;
@@ -63,6 +63,17 @@ body {
     --color-dark: 220 16% 6%;
     --color-accent: 224 100% 75%;
   }
+}
+
+/* View Transitions — scoped to AnimatedThemeToggler */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html[data-magicui-theme-vt="active"]::view-transition-group(root) {
+  animation-duration: var(--magicui-theme-toggle-vt-duration);
 }
 
 @layer base {

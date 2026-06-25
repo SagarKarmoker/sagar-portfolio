@@ -24,9 +24,9 @@ export default function ResearchStatement() {
                 <BlurFade delay={0.2} duration={0.6} offset={12}>
                     <MagicCard
                         className="rounded-2xl p-6 sm:p-8 h-full"
-                        gradientColor="hsl(24 55% 54% / 0.15)"
-                        gradientFrom="hsl(24 55% 54% / 0.08)"
-                        gradientTo="hsl(180 55% 25% / 0.05)"
+                        gradientColor="hsl(224 100% 75% / 0.15)"
+                        gradientFrom="hsl(224 100% 75% / 0.08)"
+                        gradientTo="hsl(335 76% 45% / 0.05)"
                         gradientOpacity={0.8}
                     >
                         <div className="flex items-center gap-3 mb-5">
@@ -76,9 +76,9 @@ export default function ResearchStatement() {
                 <BlurFade delay={0.35} duration={0.6} offset={12}>
                     <MagicCard
                         className="rounded-2xl p-6 sm:p-8 h-full"
-                        gradientColor="hsl(180 55% 25% / 0.15)"
-                        gradientFrom="hsl(180 55% 25% / 0.08)"
-                        gradientTo="hsl(24 55% 54% / 0.05)"
+                        gradientColor="hsl(335 76% 45% / 0.15)"
+                        gradientFrom="hsl(335 76% 45% / 0.08)"
+                        gradientTo="hsl(224 100% 75% / 0.05)"
                         gradientOpacity={0.8}
                     >
                         <div className="flex items-center gap-3 mb-5">
@@ -120,7 +120,7 @@ export default function ResearchStatement() {
             <BlurFade delay={0.5} duration={0.6} offset={12}>
                 <div className="mt-12 sm:mt-16">
                     <div className="relative bg-[hsl(var(--color-dark))] rounded-2xl p-6 sm:p-8 text-white overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(180_55%_25%_/_0.2)] to-[hsl(24_55%_54%_/_0.1)]" />
+                        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(335_76%_45%_/_0.2)] to-[hsl(224_100%_75%_/_0.1)]" />
                         <div className="relative">
                             <h3 className="text-xl sm:text-2xl font-serif mb-3">
                                 Seeking PhD Position &amp; Research Collaboration

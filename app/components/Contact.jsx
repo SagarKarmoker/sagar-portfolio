@@ -59,7 +59,7 @@ export default function Contact({ methods }) {
                         particleCount: 150,
                         spread: 70,
                         origin: { y: 0.6 },
-                        colors: ['#2B7A78', '#C17A47', '#3A7C7A', '#D49464']
+                        colors: ['#c91b68', '#809fff', '#0d0f12', '#c7cacc']
                     }}
                     manualstart
                 />
@@ -74,8 +74,8 @@ export default function Contact({ methods }) {
                     <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
                         Get in{' '}
                         <AnimatedGradientText
-                            colorFrom="hsl(180 55% 25%)"
-                            colorTo="hsl(24 55% 54%)"
+                            colorFrom="hsl(335 76% 45%)"
+                            colorTo="hsl(224 100% 75%)"
                             speed={1.5}
                             className="text-4xl sm:text-5xl font-bold"
                         >
@@ -97,9 +97,9 @@ export default function Contact({ methods }) {
                                 <Link href={method.link} target="_blank" rel="noopener noreferrer" className="block group">
                                     <MagicCard
                                         className="rounded-xl"
-                                        gradientColor="hsl(180 55% 25% / 0.08)"
-                                        gradientFrom="hsl(180 55% 25% / 0.04)"
-                                        gradientTo="hsl(24 55% 54% / 0.04)"
+                                        gradientColor="hsl(335 76% 45% / 0.08)"
+                                        gradientFrom="hsl(335 76% 45% / 0.04)"
+                                        gradientTo="hsl(224 100% 75% / 0.04)"
                                         gradientOpacity={0.4}
                                     >
                                         <div className="p-5 relative z-40">
@@ -124,9 +124,9 @@ export default function Contact({ methods }) {
                     <BlurFade delay={0.3} duration={0.6} offset={8} className="lg:col-span-3 order-1 lg:order-2">
                         <MagicCard
                             className="rounded-2xl h-full"
-                            gradientColor="hsl(180 55% 25% / 0.1)"
-                            gradientFrom="hsl(180 55% 25% / 0.05)"
-                            gradientTo="hsl(24 55% 54% / 0.03)"
+                            gradientColor="hsl(335 76% 45% / 0.1)"
+                            gradientFrom="hsl(335 76% 45% / 0.05)"
+                            gradientTo="hsl(224 100% 75% / 0.03)"
                             gradientOpacity={0.5}
                         >
                             <div className="p-6 sm:p-8 relative z-40">
@@ -182,7 +182,7 @@ export default function Contact({ methods }) {
                                     </div>
                                     <Button
                                         type="submit"
-                                        className="w-full bg-gradient-to-r from-[hsl(180_55%_25%)] to-[hsl(24_55%_54%)] hover:from-[hsl(24_55%_54%)] hover:to-[hsl(180_55%_25%)] text-white font-semibold py-3.5 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 text-sm shadow-lg shadow-[hsl(180_55%_25%_/_0.2)]"
+                                        className="w-full bg-gradient-to-r from-[hsl(335_76%_45%)] to-[hsl(224_100%_75%)] hover:from-[hsl(224_100%_75%)] hover:to-[hsl(335_76%_45%)] text-white font-semibold py-3.5 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 text-sm shadow-lg shadow-[hsl(335_76%_45%_/_0.2)]"
                                     >
                                         <MessageCircle className="w-4 h-4 mr-2" />
                                         Send Message

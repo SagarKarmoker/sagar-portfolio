@@ -50,19 +50,19 @@ function Hero() {
                         {/* Role badges */}
                         <BlurFade delay={0.45} duration={0.6} offset={8}>
                             <div className="flex flex-wrap gap-2">
-                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(180_55%_25%_/_0.4)] bg-[hsl(180_55%_25%_/_0.1)] text-[hsl(180_35%_60%)]">
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(335_76%_45%_/_0.3)] bg-[hsl(335_76%_45%_/_0.1)] text-[hsl(335_76%_60%)]">
                                     Blockchain Engineer
                                 </span>
-                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(180_55%_25%_/_0.4)] bg-[hsl(180_55%_25%_/_0.1)] text-[hsl(180_35%_60%)]">
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(335_76%_45%_/_0.3)] bg-[hsl(335_76%_45%_/_0.1)] text-[hsl(335_76%_60%)]">
                                     MSc Researcher
                                 </span>
-                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(180_55%_25%_/_0.4)] bg-[hsl(180_55%_25%_/_0.1)] text-[hsl(180_35%_60%)]">
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(335_76%_45%_/_0.3)] bg-[hsl(335_76%_45%_/_0.1)] text-[hsl(335_76%_60%)]">
                                     Backend Architect
                                 </span>
-                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(24_55%_54%_/_0.4)] bg-[hsl(24_55%_54%_/_0.1)] text-[hsl(24_55%_54%)]">
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(224_100%_75%_/_0.3)] bg-[hsl(224_100%_75%_/_0.1)] text-[hsl(224_100%_75%)]">
                                     PhD Aspirant
                                 </span>
-                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(180_55%_25%_/_0.4)] bg-[hsl(180_55%_25%_/_0.1)] text-[hsl(180_35%_60%)]">
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(335_76%_45%_/_0.3)] bg-[hsl(335_76%_45%_/_0.1)] text-[hsl(335_76%_60%)]">
                                     Smart Contract Dev
                                 </span>
                             </div>
@@ -90,7 +90,7 @@ function Hero() {
                     <BlurFade delay={0.3} duration={1} offset={20}>
                         <div className="flex justify-center lg:justify-end">
                             <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[hsl(180_55%_25%_/_0.3)] to-[hsl(24_55%_54%_/_0.2)] blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
+                                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[hsl(335_76%_45%_/_0.3)] to-[hsl(224_100%_75%_/_0.2)] blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
                                 <div className="relative w-full h-full rounded-full overflow-hidden ring-2 ring-white/10">
                                     <Image
                                         src={ProfilePic}

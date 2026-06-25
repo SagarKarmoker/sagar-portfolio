@@ -15,11 +15,14 @@ import ResearchStatement from "./components/ResearchStatement";
 import Skills from "./components/Skills";
 import WorkTimeline from "./components/WorkTimeline";
 import Teaching from "./components/Teaching";
+import { useTheme } from "next-themes"
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler"
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function App({ cmsData }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isDesktop, setIsDesktop] = useState(false);
+    const { theme, setTheme } = useTheme()
 
     useEffect(() => {
         setIsDesktop(!('ontouchstart' in window || navigator.maxTouchPoints > 0));
@@ -57,7 +60,14 @@ export default function App({ cmsData }) {
                         <a href="#hero" className="text-white text-lg font-mono font-semibold tracking-tight">
                             SK<span className="opacity-50">()</span>
                         </a>
-                        <div className="lg:hidden">
+                        <div className="lg:hidden flex items-center gap-1">
+                            <AnimatedThemeToggler
+                                theme={theme}
+                                onThemeChange={t => setTheme(t)}
+                                variant="circle"
+                                duration={400}
+                                className="w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
+                            />
                             <button
                                 onClick={toggleMobileMenu}
                                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -82,7 +92,7 @@ export default function App({ cmsData }) {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-[hsl(var(--color-dark))] z-40 flex items-center justify-center lg:hidden"
+                        className="fixed inset-0 bg-background z-40 flex items-center justify-center lg:hidden"
                     >
                         <div className="flex flex-col items-center gap-8">
                             {mobileNavLinks.map((item) => (
@@ -104,6 +114,13 @@ export default function App({ cmsData }) {
                             >
                                 Download CV ↗
                             </a>
+                            <AnimatedThemeToggler
+                                theme={theme}
+                                onThemeChange={t => setTheme(t)}
+                                variant="circle"
+                                duration={400}
+                                className="mt-6 w-12 h-12 flex items-center justify-center text-white/70 hover:text-white border border-white/20 rounded-full transition-colors"
+                            />
                         </div>
                     </motion.div>
                 )}
@@ -136,6 +153,15 @@ export default function App({ cmsData }) {
                         >
                             <span className="text-xs font-bold font-mono">CV</span>
                         </a>
+                    </DockIcon>
+                    <DockIcon label={theme === "dark" ? "Light mode" : "Dark mode"}>
+                        <AnimatedThemeToggler
+                            theme={theme}
+                            onThemeChange={t => setTheme(t)}
+                            variant="circle"
+                            duration={400}
+                            className="w-full h-full flex items-center justify-center text-foreground/70 hover:text-foreground transition-colors"
+                        />
                     </DockIcon>
                 </Dock>
             </div>
