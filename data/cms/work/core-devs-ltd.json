@@ -1,0 +1,28 @@
+{
+  "image": "/coredevs.webp",
+  "org": "Core Devs Ltd",
+  "position": "Blockchain and Backend Developer",
+  "time": "January 2026 - Present",
+  "location": "Dhaka, Bangladesh",
+  "current": true,
+  "description": "Developing blockchain infrastructure, smart contracts, and scalable backend systems for enterprise applications.",
+  "responsibilities": [
+    "Developing and deploying smart contracts for blockchain-based applications",
+    "Building scalable backend APIs and microservices architecture",
+    "Implementing secure wallet management and transaction processing systems",
+    "Collaborating with cross-functional teams on blockchain protocol development"
+  ],
+  "technologies": [
+    "Blockchain",
+    "Solidity",
+    "Web3.js",
+    "Ethereum",
+    "Node.js",
+    "TypeScript",
+    "PostgreSQL",
+    "Redis",
+    "Docker"
+  ],
+  "website": "",
+  "order": 0
+}

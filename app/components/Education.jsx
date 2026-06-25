@@ -37,7 +37,7 @@ export default function Education({ schools }) {
                                         <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-white shadow-md flex-shrink-0 self-start sm:self-center">
                                             <Image
                                                 src={edu.image}
-                                                alt={edu.institution}
+                                                alt={edu.institution || 'Institution logo'}
                                                 width={64}
                                                 height={64}
                                                 className="w-full h-full object-cover"
@@ -54,11 +54,9 @@ export default function Education({ schools }) {
                                                     {edu.degree}
                                                 </h3>
                                             </div>
-                                            {edu.institution && (
-                                                <Badge className="bg-[hsl(var(--color-accent))] text-white border-0 text-xs sm:text-sm self-start sm:self-center">
-                                                    {edu.institution}
-                                                </Badge>
-                                            )}
+                                            <Badge className="bg-[hsl(var(--color-accent))] text-white border-0 text-xs sm:text-sm self-start sm:self-center">
+                                                {edu.institution || 'University'}
+                                            </Badge>
                                         </div>
                                         
                                         <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-sm sm:text-base text-muted-foreground">

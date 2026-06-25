@@ -1,0 +1,85 @@
+{
+  "skillCategories": [
+    {
+      "title": "Backend Engineering",
+      "icon": "Server",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "skills": [
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "REST APIs",
+        "Docker"
+      ]
+    },
+    {
+      "title": "Blockchain Development",
+      "icon": "Database",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ethereum/ethereum-original.svg",
+      "skills": [
+        "Solidity",
+        "Smart Contracts",
+        "Web3.js",
+        "Ethers.js",
+        "Ethereum",
+        "DeFi",
+        "Multi-chain"
+      ]
+    },
+    {
+      "title": "Programming Languages",
+      "icon": "Code",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/code/code-original.svg",
+      "skills": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Solidity",
+        "Java",
+        "C++",
+        "Go"
+      ]
+    },
+    {
+      "title": "Frontend Development",
+      "icon": "Globe",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "skills": [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "title": "DevOps & Tools",
+      "icon": "Settings",
+      "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      "skills": [
+        "Docker",
+        "Git",
+        "GitHub",
+        "AWS",
+        "Linux",
+        "CI/CD"
+      ]
+    }
+  ],
+  "additionalSkills": [
+    "System Design",
+    "Microservices",
+    "gRPC",
+    "GraphQL",
+    "Redis",
+    "Kafka",
+    "Postman",
+    "VS Code",
+    "Agile",
+    "Scrum",
+    "Research",
+    "Academic Writing"
+  ]
+}

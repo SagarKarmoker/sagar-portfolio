@@ -1,0 +1,30 @@
+{
+  "title": "Taxation System with eKYC Using Blockchain",
+  "name": "Taxation System with eKYC Using Blockchain",
+  "timeline": "Development stage",
+  "date": "2024 - Present",
+  "description": "An integrated blockchain system designed to facilitate the secure and efficient handling of tax processes, coupled with an eKYC mechanism to ensure compliance and authenticity.",
+  "desc": "An integrated blockchain system designed to facilitate the secure and efficient handling of tax processes, coupled with an eKYC mechanism to ensure compliance and authenticity.",
+  "technologies": [
+    "Blockchain",
+    "Solidity",
+    "Smart Contracts",
+    "Node.js",
+    "React",
+    "MongoDB"
+  ],
+  "badges": [
+    "Blockchain",
+    "Finance",
+    "Security",
+    "KYC"
+  ],
+  "category": "Blockchain",
+  "icon": "💰",
+  "website": "",
+  "live": "",
+  "github": "",
+  "coverImage": "",
+  "status": "Development",
+  "order": 30
+}

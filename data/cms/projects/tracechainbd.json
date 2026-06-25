@@ -1,0 +1,27 @@
+{
+  "title": "TraceChainBD",
+  "name": "TraceChainBD",
+  "timeline": "Past project",
+  "date": "2023 - 2024",
+  "description": "A blockchain-based supply chain management system that enhances transparency and traceability in logistics.",
+  "desc": "A blockchain-based supply chain management system that enhances transparency and traceability in logistics.",
+  "technologies": [
+    "Blockchain",
+    "Solidity",
+    "React",
+    "Node.js",
+    "MongoDB"
+  ],
+  "badges": [
+    "Blockchain",
+    "Supply Chain"
+  ],
+  "category": "Blockchain",
+  "icon": "🔗",
+  "website": "",
+  "live": "",
+  "github": "https://github.com/SagarKarmoker/TraceChainBD",
+  "coverImage": "",
+  "status": "Completed",
+  "order": 40
+}

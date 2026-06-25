@@ -67,7 +67,7 @@ export default function Hackathon({ items }) {
                                         </div>
                                         <div className="min-w-0 flex-1">
                                             <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-color-secondary dark:group-hover:text-color-primary transition-colors duration-300">
-                                                {hackathon.title}
+                                                {hackathon.title || hackathon.achievement || 'Hackathon'}
                                             </h3>
                                         </div>
                                     </div>

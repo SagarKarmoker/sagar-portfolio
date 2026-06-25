@@ -6,13 +6,13 @@ export default function MyProjects({ projects: projectsProp }) {
     const projects = (projectsProp || []).map(project => ({
         title: project.name,
         description: project.desc,
-        technologies: project.badges,
+        technologies: project.technologies || project.badges || [],
         date: project.timeline,
         status: project.status,
         github: project.github || null,
-        live: project.website || null,
-        category: project.status,
-        icon: '💻'
+        live: project.live || project.website || null,
+        category: project.category || project.status,
+        icon: project.icon || '💻'
     }));
 
     return (

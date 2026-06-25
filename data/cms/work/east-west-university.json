@@ -1,0 +1,22 @@
+{
+  "image": "/ewu.png",
+  "org": "East West University",
+  "position": "Graduate Teaching Assistant (GTA)",
+  "time": "February 2025 - December 2025",
+  "current": false,
+  "location": "Dhaka, Bangladesh",
+  "description": "Assisted professors in teaching computer science courses and mentoring students in programming and software development concepts.",
+  "responsibilities": [
+    "Conducted lab sessions for CSE412 Software Engineering, CSE479 Web Programming, and CSE360 Computer Architecture",
+    "Provided one-on-one tutoring to struggling students",
+    "Graded assignments and provided constructive feedback",
+    "Assisted in curriculum development and course materials"
+  ],
+  "technologies": [
+    "Software Engineering",
+    "Web Development",
+    "Computer Architecture"
+  ],
+  "website": "https://www.ewubd.edu",
+  "order": 30
+}

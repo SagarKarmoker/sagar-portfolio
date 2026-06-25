@@ -1,0 +1,27 @@
+{
+  "title": "TutorBridge",
+  "name": "TutorBridge",
+  "timeline": "Past project",
+  "date": "2023 - 2024",
+  "description": "A freelance teaching platform for Android developed using Java, XML, and Firebase.",
+  "desc": "A freelance teaching platform for Android developed using Java, XML, and Firebase.",
+  "technologies": [
+    "Java",
+    "XML",
+    "Firebase",
+    "Android Studio"
+  ],
+  "badges": [
+    "Java",
+    "XML",
+    "Firebase"
+  ],
+  "category": "Mobile Development",
+  "icon": "📱",
+  "website": "",
+  "live": "",
+  "github": "https://github.com/SagarKarmoker/TutorBridge",
+  "coverImage": "",
+  "status": "Completed",
+  "order": 50
+}

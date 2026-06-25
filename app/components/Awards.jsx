@@ -63,7 +63,7 @@ export default function Awards({ items }) {
                                             </div>
                                             <div className="min-w-0 flex-1">
                                                 <h3 className="text-lg sm:text-xl font-semibold text-foreground transition-colors duration-300">
-                                                    {award.title}
+                                                    {award.title || award.achievement}
                                                 </h3>
                                                 <Badge className="bg-[hsl(var(--color-secondary)_/_0.08)] text-[hsl(var(--color-secondary))] text-xs mt-1">
                                                     {award.category}

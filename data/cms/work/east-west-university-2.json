@@ -1,0 +1,23 @@
+{
+  "image": "/ewu.png",
+  "org": "East West University",
+  "position": "Undergraduate Teaching Assistant (UTA)",
+  "time": "October 2023 - Januray 2025",
+  "location": "Dhaka, Bangladesh",
+  "description": "Assisting professors in teaching computer science courses and mentoring students in programming and software development concepts.",
+  "responsibilities": [
+    "Conducting lab sessions for programming courses",
+    "Providing one-on-one tutoring to struggling students",
+    "Grading assignments and providing constructive feedback",
+    "Assisting in curriculum development and course materials"
+  ],
+  "technologies": [
+    "Java",
+    "Python",
+    "C++",
+    "Data Structures",
+    "Algorithms"
+  ],
+  "website": "https://www.ewubd.edu",
+  "order": 40
+}

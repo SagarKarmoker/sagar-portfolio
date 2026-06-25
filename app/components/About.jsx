@@ -97,7 +97,7 @@ function About({ expertise: expertiseProp }) {
                                         <item.icon className="w-4 h-4" />
                                     </div>
                                     <div className="min-w-0">
-                                        <h3 className="text-sm font-semibold text-foreground">{item.title}</h3>
+                                        <h3 className="text-sm font-semibold text-foreground">{item.title || 'Expertise'}</h3>
                                         <p className="text-xs text-muted-foreground leading-relaxed mt-1">{item.description}</p>
                                     </div>
                                 </div>

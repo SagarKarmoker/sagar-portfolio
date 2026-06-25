@@ -34,10 +34,12 @@ export default config({
                 icon: fields.text({ label: 'Icon (emoji)' }),
                 website: fields.text({ label: 'Website URL' }),
                 github: fields.text({ label: 'GitHub URL' }),
+                live: fields.text({ label: 'Live URL' }),
                 timeline: fields.text({ label: 'Timeline' }),
                 date: fields.text({ label: 'Date' }),
                 status: fields.text({ label: 'Status' }),
                 coverImage: fields.text({ label: 'Cover Image URL' }),
+                order: fields.integer({ label: 'Display Order', description: 'Lower = appears first. Current = 0, older = 10, 20, …' }),
             },
         }),
         workExperience: collection({
@@ -62,6 +64,7 @@ export default config({
                     itemLabel: (props) => props.value || 'Tech',
                 }),
                 website: fields.text({ label: 'Website URL' }),
+                order: fields.integer({ label: 'Display Order', description: 'Lower = appears first. Current = 0, older = 10, 20, …' }),
             },
         }),
         education: collection({
@@ -85,6 +88,7 @@ export default config({
                     itemLabel: (props) => props.value || 'Achievement',
                 }),
                 website: fields.text({ label: 'Website URL' }),
+                order: fields.integer({ label: 'Display Order', description: 'Lower = appears first.' }),
             },
         }),
         awards: collection({
@@ -102,6 +106,7 @@ export default config({
                 icon: fields.text({ label: 'Icon (emoji)' }),
                 category: fields.text({ label: 'Category' }),
                 achievement: fields.text({ label: 'Achievement' }),
+                order: fields.integer({ label: 'Display Order', description: 'Lower = appears first.' }),
             },
         }),
         hackathons: collection({
@@ -116,6 +121,7 @@ export default config({
                 location: fields.text({ label: 'Location' }),
                 description: fields.text({ label: 'Description', multiline: true }),
                 achievement: fields.text({ label: 'Achievement (Winner/Finalist/Participant)' }),
+                order: fields.integer({ label: 'Display Order', description: 'Lower = appears first.' }),
             },
         }),
         expertise: collection({
@@ -127,6 +133,7 @@ export default config({
                 icon: fields.text({ label: 'Icon Name' }),
                 title: fields.text({ label: 'Title', validation: { isRequired: true } }),
                 description: fields.text({ label: 'Description', multiline: true }),
+                order: fields.integer({ label: 'Display Order', description: 'Lower = appears first.' }),
             },
         }),
     },

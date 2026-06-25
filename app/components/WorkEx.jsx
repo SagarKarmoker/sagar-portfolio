@@ -8,7 +8,7 @@ import Image from 'next/image'
 export default function WorkEx({ jobs }) {
     const workExperience = (jobs || []).map(job => ({
         image: job.image,
-        company: job.org,
+        company: job.org || job.position,
         title: job.position,
         period: job.time,
         location: job.location || '',
@@ -56,7 +56,7 @@ export default function WorkEx({ jobs }) {
                                                 <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-white shadow-md flex-shrink-0 self-start sm:self-center">
                                                     <Image
                                                         src={job.image}
-                                                        alt={job.company}
+                                                        alt={job.company || 'Company logo'}
                                                         width={64}
                                                         height={64}
                                                         className="w-full h-full object-cover"

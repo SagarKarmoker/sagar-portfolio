@@ -1,0 +1,44 @@
+{
+  "methods": [
+    {
+      "icon": "Linkedin",
+      "title": "LinkedIn",
+      "description": "Connect with me professionally",
+      "link": "https://www.linkedin.com/in/sagarkarmoker",
+      "color": "text-blue-600 dark:text-blue-400",
+      "bgColor": "bg-blue-100 dark:bg-blue-900/30"
+    },
+    {
+      "icon": "GraduationCap",
+      "title": "Google Scholar",
+      "description": "View my research publications",
+      "link": "https://scholar.google.com/citations?user=AOEyXnEAAAAJ&hl=en&authuser=1",
+      "color": "text-blue-500 dark:text-blue-400",
+      "bgColor": "bg-blue-100 dark:bg-blue-900/30"
+    },
+    {
+      "icon": "IdCard",
+      "title": "ORCID",
+      "description": "0000-0000-0000-0000",
+      "link": "https://orcid.org/",
+      "color": "text-green-600 dark:text-green-400",
+      "bgColor": "bg-green-100 dark:bg-green-900/30"
+    },
+    {
+      "icon": "Github",
+      "title": "GitHub",
+      "description": "Check out my code and open source contributions",
+      "link": "https://github.com/SagarKarmoker",
+      "color": "text-slate-700 dark:text-slate-300",
+      "bgColor": "bg-slate-100 dark:bg-slate-700"
+    },
+    {
+      "icon": "Mail",
+      "title": "Email",
+      "description": "sagarkarmoker.official@gmail.com",
+      "link": "mailto:sagarkarmoker.official@gmail.com",
+      "color": "text-red-600 dark:text-red-400",
+      "bgColor": "bg-red-100 dark:bg-red-900/30"
+    }
+  ]
+}

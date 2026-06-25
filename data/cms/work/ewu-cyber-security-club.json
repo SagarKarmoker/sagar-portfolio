@@ -1,0 +1,23 @@
+{
+  "image": "/ewucsc.jpg",
+  "org": "EWU Cyber Security Club",
+  "position": "Web Development Lead",
+  "time": "October 2024 - Present",
+  "location": "Dhaka, Bangladesh",
+  "description": "Leading web development initiatives and managing the club's online presence while mentoring junior developers.",
+  "responsibilities": [
+    "Leading web development projects for the club",
+    "Mentoring junior developers and conducting workshops",
+    "Managing the club's website and social media presence",
+    "Collaborating with other departments for technical solutions"
+  ],
+  "technologies": [
+    "React",
+    "Next.js",
+    "JavaScript",
+    "HTML/CSS",
+    "Git"
+  ],
+  "website": "",
+  "order": 50
+}
