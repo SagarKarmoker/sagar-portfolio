@@ -12,7 +12,19 @@ let lastGitHubResponse = null;
 
 const originalFetch = globalThis.fetch;
 globalThis.fetch = async function (input, init) {
-  const urlStr = typeof input === 'string' ? input : (input && input.url) || '';
+  let urlStr = '';
+  if (typeof input === 'string') {
+    urlStr = input;
+  } else if (input instanceof URL) {
+    urlStr = input.toString();
+  } else if (input && typeof input === 'object' && 'url' in input) {
+    urlStr = input.url;
+  } else if (input && typeof input.toString === 'function') {
+    urlStr = input.toString();
+  }
+
+  console.log('[keystatic fetch intercept] url:', urlStr);
+
   if (urlStr.includes('github.com')) {
     lastGitHubRequest = {
       url: urlStr,
