@@ -9,9 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Sora', 'sans-serif'],
-        sora: ['Sora', 'sans-serif'],
-        serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+        sans: ['"DM Sans"', 'sans-serif'],
+        serif: ['"Chelsea Market"', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
@@ -58,8 +57,7 @@ module.exports = {
         'color-primary': 'hsl(var(--color-primary))',
         'color-secondary': 'hsl(var(--color-secondary))',
         'color-dark': 'hsl(var(--color-dark))',
-        'color-accent': 'hsl(var(--color-accent))',
-        'color-orange': 'hsl(var(--color-orange))'
+        'color-accent': 'hsl(var(--color-accent))'
       },
       borderRadius: {
         lg: 'var(--radius)',

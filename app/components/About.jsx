@@ -40,22 +40,22 @@ function About({ expertise: expertiseProp }) {
                         <div className="bg-card rounded-2xl p-6 sm:p-8 shadow-sm border border-border">
                             <div className="space-y-5 text-foreground/80 leading-relaxed">
                                 <p className="text-lg text-foreground font-serif italic">
-                                    &ldquo;I refuse to choose between the <Highlighter color="#C17A47">ivory tower</Highlighter> and the <Highlighter color="#2B7A78">shipping dock</Highlighter>.&rdquo;
+                                    &ldquo;I refuse to choose between the <Highlighter color="#809fff">ivory tower</Highlighter> and the <Highlighter color="#c91b68">shipping dock</Highlighter>.&rdquo;
                                 </p>
                                 <p>
                                     I&apos;m <strong className="text-foreground">Sagar Karmoker</strong> — currently an MSc student, a{' '}
                                     <span className="text-[hsl(var(--color-secondary))] font-medium">Backend &amp; Blockchain Engineer</span> at Core Devs Ltd,
                                     and a former <span className="text-[hsl(var(--color-accent))] font-medium">Research Assistant</span> at BRAC University.
-                                    My days oscillate between writing <Highlighter color="#2B7A78">smart contracts</Highlighter> and <Highlighter color="#C17A47">writing papers</Highlighter>.
+                                    My days oscillate between writing <Highlighter color="#c91b68">smart contracts</Highlighter> and <Highlighter color="#809fff">writing papers</Highlighter>.
                                 </p>
                                 <div className="border-l-2 border-[hsl(var(--color-accent)_/_0.3)] pl-4 italic text-foreground/70">
                                     <p>Research Assistant @ BRAC University &mdash; blockchain consensus, supply chain security, eKYC identity systems.</p>
                                     <p className="mt-2">Blockchain Developer @ AHOM Limited &mdash; multi-chain wallet infrastructure spanning 101+ chains.</p>
                                 </div>
                                 <p>
-                                    I&apos;m actively <Highlighter color="#C17A47">seeking PhD opportunities</Highlighter> in Computer Science,
-                                    with research interests at the intersection of <Highlighter color="#2B7A78">blockchain scalability</Highlighter>, distributed systems, and formal verification.
-                                    My goal: <Highlighter color="#2B7A78">bring the rigor of academia to the urgency of engineering</Highlighter>.
+                                    I&apos;m actively <Highlighter color="#809fff">seeking PhD opportunities</Highlighter> in Computer Science,
+                                    with research interests at the intersection of <Highlighter color="#c91b68">blockchain scalability</Highlighter>, distributed systems, and formal verification.
+                                    My goal: <Highlighter color="#c91b68">bring the rigor of academia to the urgency of engineering</Highlighter>.
                                 </p>
                             </div>
                         </div>

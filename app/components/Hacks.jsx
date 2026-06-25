@@ -14,11 +14,11 @@ export default function Hacks() {
             case 'Winner':
                 return 'bg-gradient-to-r from-yellow-400 to-yellow-600';
             case 'Participant':
-                return 'bg-gradient-to-r from-slate-blue to-crimson';
+                return 'bg-gradient-to-r from-[hsl(var(--color-secondary))] to-[hsl(var(--color-accent))]';
             case 'Runner-up':
                 return 'bg-gradient-to-r from-gray-400 to-gray-600';
             default:
-                return 'bg-gradient-to-r from-slate-blue to-crimson';
+                return 'bg-gradient-to-r from-[hsl(var(--color-secondary))] to-[hsl(var(--color-accent))]';
         }
     };
 
@@ -35,13 +35,13 @@ export default function Hacks() {
                         whileHover={{ y: -8, scale: 1.02 }}
                         className="group"
                     >
-                        <Card className="relative bg-white dark:bg-color-dark border border-color-primary/20 dark:border-color-secondary/30 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+                        <Card className="relative bg-card border border-border shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
                             {/* Background Pattern */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-color-primary/5 to-color-secondary/5 dark:from-color-primary/10 dark:to-color-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            
+                            <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--color-secondary)_/_0.05)] to-[hsl(var(--color-accent)_/_0.05)] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
                             {/* Achievement Badge */}
                             {event.achievement && (
-                                <motion.div 
+                                <motion.div
                                     className="absolute -top-4 right-6 z-10"
                                     initial={{ scale: 0, rotate: -180 }}
                                     whileInView={{ scale: 1, rotate: 0 }}
@@ -54,24 +54,24 @@ export default function Hacks() {
                                     </Badge>
                                 </motion.div>
                             )}
-                            
+
                             <CardContent className="p-8 relative z-10">
                                 <div className="flex flex-col lg:flex-row items-start space-y-6 lg:space-y-0 lg:space-x-8">
                                     {/* Icon Section */}
-                                    <motion.div 
+                                    <motion.div
                                         className="flex-shrink-0"
                                         whileHover={{ rotate: 5, scale: 1.1 }}
                                         transition={{ duration: 0.3 }}
                                     >
-                                        <div className="w-20 h-20 bg-gradient-to-br from-color-primary/20 to-color-secondary/20 dark:from-color-primary/10 dark:to-color-secondary/10 rounded-3xl flex items-center justify-center text-3xl border-2 border-color-primary/30 dark:border-color-secondary/30 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:border-color-accent/50">
+                                        <div className="w-20 h-20 bg-gradient-to-br from-[hsl(var(--color-secondary)_/_0.15)] to-[hsl(var(--color-accent)_/_0.1)] rounded-3xl flex items-center justify-center text-3xl border-2 border-[hsl(var(--color-secondary)_/_0.2)] shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:border-[hsl(var(--color-accent)_/_0.4)]">
                                             {event.icon}
                                         </div>
                                     </motion.div>
 
                                     {/* Content Section */}
                                     <div className="flex-1 space-y-4">
-                                        <motion.h3 
-                                            className="text-2xl lg:text-3xl font-bold text-foreground group-hover:text-slate-blue dark:group-hover:text-color-primary transition-colors duration-300"
+                                        <motion.h3
+                                            className="text-2xl lg:text-3xl font-bold text-foreground group-hover:text-[hsl(var(--color-accent))] transition-colors duration-300"
                                             initial={{ opacity: 0, x: -20 }}
                                             whileInView={{ opacity: 1, x: 0 }}
                                             transition={{ duration: 0.6, delay: index * 0.2 + 0.1 }}
@@ -79,9 +79,9 @@ export default function Hacks() {
                                         >
                                             {event.title}
                                         </motion.h3>
-                                        
+
                                         {/* Event Details */}
-                                        <motion.div 
+                                        <motion.div
                                             className="flex flex-wrap items-center gap-6 text-muted-foreground"
                                             initial={{ opacity: 0, y: 10 }}
                                             whileInView={{ opacity: 1, y: 0 }}
@@ -89,21 +89,21 @@ export default function Hacks() {
                                             viewport={{ once: true }}
                                         >
                                             <div className="flex items-center bg-muted px-3 py-2 rounded-lg">
-                                                <Calendar className="w-4 h-4 mr-2 text-slate-blue" />
+                                                <Calendar className="w-4 h-4 mr-2 text-[hsl(var(--color-secondary))]" />
                                                 <span className="text-sm font-medium">{event.date}</span>
                                             </div>
                                             <div className="flex items-center bg-muted px-3 py-2 rounded-lg">
-                                                <MapPin className="w-4 h-4 mr-2 text-crimson" />
+                                                <MapPin className="w-4 h-4 mr-2 text-[hsl(var(--color-accent))]" />
                                                 <span className="text-sm font-medium">{event.location}</span>
                                             </div>
                                             <div className="flex items-center bg-muted px-3 py-2 rounded-lg">
-                                                <Users className="w-4 h-4 mr-2 text-color-primary" />
+                                                <Users className="w-4 h-4 mr-2 text-[hsl(var(--color-secondary))]" />
                                                 <span className="text-sm font-medium">Hackathon</span>
                                             </div>
                                         </motion.div>
-                                        
+
                                         {/* Description */}
-                                        <motion.div 
+                                        <motion.div
                                             className="flex items-start space-x-3"
                                             initial={{ opacity: 0, y: 10 }}
                                             whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ export default function Hacks() {
                                             viewport={{ once: true }}
                                         >
                                             <div className="flex-shrink-0 mt-1">
-                                                <div className="w-2 h-2 bg-gradient-to-r from-slate-blue to-crimson rounded-full"></div>
+                                                <div className="w-2 h-2 bg-gradient-to-r from-[hsl(var(--color-secondary))] to-[hsl(var(--color-accent))] rounded-full"></div>
                                             </div>
                                             <p className="text-muted-foreground leading-relaxed text-lg">
                                                 {event.description}
@@ -125,7 +125,7 @@ export default function Hacks() {
                                             transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
                                             viewport={{ once: true }}
                                         >
-                                            <div className="inline-flex items-center space-x-2 text-slate-blue dark:text-color-primary hover:text-crimson transition-colors duration-300 cursor-pointer group/btn">
+                                            <div className="inline-flex items-center space-x-2 text-[hsl(var(--color-accent))] hover:text-[hsl(var(--color-secondary))] transition-colors duration-300 cursor-pointer group/btn">
                                                 <span className="font-medium">View Details</span>
                                                 <ExternalLink className="w-4 h-4 transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                                             </div>
