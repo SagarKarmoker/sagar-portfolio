@@ -5,8 +5,8 @@ Steps
 1. Go to https://github.com/settings/developers â New OAuth App
 2. Fill in:
   - Application name: sagar-portfolio-cms
-  - Homepage URL: http://localhost:3000 (dev) or your deployed URL
-  - Authorization callback URL: http://localhost:3000/api/keystatic/github/callback (dev) or https://yoursite.com/api/keystatic/github/callback
+  - Homepage URL: http://localhost:3000 (dev) or your deployed URL (e.g., https://sagarkarmoker.me)
+  - Authorization callback URL: http://localhost:3000/api/keystatic/github/oauth/callback (dev) or https://sagarkarmoker.me/api/keystatic/github/oauth/callback (production)
 3. Click Register application
 4. Copy Client ID â KEYSTATIC_GITHUB_CLIENT_ID
 5. Click Generate a new client secret â copy secret â KEYSTATIC_GITHUB_CLIENT_SECRET
