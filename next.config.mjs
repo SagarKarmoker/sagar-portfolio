@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    env: {
+        KEYSTATIC_GITHUB_CLIENT_ID: process.env.KEYSTATIC_GITHUB_CLIENT_ID,
+        KEYSTATIC_GITHUB_REPO_OWNER: process.env.KEYSTATIC_GITHUB_REPO_OWNER,
+        KEYSTATIC_GITHUB_REPO_NAME: process.env.KEYSTATIC_GITHUB_REPO_NAME,
+    },
     transpilePackages: ['@keystatic/next'],
+    // ponytail: force Node.js runtime resolution for @keystatic/core so route handler
+    // gets the 'node' export-condition variant instead of the 'react-server' stub.
+    // Revisit when @keystatic/next or Turbopack export-condition resolution improves.
+    serverExternalPackages: ['@keystatic/core'],
     images: {
         remotePatterns: [
             {
