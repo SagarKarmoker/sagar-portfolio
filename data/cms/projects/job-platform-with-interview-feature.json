@@ -1,0 +1,29 @@
+{
+  "title": "Job Platform with Interview Feature",
+  "name": "Job Platform with Interview Feature",
+  "timeline": "Past project",
+  "date": "2023 - 2024",
+  "description": "An online platform that connects job seekers and employers, featuring built-in tools for conducting live interviews and assessments.",
+  "desc": "An online platform that connects job seekers and employers, featuring built-in tools for conducting live interviews and assessments.",
+  "technologies": [
+    "React",
+    "Node.js",
+    "WebRTC",
+    "Socket.io",
+    "MongoDB"
+  ],
+  "badges": [
+    "Web Development",
+    "React",
+    "Node.js",
+    "WebRTC"
+  ],
+  "category": "Web Development",
+  "icon": "💼",
+  "website": "",
+  "live": "",
+  "github": "",
+  "coverImage": "",
+  "status": "Completed",
+  "order": 20
+}

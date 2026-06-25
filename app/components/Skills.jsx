@@ -2,13 +2,11 @@ import React from 'react'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { IconCloud } from '@/components/ui/icon-cloud'
 import { Badge } from "@/components/ui/badge"
-import skillsData from '@/data/skills.json'
-import logosData from '@/data/logos.json'
 import { getIcon } from '@/lib/icons'
 
-export default function Skills() {
-    const { skillCategories } = skillsData
-    const logos = logosData
+export default function Skills({ categories, logos: logosProp }) {
+    const skillCategories = categories || []
+    const logos = logosProp || {}
 
     // All image URLs for IconCloud
     const allLogos = Object.values(logos).flatMap(cat => Object.values(cat))

@@ -1,0 +1,28 @@
+{
+  "image": "/file.svg",
+  "position": "Junior Blockchain Developer",
+  "time": "December 2024 - August 2025",
+  "location": "Remote (UK)",
+  "current": false,
+  "description": "Developed and maintained blockchain infrastructure and systems for a UK-based company, focusing on wallet management, transaction handling, and DeFi integrations.",
+  "responsibilities": [
+    "Engineered a scalable Wallet Management System capable of generating and managing EOAs across 101 blockchain networks, streamlining onboarding and integration",
+    "Built and deployed an automated transaction handler for a centralized exchange, ensuring secure and efficient fund transfers to designated hot wallets",
+    "Designed and implemented a real-time Oracle Price Aggregator to identify optimal swap routes across multiple DeFi protocols, improving transaction efficiency and cost savings",
+    "Created detailed instructional materials and technical documentation to support internal training and enhance comprehension of complex blockchain workflows"
+  ],
+  "technologies": [
+    "Blockchain",
+    "Solidity",
+    "Web3.js",
+    "Ethereum",
+    "DeFi",
+    "Smart Contracts",
+    "Oracle",
+    "Multi-chain",
+    "JavaScript",
+    "Node.js"
+  ],
+  "order": 20,
+  "org": "AHOM Limited"
+}

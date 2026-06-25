@@ -1,0 +1,25 @@
+{
+  "image": "/brac.png",
+  "position": "Research Assistant (RA) - Department of CSE",
+  "time": "August 2025 - December 2025",
+  "location": "Dhaka, Bangladesh",
+  "current": false,
+  "description": "Conducting research in blockchain technology, distributed systems, and backend architecture while pursuing PhD opportunities.",
+  "responsibilities": [
+    "Researching blockchain scalability solutions and consensus mechanisms",
+    "Developing prototype systems for distributed ledger technology",
+    "Publishing research papers on blockchain and backend systems",
+    "Collaborating with faculty on cutting-edge computer science research projects"
+  ],
+  "technologies": [
+    "Blockchain",
+    "Research",
+    "Distributed Systems",
+    "Python",
+    "Solidity",
+    "Academic Writing"
+  ],
+  "website": "https://www.bracu.ac.bd",
+  "order": 10,
+  "org": "BRAC University"
+}

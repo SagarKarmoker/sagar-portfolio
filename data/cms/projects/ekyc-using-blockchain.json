@@ -1,0 +1,28 @@
+{
+  "title": "eKYC using Blockchain",
+  "name": "eKYC using Blockchain",
+  "timeline": "Current project",
+  "date": "2024 - Present",
+  "description": "A blockchain-based system designed to streamline the verification processes required for KYC compliance, increasing security and privacy through decentralized data management.",
+  "desc": "A blockchain-based system designed to streamline the verification processes required for KYC compliance, increasing security and privacy through decentralized data management.",
+  "technologies": [
+    "Blockchain",
+    "Solidity",
+    "Smart Contracts",
+    "Web3.js",
+    "React"
+  ],
+  "badges": [
+    "Blockchain",
+    "Security",
+    "Data Management"
+  ],
+  "category": "Blockchain",
+  "icon": "🔐",
+  "website": "",
+  "live": "",
+  "github": "",
+  "coverImage": "",
+  "status": "In Progress",
+  "order": 10
+}

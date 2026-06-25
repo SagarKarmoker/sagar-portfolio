@@ -1,0 +1,22 @@
+{
+  "image": "/ewucsc.jpg",
+  "position": "Web Development Lead",
+  "time": "October 2024 - December 2025",
+  "location": "Dhaka, Bangladesh",
+  "current": false,
+  "description": "Leading web development initiatives and managing the club's online presence while mentoring junior developers.",
+  "responsibilities": [
+    "Leading web development projects for the club",
+    "Mentoring junior developers and conducting workshops",
+    "Managing the club's website and social media presence",
+    "Collaborating with other departments for technical solutions"
+  ],
+  "technologies": [
+    "React",
+    "Next.js",
+    "JavaScript",
+    "HTML/CSS",
+    "Git"
+  ],
+  "order": 50
+}

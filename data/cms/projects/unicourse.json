@@ -1,0 +1,29 @@
+{
+  "title": "UniCourse",
+  "name": "UniCourse",
+  "timeline": "Current project",
+  "date": "2024 - Present",
+  "description": "A full-fledged Learning Management System built with HTML, JavaScript, Tailwind CSS, and PHP.",
+  "desc": "A full-fledged Learning Management System built with HTML, JavaScript, Tailwind CSS, and PHP.",
+  "technologies": [
+    "HTML",
+    "JavaScript",
+    "Tailwind CSS",
+    "PHP",
+    "MySQL"
+  ],
+  "badges": [
+    "HTML",
+    "JavaScript",
+    "Tailwind CSS",
+    "PHP"
+  ],
+  "category": "Web Development",
+  "icon": "🎓",
+  "website": "",
+  "live": "",
+  "github": "https://github.com/SagarKarmoker/UniCourse",
+  "coverImage": "",
+  "status": "Live",
+  "order": 60
+}

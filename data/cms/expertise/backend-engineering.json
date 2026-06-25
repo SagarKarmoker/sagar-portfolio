@@ -1,0 +1,6 @@
+{
+  "icon": "Server",
+  "title": "Backend Engineering",
+  "description": "Building scalable backend systems, REST APIs, and microservices architecture. Experienced in Node.js, TypeScript, PostgreSQL, Redis, and Docker. Passionate about system design and distributed systems.",
+  "order": 10
+}

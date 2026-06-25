@@ -1,75 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: "Sora", sans-serif;
-}
-
-.sora {
-  font-optical-sizing: auto;
+  font-family: 'DM Sans', sans-serif;
 }
 
 @layer base {
   :root {
-    --background: 40 23% 97%;
-    --foreground: 30 10% 16%;
-    --card: 0 0% 100%;
-    --card-foreground: 30 10% 16%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 30 10% 16%;
-    --primary: 40 20% 92%;
-    --primary-foreground: 30 10% 16%;
-    --secondary: 180 55% 25%;
+    --background: 220 16% 96%;
+    --foreground: 220 16% 12%;
+    --card: 220 14% 98%;
+    --card-foreground: 220 16% 12%;
+    --popover: 220 14% 98%;
+    --popover-foreground: 220 16% 12%;
+    --primary: 335 76% 45%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 335 76% 45%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 40 15% 94%;
-    --muted-foreground: 30 5% 46%;
-    --accent: 24 55% 54%;
+    --muted: 220 12% 92%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 224 100% 50%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 84% 60%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
-    --border: 40 15% 88%;
-    --input: 40 15% 88%;
-    --ring: 24 55% 54%;
+    --border: 220 12% 85%;
+    --input: 220 12% 85%;
+    --ring: 335 76% 45%;
     --radius: 0.5rem;
 
     /* Brand colors */
-    --color-primary: 40 20% 92%;
-    --color-secondary: 180 55% 25%;
-    --color-dark: 30 10% 16%;
-    --color-accent: 24 55% 54%;
-    --color-orange: 24 60% 45%;
+    --color-primary: 335 76% 45%;
+    --color-secondary: 335 76% 45%;
+    --color-dark: 220 16% 6%;
+    --color-accent: 224 100% 50%;
   }
   .dark {
-    --background: 220 15% 12%;
-    --foreground: 38 10% 82%;
-    --card: 220 15% 14%;
-    --card-foreground: 38 10% 82%;
-    --popover: 220 15% 14%;
-    --popover-foreground: 38 10% 82%;
-    --primary: 220 15% 20%;
-    --primary-foreground: 38 10% 82%;
-    --secondary: 180 35% 42%;
-    --secondary-foreground: 220 15% 12%;
-    --muted: 220 12% 18%;
-    --muted-foreground: 38 5% 60%;
-    --accent: 24 35% 48%;
-    --accent-foreground: 38 10% 90%;
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 38 10% 82%;
-    --border: 220 12% 22%;
-    --input: 220 12% 22%;
-    --ring: 24 35% 48%;
+    --background: 220 16% 6%;
+    --foreground: 200 3% 79%;
+    --card: 220 14% 9%;
+    --card-foreground: 200 3% 79%;
+    --popover: 220 14% 9%;
+    --popover-foreground: 200 3% 79%;
+    --primary: 335 76% 45%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 335 76% 45%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 12% 12%;
+    --muted-foreground: 200 3% 55%;
+    --accent: 224 100% 75%;
+    --accent-foreground: 220 16% 6%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 12% 16%;
+    --input: 220 12% 16%;
+    --ring: 335 76% 45%;
 
-    /* Brand colors dark */
-    --color-primary: 220 15% 20%;
-    --color-secondary: 180 35% 42%;
-    --color-dark: 220 15% 12%;
-    --color-accent: 24 35% 48%;
-    --color-orange: 24 40% 40%;
+    --color-primary: 335 76% 45%;
+    --color-secondary: 335 76% 45%;
+    --color-dark: 220 16% 6%;
+    --color-accent: 224 100% 75%;
   }
+}
+
+/* View Transitions — scoped to AnimatedThemeToggler */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html[data-magicui-theme-vt="active"]::view-transition-group(root) {
+  animation-duration: var(--magicui-theme-toggle-vt-duration);
 }
 
 @layer base {
@@ -84,23 +88,24 @@ body {
   }
 
   ::selection {
-    background-color: hsl(var(--color-secondary) / 0.2);
+    background-color: hsl(var(--color-secondary) / 0.3);
     color: hsl(var(--foreground));
   }
 }
 
 /* ===== Section Heading Styles ===== */
 
-/* Academic: serif, left-aligned, copper accent */
+/* Academic: left-aligned, bold heading + underline */
 .section-academic {
   margin-bottom: 3rem;
 }
 .section-academic h2 {
-  font-family: 'DM Serif Display', Georgia, serif;
+  font-family: 'Chelsea Market', system-ui, sans-serif;
   font-size: 2.25rem;
-  line-height: 1.15;
+  line-height: 1.2;
   color: hsl(var(--foreground));
   margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
 }
 .section-academic .subtitle {
   font-size: 1.05rem;
@@ -113,12 +118,12 @@ body {
   display: block;
   width: 3rem;
   height: 3px;
-  background: hsl(var(--color-accent));
+  background: hsl(var(--color-secondary));
   border-radius: 999px;
   margin-top: 1rem;
 }
 
-/* Industry: sans, centered, teal mono prefix */
+/* Industry: centered, mono prefix, red accent */
 .section-industry {
   margin-bottom: 3rem;
   text-align: center;
@@ -132,11 +137,13 @@ body {
   margin-bottom: 0.5rem;
 }
 .section-industry h2 {
+  font-family: 'Chelsea Market', system-ui, sans-serif;
   font-size: 2.25rem;
   font-weight: 700;
   color: hsl(var(--foreground));
   margin-bottom: 0.75rem;
   line-height: 1.2;
+  letter-spacing: -0.01em;
 }
 .section-industry .subtitle {
   font-size: 1.05rem;
@@ -146,16 +153,18 @@ body {
   line-height: 1.6;
 }
 
-/* Compact: for minor sections like Awards, Hackathons */
+/* Compact: for minor sections */
 .section-compact {
   margin-bottom: 2.5rem;
   text-align: center;
 }
 .section-compact h2 {
+  font-family: 'Chelsea Market', system-ui, sans-serif;
   font-size: 1.875rem;
   font-weight: 700;
   color: hsl(var(--foreground));
   margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
 }
 .section-compact .subtitle {
   font-size: 0.95rem;
@@ -164,12 +173,12 @@ body {
   margin: 0 auto;
 }
 
-/* Bridge divider between academic & industry sections */
+/* Bridge divider */
 .bridge-divider {
   position: relative;
   height: 1px;
   width: 100%;
-  background: linear-gradient(to right, hsl(var(--color-accent) / 0.3), hsl(var(--color-secondary) / 0.3));
+  background: linear-gradient(to right, hsl(var(--color-secondary) / 0.3), transparent);
   margin: 0.5rem 0;
 }
 .bridge-divider::after {
@@ -190,7 +199,7 @@ body {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
@@ -204,11 +213,11 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted-foreground) / 0.3);
+  background: hsl(var(--muted-foreground) / 0.2);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--color-secondary) / 0.5);
+  background: hsl(var(--color-secondary) / 0.4);
 }
 
 /* ===== Glass Card ===== */
@@ -218,7 +227,7 @@ body {
   border: 1px solid hsl(var(--border));
 }
 
-/* ===== Mobile utilities (keep existing) ===== */
+/* ===== Mobile utilities ===== */
 @layer utilities {
   .touch-target {
     @apply min-h-[44px] min-w-[44px];

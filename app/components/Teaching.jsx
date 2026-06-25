@@ -2,11 +2,13 @@ import React from 'react'
 import { BlurFade } from '@/components/ui/blur-fade'
 import { NumberTicker } from '@/components/ui/number-ticker'
 import { Badge } from '@/components/ui/badge'
+import Image from 'next/image'
 import { GraduationCap, BookOpen, Users, Calendar, MapPin } from 'lucide-react'
 
 export default function Teaching() {
     const teachingPositions = [
         {
+            image: "/ewu.png",
             institution: "East West University",
             position: "Graduate Teaching Assistant (GTA)",
             period: "February 2025 - December 2025",
@@ -27,6 +29,7 @@ export default function Teaching() {
             impact: "Mentored 100+ students across 3 courses"
         },
         {
+            image: "/ewu.png",
             institution: "East West University",
             position: "Undergraduate Teaching Assistant (UTA)",
             period: "October 2023 - January 2025",
@@ -94,80 +97,101 @@ export default function Teaching() {
             <div className="space-y-6 sm:space-y-8">
                 {teachingPositions.map((position, index) => (
                     <BlurFade key={index} delay={0.1 + index * 0.1} duration={0.6} offset={8}>
-                        <div className="bg-card rounded-xl p-5 sm:p-6 shadow-sm border border-border">
-                            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 sm:mb-6">
-                                <div className="flex-1">
-                                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
-                                        <h3 className="text-xl sm:text-2xl font-bold text-foreground">
-                                            {position.position}
-                                        </h3>
-                                        {position.current && (
-                                            <Badge className="bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 w-fit">
-                                                Current
-                                            </Badge>
-                                        )}
-                                    </div>
-                                    <div className="text-lg sm:text-xl font-semibold text-[hsl(var(--color-secondary))] mb-3">
-                                        {position.institution}
-                                    </div>
-                                    <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm sm:text-base text-muted-foreground">
-                                        <div className="flex items-center space-x-1">
-                                            <Calendar className="w-4 h-4" />
-                                            <span>{position.period}</span>
+                        <div className="bg-card rounded-xl p-5 sm:p-6 shadow-sm border border-border hover:border-[hsl(var(--color-accent)_/_0.3)] transition-all duration-300">
+                                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4 sm:mb-6">
+                                    <div className="flex-1">
+                                        <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
+                                            {position.image && (
+                                                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden bg-white shadow-md flex-shrink-0 self-start sm:self-center">
+                                                    <Image
+                                                        src={position.image}
+                                                        alt={position.institution || 'Institution logo'}
+                                                        width={64}
+                                                        height={64}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
+                                            )}
+                                            <div className="flex-1 min-w-0">
+                                                <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-3 space-y-2 sm:space-y-0 mb-2">
+                                                    <h3 className="text-xl sm:text-2xl font-semibold text-foreground">
+                                                        {position.position}
+                                                    </h3>
+                                                    <div className="flex flex-wrap gap-2">
+                                                        {position.current && (
+                                                            <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 animate-pulse text-xs">
+                                                                Current
+                                                            </Badge>
+                                                        )}
+                                                        <Badge className="bg-[hsl(var(--color-accent))] text-white border-0 text-xs">
+                                                            {position.institution}
+                                                        </Badge>
+                                                    </div>
+                                                </div>
+
+                                                <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-sm sm:text-base text-muted-foreground">
+                                                    <div className="flex items-center space-x-1">
+                                                        <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                                                        <span>{position.period}</span>
+                                                    </div>
+                                                    {position.location && (
+                                                        <div className="flex items-center space-x-1">
+                                                            <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                                                            <span>{position.location}</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="flex items-center space-x-1">
-                                            <MapPin className="w-4 h-4" />
-                                            <span>{position.location}</span>
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-                                {position.description}
-                            </p>
+                                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
+                                    {position.description}
+                                </p>
 
-                            <div className="mb-4 sm:mb-6">
-                                <h4 className="text-sm sm:text-base font-semibold text-foreground mb-3">
-                                    Courses Supported
-                                </h4>
-                                <div className="flex flex-wrap gap-2">
-                                    {position.courses.map((course, courseIndex) => (
-                                        <Badge
-                                            key={courseIndex}
-                                            className="bg-[hsl(var(--color-secondary)_/_0.08)] text-[hsl(var(--color-secondary))] hover:bg-[hsl(var(--color-secondary)_/_0.15)] transition-colors px-3 py-1.5 text-xs sm:text-sm"
-                                        >
-                                            {course}
-                                        </Badge>
-                                    ))}
+                                <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                                    {position.courses && position.courses.length > 0 && (
+                                        <div>
+                                            <h4 className="font-semibold text-foreground mb-2 sm:mb-3 text-sm sm:text-base">
+                                                Courses Supported
+                                            </h4>
+                                            <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                                                {position.courses.map((course, courseIndex) => (
+                                                    <Badge
+                                                        key={courseIndex}
+                                                        className="bg-[hsl(var(--color-secondary)_/_0.08)] text-[hsl(var(--color-secondary))] hover:bg-[hsl(var(--color-secondary)_/_0.15)] transition-colors text-xs sm:text-sm"
+                                                    >
+                                                        {course}
+                                                    </Badge>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {position.responsibilities && position.responsibilities.length > 0 && (
+                                        <div>
+                                            <h4 className="font-semibold text-foreground mb-2 sm:mb-3 text-sm sm:text-base">
+                                                Key Responsibilities
+                                            </h4>
+                                            <ul className="space-y-1.5">
+                                                {position.responsibilities.map((responsibility, respIndex) => (
+                                                    <li key={respIndex} className="flex items-start space-x-2 text-sm sm:text-base text-muted-foreground">
+                                                        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[hsl(var(--color-accent))] rounded-full mt-2 flex-shrink-0"></span>
+                                                        <span>{responsibility}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
                                 </div>
-                            </div>
 
-                            <div className="mb-4 sm:mb-6">
-                                <h4 className="text-sm sm:text-base font-semibold text-foreground mb-3">
-                                    Key Responsibilities
-                                </h4>
-                                <ul className="space-y-2">
-                                    {position.responsibilities.map((responsibility, respIndex) => (
-                                        <li
-                                            key={respIndex}
-                                            className="flex items-start space-x-2 text-sm sm:text-base text-muted-foreground"
-                                        >
-                                            <span className="text-[hsl(var(--color-secondary))] mt-1.5">•</span>
-                                            <span>{responsibility}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div className="bg-[hsl(var(--color-accent)_/_0.05)] border border-[hsl(var(--color-accent)_/_0.15)] rounded-xl p-4">
-                                <div className="flex items-center space-x-2">
-                                    <Users className="w-5 h-5 text-[hsl(var(--color-secondary))]" />
-                                    <span className="text-sm sm:text-base font-semibold text-foreground">
-                                        Impact: {position.impact}
-                                    </span>
+                                <div className="flex items-center space-x-2 sm:space-x-3 pt-4 sm:pt-6 border-t border-border">
+                                    <div>
+                                        <span className="text-sm sm:text-base font-semibold text-foreground">Impact</span>
+                                        <p className="text-xs sm:text-sm text-muted-foreground">{position.impact}</p>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     </BlurFade>
                 ))}

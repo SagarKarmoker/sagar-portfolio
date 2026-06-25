@@ -3,10 +3,9 @@ import { BlurFade } from '@/components/ui/blur-fade'
 import { BorderBeam } from '@/components/ui/border-beam'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, MapPin, Trophy, ExternalLink, Users, Star } from 'lucide-react'
-import hackathonsData from '@/data/hackathons.json'
 
-export default function Hackathon() {
-    const hackathons = hackathonsData;
+export default function Hackathon({ items }) {
+    const hackathons = items || []
 
     const getAchievementColor = (achievement) => {
         switch (achievement) {
@@ -68,7 +67,7 @@ export default function Hackathon() {
                                         </div>
                                         <div className="min-w-0 flex-1">
                                             <h3 className="text-lg sm:text-xl font-semibold text-foreground group-hover:text-color-secondary dark:group-hover:text-color-primary transition-colors duration-300">
-                                                {hackathon.title}
+                                                {hackathon.title || hackathon.achievement || 'Hackathon'}
                                             </h3>
                                         </div>
                                     </div>
