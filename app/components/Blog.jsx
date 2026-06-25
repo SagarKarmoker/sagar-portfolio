@@ -43,21 +43,21 @@ export default function Blog() {
                 viewport={{ once: true }}
                 className="text-center mb-12 sm:mb-16"
             >
-                <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6">
+                <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 dark:bg-color-primary/30 text-slate-blue dark:text-color-primary text-xs sm:text-sm font-medium mb-4 sm:mb-6">
                     <BookOpen className="w-4 h-4 mr-2" />
                     Technical Writing
                 </div>
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
                     Latest{' '}
-                    <span className="bg-gradient-to-r from-color-secondary to-color-accent bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-slate-blue to-crimson bg-clip-text text-transparent">
                         Articles
                     </span>
                 </h2>
-                <p className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto px-4">
+                <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
                     Sharing insights on blockchain engineering, backend architecture, and research findings. 
                     Articles coming soon as I document my learnings.
                 </p>
-                <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-color-secondary to-color-accent mx-auto rounded-full mt-4 sm:mt-6"></div>
+                <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-slate-blue to-crimson mx-auto rounded-full mt-4 sm:mt-6"></div>
             </motion.div>
 
             {/* Articles Grid */}
@@ -73,7 +73,7 @@ export default function Blog() {
                     >
                         {/* Category & Status */}
                         <div className="flex items-center justify-between mb-4">
-                            <Badge className="bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary text-xs">
+                            <Badge className="bg-color-primary/10 dark:bg-color-primary/20 text-slate-blue dark:text-color-primary text-xs">
                                 {article.category}
                             </Badge>
                             {article.status === 'draft' && (
@@ -84,12 +84,12 @@ export default function Blog() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-200 mb-3 group-hover:text-color-secondary dark:group-hover:text-color-primary transition-colors line-clamp-2">
+                        <h3 className="text-lg sm:text-xl font-bold text-foreground mb-3 group-hover:text-slate-blue dark:group-hover:text-color-primary transition-colors line-clamp-2">
                             {article.title}
                         </h3>
 
                         {/* Excerpt */}
-                        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4 line-clamp-3">
+                        <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 line-clamp-3">
                             {article.excerpt}
                         </p>
 
@@ -98,7 +98,7 @@ export default function Blog() {
                             {article.tags.slice(0, 3).map((tag, tagIndex) => (
                                 <span 
                                     key={tagIndex}
-                                    className="text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded"
+                                    className="text-xs text-muted-foreground bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded"
                                 >
                                     #{tag}
                                 </span>
@@ -107,7 +107,7 @@ export default function Blog() {
 
                         {/* Meta */}
                         <div className="flex items-center justify-between pt-4 border-t border-color-primary/10 dark:border-color-secondary/20">
-                            <div className="flex items-center space-x-3 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+                            <div className="flex items-center space-x-3 text-xs sm:text-sm text-muted-foreground">
                                 <div className="flex items-center space-x-1">
                                     <Clock className="w-3.5 h-3.5" />
                                     <span>{article.readTime}</span>
@@ -117,7 +117,7 @@ export default function Blog() {
                                     <span>{article.date}</span>
                                 </div>
                             </div>
-                            <div className="flex items-center text-color-secondary dark:text-color-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
+                            <div className="flex items-center text-slate-blue dark:text-color-primary text-sm font-medium group-hover:translate-x-1 transition-transform">
                                 <span>Read</span>
                                 <ArrowRight className="w-4 h-4 ml-1" />
                             </div>
@@ -134,14 +134,14 @@ export default function Blog() {
                 viewport={{ once: true }}
                 className="text-center mt-8 sm:mt-12"
             >
-                <p className="text-slate-600 dark:text-slate-400 mb-4">
+                <p className="text-muted-foreground mb-4">
                     More articles on blockchain engineering, backend systems, and research insights coming soon.
                 </p>
                 <a 
                     href="https://medium.com/@sagarkarmoker" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-2 text-color-secondary dark:text-color-primary hover:text-color-accent dark:hover:text-color-accent transition-colors font-medium"
+                    className="inline-flex items-center space-x-2 text-slate-blue dark:text-color-primary hover:text-crimson dark:hover:text-crimson transition-colors font-medium"
                 >
                     <span>Follow me on Medium</span>
                     <ArrowRight className="w-4 h-4" />

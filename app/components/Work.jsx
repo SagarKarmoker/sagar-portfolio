@@ -44,7 +44,7 @@ export default function Work({ details }) {
                 <div className="flex-1">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                         <div className="flex-1">
-                            <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-2">
+                            <h3 className="text-2xl font-bold text-foreground mb-2">
                                 {position}
                             </h3>
                             <div className="flex items-center text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3">
@@ -52,7 +52,7 @@ export default function Work({ details }) {
                                 {org}
                             </div>
                             {description && (
-                                <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                <p className="text-muted-foreground leading-relaxed mb-4">
                                     {description}
                                 </p>
                             )}
@@ -60,7 +60,7 @@ export default function Work({ details }) {
 
                         {/* Timeline */}
                         <div className="flex items-center lg:items-start lg:flex-col lg:text-right">
-                            <div className="flex items-center text-slate-500 dark:text-slate-400">
+                            <div className="flex items-center text-muted-foreground">
                                 <Calendar className="w-5 h-5 mr-2" />
                                 <span className="font-medium">{time}</span>
                             </div>

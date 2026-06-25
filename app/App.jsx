@@ -1,5 +1,8 @@
 "use client"
 import { useState } from "react"
+import { Pointer } from "@/components/ui/pointer"
+import { Dock, DockIcon } from "@/components/ui/dock"
+import { Home, User, FlaskConical, Briefcase, FolderGit2, Mail } from "lucide-react"
 import About from "./components/About";
 import Awards from "./components/Awards";
 import Contact from "./components/Contact";
@@ -12,347 +15,212 @@ import ResearchStatement from "./components/ResearchStatement";
 import Skills from "./components/Skills";
 import WorkEx from "./components/WorkEx";
 import Teaching from "./components/Teaching";
-// import Blog from "./components/Blog"; // Commented out for future use
 import { motion, AnimatePresence } from "framer-motion";
-// import MyDock from "./components/MyDock";
 
 export default function App() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+    const toggleMobileMenu = () => setIsMobileMenuOpen(p => !p);
+    const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-    const closeMobileMenu = () => {
-        setIsMobileMenuOpen(false);
-    };
+    const sections = [
+        { href: "#hero", label: "Home", icon: Home },
+        { href: "#about", label: "About", icon: User },
+        { href: "#research", label: "Research", icon: FlaskConical },
+        { href: "#experience", label: "Experience", icon: Briefcase },
+        { href: "#projects", label: "Projects", icon: FolderGit2 },
+        { href: "#contact", label: "Contact", icon: Mail },
+    ];
 
-    const mainNavItems = [
+    const mobileNavLinks = [
         { href: "#about", label: "About" },
-        { href: "#research-statement", label: "Research" },
+        { href: "#research", label: "Research" },
         { href: "#experience", label: "Experience" },
         { href: "#projects", label: "Projects" },
-        { href: "#contact", label: "Contact" }
-    ];
-    
-    const moreNavItems = [
-        { href: "#teaching", label: "Teaching" },
-        { href: "#education", label: "Education" },
-        { href: "#skills", label: "Skills" },
-        { href: "#awards", label: "Awards" },
-        { href: "#hackathons", label: "Hackathons" }
-        // { href: "#blog", label: "Blog" } // Commented out for future use
+        { href: "#contact", label: "Contact" },
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-color-primary/20 via-color-secondary/10 to-color-accent/10 dark:from-color-dark dark:via-color-secondary/20 dark:to-color-dark">
-            {/* Navigation */}
-            <nav className="fixed top-0 w-full bg-white/90 dark:bg-color-dark/90 backdrop-blur-lg z-50 border-b border-color-primary/20 dark:border-color-secondary/30 shadow-sm">
+        <div className="min-h-screen relative">
+            <Pointer />
+            {/* Grain overlay via layout */}
+
+            {/* Mobile Nav — hidden on lg+ */}
+            <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 mix-blend-difference">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-16">
-                        {/* Logo */}
-                        <motion.div 
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="flex items-center space-x-2 cursor-pointer group"
-                        >
-                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-color-secondary to-color-accent flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                                SK
-                            </div>
-                            <div className="hidden sm:block">
-                                <div className="text-lg font-bold bg-gradient-to-r from-color-secondary to-color-accent bg-clip-text text-transparent">
-                                    Sagar Karmoker
-                                </div>
-                                <div className="text-xs text-slate-500 dark:text-slate-400 -mt-1">
-                                    MSc Student | Seeking PhD
-                                </div>
-                            </div>
-                        </motion.div>
-                        
-                        {/* Desktop Navigation */}
-                        <motion.div 
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="hidden lg:flex items-center space-x-1"
-                        >
-                            {mainNavItems.map((item) => (
-                                <a 
-                                    key={item.href}
-                                    href={item.href} 
-                                    className="relative px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 cursor-pointer font-medium rounded-lg hover:bg-color-primary/10 dark:hover:bg-color-primary/20 group"
-                                >
-                                    {item.label}
-                                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-color-secondary to-color-accent group-hover:w-full transition-all duration-300 rounded-full"></span>
-                                </a>
-                            ))}
-                            
-                            {/* More Dropdown */}
-                            <div className="relative group">
-                                <button className="px-3 py-2 text-sm text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 cursor-pointer font-medium rounded-lg hover:bg-color-primary/10 dark:hover:bg-color-primary/20 flex items-center space-x-1">
-                                    <span>More</span>
-                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-                                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-color-dark rounded-xl shadow-xl border border-color-primary/20 dark:border-color-secondary/30 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                                    {moreNavItems.map((item) => (
-                                        <a 
-                                            key={item.href}
-                                            href={item.href} 
-                                            className="block px-4 py-2 text-sm text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary hover:bg-color-primary/10 dark:hover:bg-color-primary/20 first:rounded-t-xl last:rounded-b-xl transition-colors"
-                                        >
-                                            {item.label}
-                                        </a>
-                                    ))}
-                                </div>
-                            </div>
-                            
-                            {/* Download CV Button */}
-                            <a 
-                                href="/Sagar_Resume.pdf" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="ml-4 px-4 py-2 bg-gradient-to-r from-color-secondary to-color-accent text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-color-accent/25 transition-all duration-300 transform hover:-translate-y-0.5"
-                            >
-                                Download CV
-                            </a>
-                        </motion.div>
-                        
-                        {/* Mobile Menu Button */}
-                        <motion.div 
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            className="lg:hidden"
-                        >
-                            <button 
+                    <div className="flex items-center justify-between h-16 sm:h-20">
+                        <a href="#hero" className="text-white text-lg font-mono font-semibold tracking-tight">
+                            SK<span className="opacity-50">()</span>
+                        </a>
+                        <div className="lg:hidden">
+                            <button
                                 onClick={toggleMobileMenu}
                                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                                 aria-expanded={isMobileMenuOpen}
-                                className="p-3 rounded-xl bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30 transition-all duration-300 cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center touch-target"
+                                className="relative w-10 h-10 flex items-center justify-center text-white touch-target"
                             >
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    {isMobileMenuOpen ? (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    ) : (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                    )}
-                                </svg>
+                                <div className="w-5 flex flex-col gap-[5px]">
+                                    <span className={`block h-[1.5px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
+                                    <span className={`block h-[1.5px] bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`} />
+                                    <span className={`block h-[1.5px] bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+                                </div>
                             </button>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
-
-                {/* Mobile Menu */}
                 <AnimatePresence>
                     {isMobileMenuOpen && (
                         <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="lg:hidden bg-white/95 dark:bg-color-dark/95 backdrop-blur-lg border-t border-color-primary/20 dark:border-color-secondary/30 shadow-lg"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 top-0 bg-[hsl(var(--color-dark))] z-40 flex items-center justify-center"
                         >
-                            <div className="px-4 py-4 space-y-1">
-                                {/* Main Navigation Items */}
-                                {mainNavItems.map((item) => (
+                            <div className="flex flex-col items-center gap-8">
+                                {mobileNavLinks.map((item) => (
                                     <a
                                         key={item.href}
                                         href={item.href}
                                         onClick={closeMobileMenu}
-                                        className="block px-4 py-4 text-slate-600 dark:text-slate-300 hover:text-color-secondary dark:hover:text-color-primary hover:bg-color-primary/10 dark:hover:bg-color-primary/20 rounded-xl transition-all duration-300 cursor-pointer font-medium min-h-[48px] flex items-center touch-target"
+                                        className="text-white/80 hover:text-white text-xl font-mono uppercase tracking-widest transition-all duration-300"
                                     >
                                         {item.label}
                                     </a>
                                 ))}
-                                
-                                {/* Divider */}
-                                <div className="border-t border-color-primary/10 dark:border-color-secondary/20 my-2"></div>
-                                
-                                {/* More Items */}
-                                <div className="px-4 py-2 text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                                    More
-                                </div>
-                                {moreNavItems.map((item) => (
-                                    <a
-                                        key={item.href}
-                                        href={item.href}
-                                        onClick={closeMobileMenu}
-                                        className="block px-4 py-3 text-sm text-slate-500 dark:text-slate-400 hover:text-color-secondary dark:hover:text-color-primary hover:bg-color-primary/10 dark:hover:bg-color-primary/20 rounded-xl transition-all duration-300 cursor-pointer min-h-[44px] flex items-center touch-target"
-                                    >
-                                        {item.label}
-                                    </a>
-                                ))}
-                                
-                                {/* Download CV Button */}
-                                <div className="pt-2 border-t border-color-primary/10 dark:border-color-secondary/20 mt-2">
-                                    <a 
-                                        href="/Sagar_Resume.pdf" 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        onClick={closeMobileMenu}
-                                        className="block px-4 py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold text-center hover:shadow-lg transition-all duration-300 min-h-[48px] flex items-center justify-center touch-target"
-                                    >
-                                        Download CV
-                                    </a>
-                                </div>
+                                <a
+                                    href="/Sagar_Resume.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={closeMobileMenu}
+                                    className="mt-4 px-6 py-3 text-sm font-medium text-white border border-white/30 rounded-full hover:bg-white hover:text-black transition-all duration-300"
+                                >
+                                    Download CV ↗
+                                </a>
                             </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
             </nav>
 
-            {/* Main Content */}
-            <main className="pt-16">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-                    <div className="space-y-16 sm:space-y-20 lg:space-y-24">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
+            {/* Desktop Dock — hidden on < lg */}
+            <div className="hidden lg:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+                <Dock className="bg-background/80 backdrop-blur-lg border border-border shadow-lg">
+                    {sections.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <DockIcon key={item.href} label={item.label}>
+                                <a
+                                    href={item.href}
+                                    className="w-full h-full flex items-center justify-center text-foreground/70 hover:text-foreground transition-colors"
+                                    aria-label={item.label || "Home"}
+                                >
+                                    <Icon className="w-5 h-5" />
+                                </a>
+                            </DockIcon>
+                        );
+                    })}
+                    <DockIcon label="Resume">
+                        <a
+                            href="/Sagar_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="w-full h-full flex items-center justify-center text-foreground/70 hover:text-foreground transition-colors"
+                            aria-label="Resume"
                         >
-                            <Hero />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="about"
-                        >
-                            <About />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="research-statement"
-                        >
-                            <ResearchStatement />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="research"
-                        >
-                            <Research />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="experience"
-                        >
-                            <WorkEx />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="teaching"
-                        >
-                            <Teaching />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="education"
-                        >
-                            <Education />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="projects"
-                        >
-                            <MyProjects />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="skills"
-                        >
-                            <Skills />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="awards"
-                        >
-                            <Awards />
-                        </motion.div>
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="hackathons"
-                        >
-                            <Hackathon />
-                        </motion.div>
-                        
-                        {/* Blog section commented out for future use
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="blog"
-                        >
-                            <Blog />
-                        </motion.div>
-                        */}
-                        
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            viewport={{ once: true }}
-                            id="contact"
-                        >
-                            <Contact />
-                        </motion.div>
+                            <span className="text-xs font-bold font-mono">CV</span>
+                        </a>
+                    </DockIcon>
+                </Dock>
+            </div>
+
+            {/* Main Content — full-width sections */}
+            <main>
+                <div id="hero">
+                    <Hero />
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="space-y-8 sm:space-y-12" id="about">
+                        <About />
+                    </div>
+
+                    <div className="bridge-divider" />
+
+                    <div className="space-y-8 sm:space-y-12" id="research">
+                        <ResearchStatement />
+                        <Research />
+                    </div>
+
+                    <div className="bridge-divider" />
+
+                    <div className="space-y-8 sm:space-y-12" id="experience">
+                        <WorkEx />
+                        <Teaching />
+                    </div>
+
+                    <div className="bridge-divider" />
+
+                    <div className="space-y-8 sm:space-y-12" id="education">
+                        <Education />
+                    </div>
+
+                    <div className="bridge-divider" />
+
+                    <div className="space-y-8 sm:space-y-12" id="projects">
+                        <MyProjects />
+                        <Skills />
+                    </div>
+
+                    <div className="bridge-divider" />
+
+                    <div className="space-y-8 sm:space-y-12" id="awards">
+                        <Awards />
+                        <Hackathon />
+                    </div>
+
+                    <div className="space-y-8 sm:space-y-12" id="contact">
+                        <Contact />
                     </div>
                 </div>
             </main>
 
             {/* Footer */}
-            <footer className="bg-white dark:bg-color-dark border-t border-color-primary/20 dark:border-color-secondary/30 mt-16 sm:mt-20 lg:mt-24">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-                    <div className="text-center">
-                        <blockquote className="mb-6 sm:mb-8">
-                            <p className="text-base sm:text-lg lg:text-xl text-slate-700 dark:text-slate-300 italic font-medium max-w-2xl mx-auto leading-relaxed">
-                                "The best way to predict the future is to invent it."
+            <footer className="relative mt-16 sm:mt-24 border-t border-border pb-24 lg:pb-32">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+                    <div className="grid sm:grid-cols-3 gap-8 sm:gap-12">
+                        <div>
+                            <p className="text-lg font-serif text-foreground mb-2">Sagar Karmoker</p>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                                Researcher &amp; Engineer<br />
+                                Building at the intersection of<br />
+                                academic rigor &amp; production engineering.
                             </p>
-                            <cite className="text-sm sm:text-base text-color-secondary dark:text-color-primary mt-2 block not-italic font-semibold">
-                                — Alan Kay
-                            </cite>
-                        </blockquote>
-                        <div className="border-t border-color-primary/10 dark:border-color-secondary/20 pt-6 sm:pt-8">
-                            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400">
-                                © 2025 Sagar Karmoker. Crafted with passion, coffee, and code.
+                        </div>
+                        <div>
+                            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Navigate</p>
+                            <div className="flex flex-col gap-2">
+                                {mobileNavLinks.map((item) => (
+                                    <a key={item.href} href={item.href} className="text-sm text-foreground/70 hover:text-foreground transition-colors">
+                                        {item.label}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                        <div>
+                            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-4">Connect</p>
+                            <div className="flex gap-3">
+                                <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:text-foreground hover:border-foreground/50 transition-all duration-300">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                                </a>
+                                <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:text-foreground hover:border-foreground/50 transition-all duration-300">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                </a>
+                                <a href="mailto:sagarkarmoker.official@gmail.com" className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-foreground/70 hover:text-foreground hover:border-foreground/50 transition-all duration-300">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                </a>
+                            </div>
+                            <p className="text-xs text-muted-foreground/60 mt-4 font-mono">
+                                © {new Date().getFullYear()} Sagar Karmoker
                             </p>
                         </div>
                     </div>

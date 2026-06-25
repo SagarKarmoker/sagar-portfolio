@@ -14,69 +14,61 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --background: 40 23% 97%;
+    --foreground: 30 10% 16%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 30 10% 16%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
+    --popover-foreground: 30 10% 16%;
+    --primary: 40 20% 92%;
+    --primary-foreground: 30 10% 16%;
+    --secondary: 180 55% 25%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 40 15% 94%;
+    --muted-foreground: 30 5% 46%;
+    --accent: 24 55% 54%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 24 55% 54%;
     --radius: 0.5rem;
-    /* Professional Academic Color Palette */
-    --color-primary: 210 40% 96%;    /* #F1F5F9 - Slate 100 */
-    --color-secondary: 215 28% 35%;  /* #475569 - Slate 600 */
-    --color-dark: 222 47% 11%;       /* #0F172A - Slate 900 */
-    --color-accent: 199 89% 48%;     /* #0EA5E9 - Sky Blue 500 */
-    --color-orange: 217 91% 60%;     /* #3B82F6 - Blue 500 */
+
+    /* Brand colors */
+    --color-primary: 40 20% 92%;
+    --color-secondary: 180 55% 25%;
+    --color-dark: 30 10% 16%;
+    --color-accent: 24 55% 54%;
+    --color-orange: 24 60% 45%;
   }
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    /* Dark mode color palette */
-    --color-primary: 215 28% 25%;    /* #334155 - Slate 700 */
-    --color-secondary: 210 40% 80%;  /* #BFDBFE - Blue 200 */
-    --color-dark: 222 47% 11%;       /* #0F172A - Slate 900 */
-    --color-accent: 199 89% 60%;     /* #38BDF8 - Sky Blue 400 */
-    --color-orange: 217 91% 70%;     /* #93C5FD - Blue 300 */
+    --background: 220 15% 12%;
+    --foreground: 38 10% 82%;
+    --card: 220 15% 14%;
+    --card-foreground: 38 10% 82%;
+    --popover: 220 15% 14%;
+    --popover-foreground: 38 10% 82%;
+    --primary: 220 15% 20%;
+    --primary-foreground: 38 10% 82%;
+    --secondary: 180 35% 42%;
+    --secondary-foreground: 220 15% 12%;
+    --muted: 220 12% 18%;
+    --muted-foreground: 38 5% 60%;
+    --accent: 24 35% 48%;
+    --accent-foreground: 38 10% 90%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 38 10% 82%;
+    --border: 220 12% 22%;
+    --input: 220 12% 22%;
+    --ring: 24 35% 48%;
+
+    /* Brand colors dark */
+    --color-primary: 220 15% 20%;
+    --color-secondary: 180 35% 42%;
+    --color-dark: 220 15% 12%;
+    --color-accent: 24 35% 48%;
+    --color-orange: 24 40% 40%;
   }
 }
 
@@ -86,70 +78,182 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: hsl(var(--color-secondary) / 0.2);
+    color: hsl(var(--foreground));
   }
 }
 
-/* Mobile-first responsive utilities */
+/* ===== Section Heading Styles ===== */
+
+/* Academic: serif, left-aligned, copper accent */
+.section-academic {
+  margin-bottom: 3rem;
+}
+.section-academic h2 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.75rem;
+}
+.section-academic .subtitle {
+  font-size: 1.05rem;
+  color: hsl(var(--muted-foreground));
+  max-width: 36rem;
+  line-height: 1.6;
+}
+.section-academic::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: hsl(var(--color-accent));
+  border-radius: 999px;
+  margin-top: 1rem;
+}
+
+/* Industry: sans, centered, teal mono prefix */
+.section-industry {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.section-industry .meta-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: hsl(var(--color-secondary));
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.section-industry h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+.section-industry .subtitle {
+  font-size: 1.05rem;
+  color: hsl(var(--muted-foreground));
+  max-width: 36rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Compact: for minor sections like Awards, Hackathons */
+.section-compact {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.section-compact h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin-bottom: 0.5rem;
+}
+.section-compact .subtitle {
+  font-size: 0.95rem;
+  color: hsl(var(--muted-foreground));
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+/* Bridge divider between academic & industry sections */
+.bridge-divider {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, hsl(var(--color-accent) / 0.3), hsl(var(--color-secondary) / 0.3));
+  margin: 0.5rem 0;
+}
+.bridge-divider::after {
+  content: '◆';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.5rem;
+  color: hsl(var(--color-secondary));
+  background: hsl(var(--background));
+  padding: 0 0.75rem;
+}
+
+/* ===== Grain / Noise Texture ===== */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--color-secondary) / 0.5);
+}
+
+/* ===== Glass Card ===== */
+.glass-card {
+  background: hsl(var(--card) / 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid hsl(var(--border));
+}
+
+/* ===== Mobile utilities (keep existing) ===== */
 @layer utilities {
-  /* Improved touch targets for mobile */
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
   }
-  
-  /* Mobile-safe horizontal padding */
   .mobile-safe-x {
     @apply px-4 sm:px-6 lg:px-8;
   }
-  
-  /* Responsive container */
   .container-mobile {
     @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
-  
-  /* Mobile-optimized spacing */
   .section-spacing {
     @apply py-12 sm:py-16 lg:py-20;
   }
-  
-  /* Mobile-first grid */
   .grid-mobile {
     @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
   }
 }
 
-/* Prevent horizontal scroll on mobile */
 html, body {
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }
-
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
-
-/* Improve text rendering on mobile */
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
-
-/* Prevent text size inflation on mobile Safari */
 @media screen and (max-width: 768px) {
   html {
     -webkit-text-size-adjust: 100%;
   }
 }
-
-/* Mobile navigation improvements */
 @media screen and (max-width: 1023px) {
   .mobile-nav-link {
     @apply py-4 px-4 text-base;
   }
 }
-
-/* Ensure images don't overflow on mobile */
 img {
   max-width: 100%;
   height: auto;

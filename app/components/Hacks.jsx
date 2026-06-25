@@ -14,11 +14,11 @@ export default function Hacks() {
             case 'Winner':
                 return 'bg-gradient-to-r from-yellow-400 to-yellow-600';
             case 'Participant':
-                return 'bg-gradient-to-r from-color-secondary to-color-accent';
+                return 'bg-gradient-to-r from-slate-blue to-crimson';
             case 'Runner-up':
                 return 'bg-gradient-to-r from-gray-400 to-gray-600';
             default:
-                return 'bg-gradient-to-r from-color-secondary to-color-accent';
+                return 'bg-gradient-to-r from-slate-blue to-crimson';
         }
     };
 
@@ -71,7 +71,7 @@ export default function Hacks() {
                                     {/* Content Section */}
                                     <div className="flex-1 space-y-4">
                                         <motion.h3 
-                                            className="text-2xl lg:text-3xl font-bold text-slate-800 dark:text-slate-200 group-hover:text-color-secondary dark:group-hover:text-color-primary transition-colors duration-300"
+                                            className="text-2xl lg:text-3xl font-bold text-foreground group-hover:text-slate-blue dark:group-hover:text-color-primary transition-colors duration-300"
                                             initial={{ opacity: 0, x: -20 }}
                                             whileInView={{ opacity: 1, x: 0 }}
                                             transition={{ duration: 0.6, delay: index * 0.2 + 0.1 }}
@@ -82,21 +82,21 @@ export default function Hacks() {
                                         
                                         {/* Event Details */}
                                         <motion.div 
-                                            className="flex flex-wrap items-center gap-6 text-slate-600 dark:text-slate-400"
+                                            className="flex flex-wrap items-center gap-6 text-muted-foreground"
                                             initial={{ opacity: 0, y: 10 }}
                                             whileInView={{ opacity: 1, y: 0 }}
                                             transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
                                             viewport={{ once: true }}
                                         >
-                                            <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
-                                                <Calendar className="w-4 h-4 mr-2 text-color-secondary" />
+                                            <div className="flex items-center bg-muted px-3 py-2 rounded-lg">
+                                                <Calendar className="w-4 h-4 mr-2 text-slate-blue" />
                                                 <span className="text-sm font-medium">{event.date}</span>
                                             </div>
-                                            <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
-                                                <MapPin className="w-4 h-4 mr-2 text-color-accent" />
+                                            <div className="flex items-center bg-muted px-3 py-2 rounded-lg">
+                                                <MapPin className="w-4 h-4 mr-2 text-crimson" />
                                                 <span className="text-sm font-medium">{event.location}</span>
                                             </div>
-                                            <div className="flex items-center bg-slate-100 dark:bg-slate-800 px-3 py-2 rounded-lg">
+                                            <div className="flex items-center bg-muted px-3 py-2 rounded-lg">
                                                 <Users className="w-4 h-4 mr-2 text-color-primary" />
                                                 <span className="text-sm font-medium">Hackathon</span>
                                             </div>
@@ -111,9 +111,9 @@ export default function Hacks() {
                                             viewport={{ once: true }}
                                         >
                                             <div className="flex-shrink-0 mt-1">
-                                                <div className="w-2 h-2 bg-gradient-to-r from-color-secondary to-color-accent rounded-full"></div>
+                                                <div className="w-2 h-2 bg-gradient-to-r from-slate-blue to-crimson rounded-full"></div>
                                             </div>
-                                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-lg">
+                                            <p className="text-muted-foreground leading-relaxed text-lg">
                                                 {event.description}
                                             </p>
                                         </motion.div>
@@ -125,7 +125,7 @@ export default function Hacks() {
                                             transition={{ duration: 0.6, delay: index * 0.2 + 0.4 }}
                                             viewport={{ once: true }}
                                         >
-                                            <div className="inline-flex items-center space-x-2 text-color-secondary dark:text-color-primary hover:text-color-accent transition-colors duration-300 cursor-pointer group/btn">
+                                            <div className="inline-flex items-center space-x-2 text-slate-blue dark:text-color-primary hover:text-crimson transition-colors duration-300 cursor-pointer group/btn">
                                                 <span className="font-medium">View Details</span>
                                                 <ExternalLink className="w-4 h-4 transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300" />
                                             </div>

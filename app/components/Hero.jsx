@@ -1,258 +1,115 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { Particles } from '@/components/ui/particles'
+import { BlurFade } from '@/components/ui/blur-fade'
 import ProfilePic from '@/public/profile.jpg'
 
 function Hero() {
-    const [mounted, setMounted] = useState(false)
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    // Static version for SSR to prevent hydration issues
-    if (!mounted) {
-        return (
-            <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 sm:py-12">
-                <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto px-4 sm:px-6">
-                    {/* Left Content - Static version for SSR */}
-                    <div className="space-y-6 sm:space-y-8 order-2 lg:order-1">
-                        <div className="space-y-4 sm:space-y-6">
-                            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary text-xs sm:text-sm font-medium">
-                                <span className="w-2 h-2 bg-color-secondary rounded-full mr-2"></span>
-                                PhD Researcher | Backend & Blockchain Engineer
-                            </div>
-                            
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                                Hi, I&apos;m{' '}
-                                <span className="bg-gradient-to-r from-color-secondary via-color-accent to-color-orange bg-clip-text text-transparent">
-                                    Sagar
-                                </span>
-                                <br />
-                                <span className="text-slate-600 dark:text-slate-300">
-                                    👋
-                                </span>
-                            </h1>
-                            
-                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed">
-                                Backend & Blockchain Engineer passionate about{' '}
-                                <span className="font-semibold text-slate-800 dark:text-slate-200">
-                                    distributed systems and decentralized infrastructure
-                                </span>
-                                . Currently at Core Devs Ltd, building scalable backend systems and smart contracts. Former Research Assistant at BRAC University.
-                            </p>
-
-                            <div className="flex flex-wrap gap-2">
-                                <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
-                                    🔬 Blockchain Research
-                                </span>
-                                <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
-                                    ⚡ Distributed Systems
-                                </span>
-                                <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
-                                    🎓 Seeking PhD Opportunity
-                                </span>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <a href="#projects" className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-color-accent/25 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-sm sm:text-base text-center">
-                                View My Work
-                            </a>
-                            <a href="/Sagar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 rounded-xl font-semibold hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 cursor-pointer text-sm sm:text-base text-center">
-                                Download CV
-                            </a>
-                        </div>
-
-                        <div className="flex space-x-4 sm:space-x-6">
-                            <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
-                                <Github className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700 dark:text-slate-300" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
-                                <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-color-secondary" />
-                            </a>
-                            <a href="mailto:sagarkarmoker.official@gmail.com" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
-                                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-color-accent" />
-                            </a>
-                        </div>
-                    </div>
-
-                    {/* Right Content - Profile Image */}
-                    <div className="flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0">
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-color-secondary to-color-accent rounded-full blur-2xl sm:blur-3xl opacity-20"></div>
-                            <div className="relative">
-                                <Image
-                                    src={ProfilePic}
-                                    width={300}
-                                    height={300}
-                                    alt="Sagar Karmoker"
-                                    className="rounded-full shadow-2xl w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px] object-cover"
-                                    priority
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Scroll Indicator */}
-                <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2">
-                    <div className="flex flex-col items-center space-y-2 text-slate-600 dark:text-slate-400">
-                        <span className="text-xs sm:text-sm font-medium">Scroll down</span>
-                        <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
-    // Animated version for client-side rendering
     return (
-        <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 sm:py-12">
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center max-w-6xl mx-auto px-4 sm:px-6">
-                {/* Left Content */}
-                <motion.div 
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="space-y-6 sm:space-y-8 order-2 lg:order-1"
-                >
-                    <div className="space-y-4 sm:space-y-6">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.2, duration: 0.6 }}
-                            className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary text-xs sm:text-sm font-medium"
-                        >
-                            <span className="w-2 h-2 bg-color-secondary rounded-full mr-2 animate-pulse"></span>
-                            PhD Researcher | Backend & Blockchain Engineer
-                        </motion.div>
-                        
-                        <motion.h1 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.4, duration: 0.6 }}
-                            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
-                        >
-                            Hi, I&apos;m{' '}
-                            <span className="bg-gradient-to-r from-color-secondary via-color-accent to-color-orange bg-clip-text text-transparent">
+        <section className="min-h-screen flex items-center relative overflow-hidden bg-[hsl(var(--color-dark))]">
+            {/* Particles background */}
+            <Particles
+                className="absolute inset-0 z-0"
+                quantity={150}
+                color="#ffffff"
+                size={0.3}
+                staticity={30}
+                ease={30}
+            />
+
+            {/* Subtle grid overlay */}
+            <div className="absolute inset-0 opacity-[0.03] z-[1]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+
+            <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 z-10">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Left: Text */}
+                    <div className="text-white space-y-8">
+                        <BlurFade delay={0} duration={0.6} offset={8}>
+                            <div className="flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
+                                <span className="w-8 h-[1px] bg-white/30" />
+                                Researcher & Engineer
+                            </div>
+                        </BlurFade>
+
+                        <BlurFade delay={0.15} duration={0.8} offset={12}>
+                            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-serif leading-none">
                                 Sagar
-                            </span>
-                            <br />
-                            <span className="text-slate-600 dark:text-slate-300 animate-pulse">
-                                👋
-                            </span>
-                        </motion.h1>
-                        
-                        <motion.p 
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6, duration: 0.6 }}
-                            className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed"
-                        >
-                            Backend & Blockchain Engineer passionate about{' '}
-                            <span className="font-semibold text-slate-800 dark:text-slate-200">
-                                distributed systems and decentralized infrastructure
-                            </span>
-                            . Currently at Core Devs Ltd, building scalable backend systems and smart contracts. Former Research Assistant at BRAC University.
-                        </motion.p>
+                                <br />
+                                <span className="text-4xl sm:text-5xl lg:text-6xl italic text-white/70">Karmoker</span>
+                            </h1>
+                        </BlurFade>
 
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.7, duration: 0.6 }}
-                            className="flex flex-wrap gap-2"
-                        >
-                            <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
-                                🔬 Blockchain Research
-                            </span>
-                            <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
-                                ⚡ Distributed Systems
-                            </span>
-                            <span className="px-3 py-1 bg-color-primary/20 dark:bg-color-primary/30 text-color-secondary dark:text-color-primary rounded-full text-xs sm:text-sm font-medium">
-                                🎓 Seeking PhD Opportunity
-                            </span>
-                        </motion.div>
+                        <BlurFade delay={0.3} duration={0.8} offset={12}>
+                            <p className="text-base sm:text-lg text-white/60 max-w-xl leading-relaxed">
+                                Building at the intersection of <strong className="text-white/90">academic research</strong> and{' '}
+                                <strong className="text-white/90">production engineering</strong> — distributed systems, blockchain infrastructure, and decentralized protocols.
+                            </p>
+                        </BlurFade>
+
+                        {/* Role badges */}
+                        <BlurFade delay={0.45} duration={0.6} offset={8}>
+                            <div className="flex flex-wrap gap-2">
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(180_55%_25%_/_0.4)] bg-[hsl(180_55%_25%_/_0.1)] text-[hsl(180_35%_60%)]">
+                                    Blockchain Engineer
+                                </span>
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(180_55%_25%_/_0.4)] bg-[hsl(180_55%_25%_/_0.1)] text-[hsl(180_35%_60%)]">
+                                    MSc Researcher
+                                </span>
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(180_55%_25%_/_0.4)] bg-[hsl(180_55%_25%_/_0.1)] text-[hsl(180_35%_60%)]">
+                                    Backend Architect
+                                </span>
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(24_55%_54%_/_0.4)] bg-[hsl(24_55%_54%_/_0.1)] text-[hsl(24_55%_54%)]">
+                                    PhD Aspirant
+                                </span>
+                                <span className="px-3 py-1.5 text-xs font-mono rounded-full border border-[hsl(180_55%_25%_/_0.4)] bg-[hsl(180_55%_25%_/_0.1)] text-[hsl(180_35%_60%)]">
+                                    Smart Contract Dev
+                                </span>
+                            </div>
+                        </BlurFade>
+
+                        <BlurFade delay={0.6} duration={0.6} offset={8}>
+                            <nav aria-label="Primary navigation" className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-4 text-sm">
+                                <a href="#research" className="text-white/40 hover:text-white/70 transition-colors duration-300 font-mono">Research</a>
+                                <span className="text-white/20" aria-hidden="true">→</span>
+                                <a href="#projects" className="text-white/40 hover:text-white/70 transition-colors duration-300 font-mono">Engineering</a>
+                                <span className="text-white/20" aria-hidden="true">→</span>
+                                <a
+                                    href="/Sagar_Resume.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="relative text-white font-semibold font-mono after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:rounded-full after:bg-[hsl(var(--color-secondary))]"
+                                >
+                                    CV
+                                </a>
+                            </nav>
+                        </BlurFade>
                     </div>
 
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.8, duration: 0.6 }}
-                        className="flex flex-col sm:flex-row gap-4"
-                    >
-                        <a href="#projects" className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-color-secondary to-color-accent text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-color-accent/25 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer text-sm sm:text-base text-center">
-                            View My Work
-                        </a>
-                        <a href="/Sagar_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-color-primary/30 dark:border-color-secondary/30 text-slate-700 dark:text-slate-300 rounded-xl font-semibold hover:border-color-secondary dark:hover:border-color-primary hover:text-color-secondary dark:hover:text-color-primary transition-all duration-300 cursor-pointer text-sm sm:text-base text-center">
-                            Download CV
-                        </a>
-                    </motion.div>
-
-                    <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1, duration: 0.6 }}
-                        className="flex space-x-4 sm:space-x-6"
-                    >
-                        <a href="https://github.com/SagarKarmoker" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
-                            <Github className="w-5 h-5 sm:w-6 sm:h-6 text-slate-700 dark:text-slate-300" />
-                        </a>
-                        <a href="https://www.linkedin.com/in/sagarkarmoker" target="_blank" rel="noopener noreferrer" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
-                            <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-color-secondary" />
-                        </a>
-                        <a href="mailto:sagarkarmoker.official@gmail.com" className="p-3 bg-white dark:bg-color-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer touch-target min-h-[44px] min-w-[44px] flex items-center justify-center">
-                            <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-color-accent" />
-                        </a>
-                    </motion.div>
-                </motion.div>
-
-                {/* Right Content - Profile Image */}
-                <motion.div 
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0"
-                >
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-color-secondary to-color-accent rounded-full blur-2xl sm:blur-3xl opacity-20 animate-pulse"></div>
-                        <motion.div
-                            whileHover={{ scale: 1.05 }}
-                            transition={{ duration: 0.3 }}
-                            className="relative"
-                        >
-                            <Image
-                                src={ProfilePic}
-                                width={300}
-                                height={300}
-                                alt="Sagar Karmoker"
-                                className="rounded-full shadow-2xl w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[500px] xl:h-[500px] object-cover"
-                                priority
-                            />
-                        </motion.div>
-                    </div>
-                </motion.div>
+                    {/* Right: Photo */}
+                    <BlurFade delay={0.3} duration={1} offset={20}>
+                        <div className="flex justify-center lg:justify-end">
+                            <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[hsl(180_55%_25%_/_0.3)] to-[hsl(24_55%_54%_/_0.2)] blur-3xl animate-pulse" style={{ animationDuration: '6s' }} />
+                                <div className="relative w-full h-full rounded-full overflow-hidden ring-2 ring-white/10">
+                                    <Image
+                                        src={ProfilePic}
+                                        width={384}
+                                        height={384}
+                                        alt="Sagar Karmoker"
+                                        className="w-full h-full object-cover"
+                                        priority
+                                    />
+                                </div>
+                                {/* Decorative rings */}
+                                <div className="absolute -inset-4 rounded-full border border-white/10" />
+                                <div className="absolute -inset-8 rounded-full border border-white/5" />
+                            </div>
+                        </div>
+                    </BlurFade>
+                </div>
             </div>
-
-            {/* Scroll Indicator */}
-            <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 0.6 }}
-                className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2"
-            >
-                <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="flex flex-col items-center space-y-2 text-slate-600 dark:text-slate-400"
-                >
-                    <span className="text-xs sm:text-sm font-medium">Scroll down</span>
-                    <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5" />
-                </motion.div>
-            </motion.div>
-        </div>
+        </section>
     )
 }
 

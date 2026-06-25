@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
+  <rect width="180" height="180" rx="32" fill="#1B1D23"/>
+  <text x="90" y="110" font-family="'JetBrains Mono','Courier New',monospace" font-size="72" font-weight="600" fill="white" text-anchor="middle">SK</text>
+  <text x="132" y="86" font-family="'JetBrains Mono','Courier New',monospace" font-size="30" fill="rgba(255,255,255,0.5)">()</text>
+</svg>
