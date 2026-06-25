@@ -3,10 +3,9 @@ import { BlurFade } from '@/components/ui/blur-fade'
 import { NumberTicker } from '@/components/ui/number-ticker'
 import { Highlighter } from '@/components/ui/highlighter'
 import { getIcon } from '@/lib/icons'
-import expertiseData from '@/data/expertise.json'
 
-function About() {
-    const expertise = expertiseData.map(item => ({
+function About({ expertise: expertiseProp }) {
+    const expertise = (expertiseProp || []).map(item => ({
         ...item,
         icon: getIcon(item.icon)
     }));

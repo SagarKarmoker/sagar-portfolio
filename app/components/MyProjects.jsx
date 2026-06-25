@@ -1,10 +1,9 @@
 import React from 'react'
 import { BlurFade } from '@/components/ui/blur-fade'
 import ProjectCard from './ProjectCard'
-import projectsData from '@/data/projects.json'
 
-export default function MyProjects() {
-    const projects = projectsData.map(project => ({
+export default function MyProjects({ projects: projectsProp }) {
+    const projects = (projectsProp || []).map(project => ({
         title: project.name,
         description: project.desc,
         technologies: project.badges,

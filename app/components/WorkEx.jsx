@@ -3,11 +3,10 @@ import { BlurFade } from '@/components/ui/blur-fade'
 import { BorderBeam } from '@/components/ui/border-beam'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, MapPin, ExternalLink } from 'lucide-react'
-import workExperienceData from '@/data/workExperience.json'
 import Image from 'next/image'
 
-export default function WorkEx() {
-    const workExperience = workExperienceData.map(job => ({
+export default function WorkEx({ jobs }) {
+    const workExperience = (jobs || []).map(job => ({
         image: job.image,
         company: job.org,
         title: job.position,

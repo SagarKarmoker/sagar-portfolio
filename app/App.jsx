@@ -17,7 +17,7 @@ import WorkEx from "./components/WorkEx";
 import Teaching from "./components/Teaching";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function App() {
+export default function App({ cmsData }) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isDesktop, setIsDesktop] = useState(false);
 
@@ -148,45 +148,45 @@ export default function App() {
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="space-y-8 sm:space-y-12" id="about">
-                        <About />
+                        <About expertise={cmsData.expertise} />
                     </div>
 
                     <div className="bridge-divider" />
 
                     <div className="space-y-8 sm:space-y-12" id="research">
                         <ResearchStatement />
-                        <Research />
+                        <Research publications={cmsData.research?.publications} />
                     </div>
 
                     <div className="bridge-divider" />
 
                     <div className="space-y-8 sm:space-y-12" id="experience">
-                        <WorkEx />
+                        <WorkEx jobs={cmsData.workExperience} />
                         <Teaching />
                     </div>
 
                     <div className="bridge-divider" />
 
                     <div className="space-y-8 sm:space-y-12" id="education">
-                        <Education />
+                        <Education schools={cmsData.education} />
                     </div>
 
                     <div className="bridge-divider" />
 
                     <div className="space-y-8 sm:space-y-12" id="projects">
-                        <MyProjects />
-                        <Skills />
+                        <MyProjects projects={cmsData.projects} />
+                        <Skills categories={cmsData.skills?.skillCategories} logos={cmsData.logos} />
                     </div>
 
                     <div className="bridge-divider" />
 
                     <div className="space-y-8 sm:space-y-12" id="awards">
-                        <Awards />
-                        <Hackathon />
+                        <Awards items={cmsData.awards} />
+                        <Hackathon items={cmsData.hackathons} />
                     </div>
 
                     <div className="space-y-8 sm:space-y-12" id="contact">
-                        <Contact />
+                        <Contact methods={cmsData.contact} />
                     </div>
                 </div>
             </main>

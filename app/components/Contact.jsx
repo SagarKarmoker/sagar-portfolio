@@ -6,15 +6,14 @@ import { Confetti } from '@/components/ui/confetti'
 import { Button } from '@/components/ui/button'
 import { MessageCircle, ArrowUpRight, Mail } from 'lucide-react'
 import Link from 'next/link'
-import contactData from '@/data/contact.json'
 import { getIcon } from '@/lib/icons'
 
 function ContactIcon({ icon: Icon, className }) {
     return <Icon className={className} />
 }
 
-export default function Contact() {
-    const contactMethods = contactData.map(method => ({
+export default function Contact({ methods }) {
+    const contactMethods = (methods || []).map(method => ({
         ...method,
         icon: getIcon(method.icon)
     }));

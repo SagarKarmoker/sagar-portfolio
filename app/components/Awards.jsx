@@ -3,10 +3,9 @@ import { BlurFade } from '@/components/ui/blur-fade'
 import { BorderBeam } from '@/components/ui/border-beam'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, MapPin, Award as AwardIcon, Star, Trophy } from 'lucide-react'
-import awardsData from '@/data/awards.json'
 
-export default function Awards() {
-    const awards = awardsData;
+export default function Awards({ items }) {
+    const awards = items || []
 
     const getAchievementColor = (achievement) => {
         switch (achievement) {

@@ -2,11 +2,10 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, MapPin, GraduationCap, ExternalLink } from 'lucide-react'
-import educationData from '@/data/education.json'
 import Image from 'next/image'
 
-export default function Education() {
-    const education = educationData;
+export default function Education({ schools }) {
+    const education = schools || [];
 
     return (
         <div className="py-12 sm:py-16 lg:py-20">

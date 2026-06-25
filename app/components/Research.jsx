@@ -3,10 +3,9 @@ import { BlurFade } from '@/components/ui/blur-fade'
 import { BorderBeam } from '@/components/ui/border-beam'
 import { Badge } from '@/components/ui/badge'
 import { BookOpen, ExternalLink, Globe } from 'lucide-react'
-import researchData from '@/data/research.json'
 
-export default function Research() {
-    const { publications, researchAreas } = researchData;
+export default function Research({ publications }) {
+    const items = publications || []
 
     return (
         <div className="py-12 sm:py-16 lg:py-20">
@@ -32,28 +31,9 @@ export default function Research() {
                 </div>
             </BlurFade>
 
-            {/* Research Areas */}
-            <BlurFade delay={0.2} duration={0.6} offset={8}>
-                <div className="mb-8 sm:mb-12">
-                    <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-4 sm:mb-6 text-center">
-                        Research Areas
-                    </h3>
-                    <div className="flex flex-wrap justify-center gap-2 sm:gap-3 px-4">
-                        {researchAreas.map((area, index) => (
-                            <Badge
-                                key={index}
-                                className="bg-color-primary/10 dark:bg-color-primary/20 text-color-secondary dark:text-color-primary hover:bg-color-primary/20 dark:hover:bg-color-primary/30 transition-colors px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium"
-                            >
-                                {area}
-                            </Badge>
-                        ))}
-                    </div>
-                </div>
-            </BlurFade>
-
             {/* Publications */}
             <div className="space-y-3 sm:space-y-4">
-                {publications.map((publication, index) => (
+                {items.map((publication, index) => (
                     <BlurFade key={index} delay={0.1 + index * 0.08} duration={0.6} offset={8}>
                         <div className="relative bg-card rounded-xl p-5 sm:p-6 shadow-sm border border-border hover:border-[hsl(var(--color-accent)_/_0.3)] transition-all duration-300 overflow-hidden">
                             <BorderBeam

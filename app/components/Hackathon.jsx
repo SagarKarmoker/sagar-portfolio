@@ -3,10 +3,9 @@ import { BlurFade } from '@/components/ui/blur-fade'
 import { BorderBeam } from '@/components/ui/border-beam'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, MapPin, Trophy, ExternalLink, Users, Star } from 'lucide-react'
-import hackathonsData from '@/data/hackathons.json'
 
-export default function Hackathon() {
-    const hackathons = hackathonsData;
+export default function Hackathon({ items }) {
+    const hackathons = items || []
 
     const getAchievementColor = (achievement) => {
         switch (achievement) {
